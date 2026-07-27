@@ -1,0 +1,2206 @@
+================================================================== test session starts ==================================================================
+platform linux -- Python 3.11.15, pytest-8.3.4, pluggy-1.6.0 -- /home/jovyan/venvs/collagen_3_11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized
+configfile: pyproject.toml
+plugins: typeguard-4.4.2, anyio-4.12.1, zarr-3.1.6
+collecting ... collected 30 items
+
+tests/test_integration.py::test_single_worker_matches_reference FAILED                                                                            [  3%]
+tests/test_integration.py::test_parallel_matches_single FAILED                                                                                    [  6%]
+tests/test_integration.py::test_local_io_roundtrip FAILED                                                                                         [ 10%]
+tests/test_integration.py::test_gene_intersection_is_applied FAILED                                                                               [ 13%]
+tests/test_integration.py::test_na_drop_full_pipeline FAILED                                                                                      [ 16%]
+tests/test_integration.py::test_na_knn_full_pipeline FAILED                                                                                       [ 20%]
+tests/test_io_utils.py::test_read_local_csv PASSED                                                                                                [ 23%]
+tests/test_io_utils.py::test_read_local_tsv_gz PASSED                                                                                             [ 26%]
+tests/test_io_utils.py::test_write_and_read_roundtrip PASSED                                                                                      [ 30%]
+tests/test_io_utils.py::test_parse_s3_uri PASSED                                                                                                  [ 33%]
+tests/test_io_utils.py::test_s3_read_mocked PASSED                                                                                                [ 36%]
+tests/test_na_handling.py::test_detect_na_genes_correct PASSED                                                                                    [ 40%]
+tests/test_na_handling.py::test_drop_removes_na_genes PASSED                                                                                      [ 43%]
+tests/test_na_handling.py::test_knn_fills_nas PASSED                                                                                              [ 46%]
+tests/test_na_handling.py::test_restore_preserves_original_order PASSED                                                                           [ 50%]
+tests/test_na_handling.py::test_restore_inserts_nan_correct_columns PASSED                                                                        [ 53%]
+tests/test_na_handling.py::test_all_na_gene_handled_gracefully PASSED                                                                             [ 56%]
+tests/test_octave_bridge.py::test_bridge_returns_correct_shape FAILED                                                                             [ 60%]
+tests/test_octave_bridge.py::test_bridge_symbol_index_correct FAILED                                                                              [ 63%]
+tests/test_octave_bridge.py::test_bridge_raises_on_nonzero_exit PASSED                                                                            [ 66%]
+tests/test_octave_bridge.py::test_bridge_error_message_contains_stderr PASSED                                                                     [ 70%]
+tests/test_octave_bridge.py::test_bridge_raises_on_unparseable_stdout PASSED                                                                      [ 73%]
+tests/test_octave_bridge.py::test_tsv_formatting_round_trip PASSED                                                                                [ 76%]
+tests/test_octave_bridge.py::test_random_seed_injected_in_preamble PASSED                                                                         [ 80%]
+tests/test_q_rescale.py::test_rescale_known_values PASSED                                                                                         [ 83%]
+tests/test_q_rescale.py::test_compute_q_statistics_shape PASSED                                                                                   [ 86%]
+tests/test_q_rescale.py::test_pseudocount_prevents_log_zero PASSED                                                                                [ 90%]
+tests/test_q_rescale.py::test_pseudocount_zero_excludes_with_warning PASSED                                                                       [ 93%]
+tests/test_q_rescale.py::test_rescale_raises_on_negative_q PASSED                                                                                 [ 96%]
+tests/test_q_rescale.py::test_rescale_gene_intersection PASSED                                                                                    [100%]
+
+======================================================================= FAILURES ========================================================================
+_________________________________________________________ test_single_worker_matches_reference __________________________________________________________
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 72, in _harmonize_one_batch
+    return run_octave_normalize(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/octave_bridge.py", line 221, in run_octave_normalize
+    raise OctaveExecutionError(
+shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+--- STDERR (full) ---
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+error: ignoring const execution_exception& while preparing to exit
+error: ignoring const execution_exception& while preparing to exit
+
+--- STDOUT (first 2000 chars) ---
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+>                   batch_results[idx] = future.result()
+
+shambhala/parallel.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+>               raise self._exception
+E               shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+E               --- STDERR (full) ---
+E               octave: X11 DISPLAY environment variable not set
+E               octave: disabling GUI features
+E               error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+E               error: ignoring const execution_exception& while preparing to exit
+E               error: ignoring const execution_exception& while preparing to exit
+E               
+E               --- STDOUT (first 2000 chars) ---
+
+/usr/lib/python3.11/concurrent/futures/_base.py:401: OctaveExecutionError
+
+The above exception was the direct cause of the following exception:
+
+    @octave_required
+    @pytest.mark.timeout(300)
+    def test_single_worker_matches_reference():
+>       result = _run_pipeline(
+            FIXTURES_DIR / "input_10samples.csv",
+            FIXTURES_DIR / "P0_small.csv",
+            FIXTURES_DIR / "Q0_small.csv",
+            n_workers=1,
+        )
+
+tests/test_integration.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_integration.py:56: in _run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+                    batch_results[idx] = future.result()
+                    logger.info("Worker %d/%d complete.", idx + 1, effective_workers)
+                except Exception as exc:
+>                   raise RuntimeError(
+                        f"Worker for batch {idx} (samples: {batches[idx]}) failed."
+                    ) from exc
+E                   RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_5', 'СTO_6', 'СTO_7', 'СTO_8', 'СTO_9', 'СTO_10']) failed.
+
+shambhala/parallel.py:200: RuntimeError
+_____________________________________________________________ test_parallel_matches_single ______________________________________________________________
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 72, in _harmonize_one_batch
+    return run_octave_normalize(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/octave_bridge.py", line 221, in run_octave_normalize
+    raise OctaveExecutionError(
+shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+--- STDERR (full) ---
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+error: ignoring const execution_exception& while preparing to exit
+error: ignoring const execution_exception& while preparing to exit
+
+--- STDOUT (first 2000 chars) ---
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+>                   batch_results[idx] = future.result()
+
+shambhala/parallel.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+>               raise self._exception
+E               shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+E               --- STDERR (full) ---
+E               octave: X11 DISPLAY environment variable not set
+E               octave: disabling GUI features
+E               error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+E               error: ignoring const execution_exception& while preparing to exit
+E               error: ignoring const execution_exception& while preparing to exit
+E               
+E               --- STDOUT (first 2000 chars) ---
+
+/usr/lib/python3.11/concurrent/futures/_base.py:401: OctaveExecutionError
+
+The above exception was the direct cause of the following exception:
+
+    @octave_required
+    @pytest.mark.timeout(600)
+    def test_parallel_matches_single():
+>       result_1 = _run_pipeline(
+            FIXTURES_DIR / "input_10samples.csv",
+            FIXTURES_DIR / "P0_small.csv",
+            FIXTURES_DIR / "Q0_small.csv",
+            n_workers=1,
+            random_seed=42,
+        )
+
+tests/test_integration.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_integration.py:56: in _run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+                    batch_results[idx] = future.result()
+                    logger.info("Worker %d/%d complete.", idx + 1, effective_workers)
+                except Exception as exc:
+>                   raise RuntimeError(
+                        f"Worker for batch {idx} (samples: {batches[idx]}) failed."
+                    ) from exc
+E                   RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_5', 'СTO_6', 'СTO_7', 'СTO_8', 'СTO_9', 'СTO_10']) failed.
+
+shambhala/parallel.py:200: RuntimeError
+________________________________________________________________ test_local_io_roundtrip ________________________________________________________________
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 72, in _harmonize_one_batch
+    return run_octave_normalize(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/octave_bridge.py", line 221, in run_octave_normalize
+    raise OctaveExecutionError(
+shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+--- STDERR (full) ---
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+error: ignoring const execution_exception& while preparing to exit
+error: ignoring const execution_exception& while preparing to exit
+
+--- STDOUT (first 2000 chars) ---
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+>                   batch_results[idx] = future.result()
+
+shambhala/parallel.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+>               raise self._exception
+E               shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+E               --- STDERR (full) ---
+E               octave: X11 DISPLAY environment variable not set
+E               octave: disabling GUI features
+E               error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+E               error: ignoring const execution_exception& while preparing to exit
+E               error: ignoring const execution_exception& while preparing to exit
+E               
+E               --- STDOUT (first 2000 chars) ---
+
+/usr/lib/python3.11/concurrent/futures/_base.py:401: OctaveExecutionError
+
+The above exception was the direct cause of the following exception:
+
+    @octave_required
+    def test_local_io_roundtrip():
+>       result = _run_pipeline(
+            FIXTURES_DIR / "input_10samples.csv",
+            FIXTURES_DIR / "P0_small.csv",
+            FIXTURES_DIR / "Q0_small.csv",
+            n_workers=1,
+        )
+
+tests/test_integration.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_integration.py:56: in _run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+                    batch_results[idx] = future.result()
+                    logger.info("Worker %d/%d complete.", idx + 1, effective_workers)
+                except Exception as exc:
+>                   raise RuntimeError(
+                        f"Worker for batch {idx} (samples: {batches[idx]}) failed."
+                    ) from exc
+E                   RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_5', 'СTO_6', 'СTO_7', 'СTO_8', 'СTO_9', 'СTO_10']) failed.
+
+shambhala/parallel.py:200: RuntimeError
+___________________________________________________________ test_gene_intersection_is_applied ___________________________________________________________
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 72, in _harmonize_one_batch
+    return run_octave_normalize(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/octave_bridge.py", line 221, in run_octave_normalize
+    raise OctaveExecutionError(
+shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+--- STDERR (full) ---
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+error: ignoring const execution_exception& while preparing to exit
+error: ignoring const execution_exception& while preparing to exit
+
+--- STDOUT (first 2000 chars) ---
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+>                   batch_results[idx] = future.result()
+
+shambhala/parallel.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+>               raise self._exception
+E               shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+E               --- STDERR (full) ---
+E               octave: X11 DISPLAY environment variable not set
+E               octave: disabling GUI features
+E               error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+E               error: ignoring const execution_exception& while preparing to exit
+E               error: ignoring const execution_exception& while preparing to exit
+E               
+E               --- STDOUT (first 2000 chars) ---
+
+/usr/lib/python3.11/concurrent/futures/_base.py:401: OctaveExecutionError
+
+The above exception was the direct cause of the following exception:
+
+    @octave_required
+    def test_gene_intersection_is_applied():
+        # P fixture has fewer genes than input; only their intersection should appear in output
+        input_df = io_utils.read_expression(str(FIXTURES_DIR / "input_10samples.csv"))
+        p_df = io_utils.read_expression(str(FIXTURES_DIR / "P0_small.csv")).astype(float)
+        q_df = io_utils.read_expression(str(FIXTURES_DIR / "Q0_small.csv")).astype(float)
+    
+        # Artificially drop 50 genes from P to create a strict subset
+        p_df_reduced = p_df.iloc[:, 50:]
+    
+        input_T = input_df.T
+        p_T = p_df_reduced.T
+        q_T = q_df.T
+        common_genes = input_T.index.intersection(p_T.index).intersection(q_T.index)
+    
+>       result = _run_pipeline(
+            FIXTURES_DIR / "input_10samples.csv",
+            FIXTURES_DIR / "P0_small.csv",
+            FIXTURES_DIR / "Q0_small.csv",
+            n_workers=1,
+        )
+
+tests/test_integration.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_integration.py:56: in _run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0    884.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+                    batch_results[idx] = future.result()
+                    logger.info("Worker %d/%d complete.", idx + 1, effective_workers)
+                except Exception as exc:
+>                   raise RuntimeError(
+                        f"Worker for batch {idx} (samples: {batches[idx]}) failed."
+                    ) from exc
+E                   RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_5', 'СTO_6', 'СTO_7', 'СTO_8', 'СTO_9', 'СTO_10']) failed.
+
+shambhala/parallel.py:200: RuntimeError
+______________________________________________________________ test_na_drop_full_pipeline _______________________________________________________________
+
+    @octave_required
+    @pytest.mark.timeout(300)
+    def test_na_drop_full_pipeline():
+>       result = _run_pipeline(
+            FIXTURES_DIR / "input_with_nas.csv",
+            FIXTURES_DIR / "P0_small.csv",
+            FIXTURES_DIR / "Q0_small.csv",
+            n_workers=1,
+            na_strategy="drop",
+        )
+
+tests/test_integration.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_integration.py:56: in _run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+shambhala/parallel.py:164: in harmonize_parallel
+    for arr in np.array_split(sample_names, effective_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+ary = [], indices_or_sections = 0, axis = 0
+
+    @array_function_dispatch(_array_split_dispatcher)
+    def array_split(ary, indices_or_sections, axis=0):
+        """
+        Split an array into multiple sub-arrays.
+    
+        Please refer to the ``split`` documentation.  The only difference
+        between these functions is that ``array_split`` allows
+        `indices_or_sections` to be an integer that does *not* equally
+        divide the axis. For an array of length l that should be split
+        into n sections, it returns l % n sub-arrays of size l//n + 1
+        and the rest of size l//n.
+    
+        See Also
+        --------
+        split : Split array into multiple sub-arrays of equal size.
+    
+        Examples
+        --------
+        >>> x = np.arange(8.0)
+        >>> np.array_split(x, 3)
+        [array([0.,  1.,  2.]), array([3.,  4.,  5.]), array([6.,  7.])]
+    
+        >>> x = np.arange(9)
+        >>> np.array_split(x, 4)
+        [array([0, 1, 2]), array([3, 4]), array([5, 6]), array([7, 8])]
+    
+        """
+        try:
+            Ntotal = ary.shape[axis]
+        except AttributeError:
+            Ntotal = len(ary)
+        try:
+            # handle array case.
+            Nsections = len(indices_or_sections) + 1
+            div_points = [0] + list(indices_or_sections) + [Ntotal]
+        except TypeError:
+            # indices_or_sections is a scalar, not an array.
+            Nsections = int(indices_or_sections)
+            if Nsections <= 0:
+>               raise ValueError('number sections must be larger than 0.') from None
+E               ValueError: number sections must be larger than 0.
+
+../../../../venvs/collagen_3_11/lib/python3.11/site-packages/numpy/lib/shape_base.py:770: ValueError
+_______________________________________________________________ test_na_knn_full_pipeline _______________________________________________________________
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 72, in _harmonize_one_batch
+    return run_octave_normalize(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/octave_bridge.py", line 221, in run_octave_normalize
+    raise OctaveExecutionError(
+shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+--- STDERR (full) ---
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+error: ignoring const execution_exception& while preparing to exit
+error: ignoring const execution_exception& while preparing to exit
+
+--- STDOUT (first 2000 chars) ---
+
+"""
+
+The above exception was the direct cause of the following exception:
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0   1269.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+>                   batch_results[idx] = future.result()
+
+shambhala/parallel.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+/usr/lib/python3.11/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+>               raise self._exception
+E               shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+E               --- STDERR (full) ---
+E               octave: X11 DISPLAY environment variable not set
+E               octave: disabling GUI features
+E               error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+E               error: ignoring const execution_exception& while preparing to exit
+E               error: ignoring const execution_exception& while preparing to exit
+E               
+E               --- STDOUT (first 2000 chars) ---
+
+/usr/lib/python3.11/concurrent/futures/_base.py:401: OctaveExecutionError
+
+The above exception was the direct cause of the following exception:
+
+    @octave_required
+    @pytest.mark.timeout(300)
+    def test_na_knn_full_pipeline():
+>       result = _run_pipeline(
+            FIXTURES_DIR / "input_with_nas.csv",
+            FIXTURES_DIR / "P0_small.csv",
+            FIXTURES_DIR / "Q0_small.csv",
+            n_workers=1,
+            na_strategy="knn",
+        )
+
+tests/test_integration.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_integration.py:56: in _run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+input_df =          СTO_1   СTO_2    СTO_3   СTO_4    СTO_5    СTO_6   СTO_7    СTO_8    СTO_9   СTO_10
+A2M     6016.0  4936.0  6...
+ZZZ3    1285.0  1250.0   1203.0   823.0   1451.0   1269.0  1724.0    600.0    630.0    585.0
+
+[8174 rows x 10 columns]
+p_df =           GSM298370    GSM298374    GSM298376    GSM298378    GSM298380  ...    GSM996000    GSM996001   GSM996002   G...   370.934305   371.837323  ...   636.855469   622.006108  569.302833  535.830442  568.428695
+
+[8174 rows x 39 columns]
+rm = GTEX.14JIY.1426.SM.6EU29    7.168095
+GTEX.YF7O.2426.SM.5IFJL     7.181746
+GTEX.1CB4G.2126.SM.7IGQ8    7.207710
+GTEX.14...731DP    7.072415
+GTEX.11DXZ.0926.SM.5N9CG    7.104790
+GTEX.1128S.0126.SM.5H12S    7.132023
+Length: 100, dtype: float64
+rs = GTEX.14JIY.1426.SM.6EU29    1.333641
+GTEX.YF7O.2426.SM.5IFJL     1.447540
+GTEX.1CB4G.2126.SM.7IGQ8    1.341602
+GTEX.14...731DP    1.340833
+GTEX.11DXZ.0926.SM.5N9CG    1.280455
+GTEX.1128S.0126.SM.5H12S    1.328038
+Length: 100, dtype: float64
+k = 5, n_workers = 1, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 300, random_seed = 42
+
+    def harmonize_parallel(
+        input_df: pd.DataFrame,
+        p_df: pd.DataFrame,
+        rm: pd.Series,
+        rs: pd.Series,
+        k: int = 5,
+        n_workers: int = 5,
+        octave_scripts_dir: str = None,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Harmonize all samples in parallel and apply Q-rescaling to the assembled result.
+    
+        Samples are split into n_workers batches of approximately equal size using
+        numpy.array_split. Each batch is dispatched to a separate worker process
+        that runs an independent Octave subprocess. Results are concatenated and
+        Q-rescaling is applied once to the full assembled matrix.
+    
+        Parameters
+        ----------
+        input_df : pd.DataFrame
+            NaN-free expression matrix in internal Shambhala convention.
+            Shape: (n_genes, n_samples). Rows = genes, columns = samples.
+        p_df : pd.DataFrame
+            NaN-free P reference. Shape: (n_genes, n_p_samples).
+        rm : pd.Series
+            Per-gene Q mean (from q_rescale.compute_q_statistics).
+        rs : pd.Series
+            Per-gene Q std.
+        k : int
+            k-means clusters for CuBlock. Default: 5.
+        n_workers : int
+            Number of parallel worker processes. Default: 5. Maximum: 10.
+            If n_workers > n_samples, it is clamped to n_samples.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+            If None, defaults to the `octave/` directory adjacent to this module.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave'.
+        timeout_s : int
+            Per-batch Octave subprocess timeout in seconds. Default: 6000.
+        random_seed : int, optional
+            If provided, passed to every worker for reproducible k-means.
+            Default: None (random initialization).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Fully harmonized expression matrix. Shape: (n_genes, n_samples).
+            Rows = genes, columns = samples (same order as input).
+    
+        Raises
+        ------
+        ValueError
+            If n_workers is outside the range [1, 10].
+        RuntimeError
+            If any worker process raises an exception (original exception chained).
+        """
+        if not (1 <= n_workers <= 10):
+            raise ValueError(f"n_workers must be in [1, 10], got {n_workers}.")
+    
+        if octave_scripts_dir is None:
+            octave_scripts_dir = str(
+                pathlib.Path(__file__).resolve().parent.parent / "octave"
+            )
+    
+        n_samples = input_df.shape[1]
+        effective_workers = min(n_workers, n_samples)
+        if effective_workers < n_workers:
+            logger.info(
+                "n_workers=%d clamped to %d (fewer samples than workers).",
+                n_workers,
+                effective_workers,
+            )
+    
+        sample_names = list(input_df.columns)
+        batches = [
+            list(arr)
+            for arr in np.array_split(sample_names, effective_workers)
+            if len(arr) > 0
+        ]
+    
+        logger.info(
+            "Dispatching %d samples across %d workers (%d–%d samples/worker).",
+            n_samples,
+            effective_workers,
+            min(len(b) for b in batches),
+            max(len(b) for b in batches),
+        )
+    
+        batch_results: dict[int, pd.DataFrame] = {}
+    
+        with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+            future_to_idx = {
+                executor.submit(
+                    _harmonize_one_batch,
+                    batch,
+                    input_df,
+                    p_df,
+                    k,
+                    octave_scripts_dir,
+                    octave_bin,
+                    timeout_s,
+                    random_seed,
+                ): idx
+                for idx, batch in enumerate(batches)
+            }
+    
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                try:
+                    batch_results[idx] = future.result()
+                    logger.info("Worker %d/%d complete.", idx + 1, effective_workers)
+                except Exception as exc:
+>                   raise RuntimeError(
+                        f"Worker for batch {idx} (samples: {batches[idx]}) failed."
+                    ) from exc
+E                   RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_5', 'СTO_6', 'СTO_7', 'СTO_8', 'СTO_9', 'СTO_10']) failed.
+
+shambhala/parallel.py:200: RuntimeError
+___________________________________________________________ test_bridge_returns_correct_shape ___________________________________________________________
+
+    @octave_required
+    def test_bridge_returns_correct_shape():
+        pool_df = _make_pool_df(n_genes=30, n_samples=5, n_p=5)
+>       result = run_octave_normalize(
+            pool_df=pool_df,
+            nh=5,
+            np_=5,
+            k=5,
+            octave_scripts_dir=str(OCTAVE_DIR),
+            octave_bin=_OCTAVE_BIN,
+            timeout_s=120,
+            random_seed=42,
+        )
+
+tests/test_octave_bridge.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+pool_df =              S0          S1          S2          S3          S4          P0          P1          P2          P3       ...  62.870759   92.135106  399.768486  322.260812  360.486396  498.385583  469.589979  421.512533  388.557905  197.509608
+nh = 5, np_ = 5, k = 5, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 120, random_seed = 42
+
+    def run_octave_normalize(
+        pool_df: pd.DataFrame,
+        nh: int,
+        np_: int,
+        k: int,
+        octave_scripts_dir: str,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Run the full Octave normalization pipeline (quantile normalization + CuBlock)
+        on a pool matrix.
+    
+        The Octave script Shambhala2_piped.m performs two sequential steps for
+        each of the NH input samples (Borisov et al., 2021, doi:10.1093/bioinformatics/btab105):
+            1. Quantile normalization: the input sample is combined with all NP
+               P-reference samples and the combined matrix is quantile-normalized
+               (Bolstad et al., 2003, doi:10.1093/bioinformatics/19.2.185).
+            2. CuBlock normalization: k-means clustering of genes (k clusters) followed
+               by cubic polynomial fitting per block, repeated 30 times and averaged.
+               Only the normalized values for the NH input samples are retained; the P
+               samples serve solely as the quantile-normalization anchor and are discarded.
+    
+        This function is the sole interface between Python and Octave. It:
+            1. Formats pool_df as a tab-separated string (stdin payload).
+            2. Builds the Octave --eval preamble injecting NH, NP, k, and optionally
+               a random seed for reproducible k-means initialization.
+            3. Calls Octave as a subprocess, piping the TSV via stdin.
+            4. Captures and parses Octave's stdout into a DataFrame.
+            5. Validates the output shape.
+    
+        The pool_df must be in Shambhala2 internal convention:
+            - Rows = genes (row index = HGNC gene symbols).
+            - Columns = first nh columns are input samples, next np_ columns
+              are P reference samples.
+    
+        Parameters
+        ----------
+        pool_df : pd.DataFrame
+            Merged input + P reference matrix. Shape: (n_genes, nh + np_).
+            Row index = gene symbols (used as the SYMBOL column for Octave).
+        nh : int
+            Number of input samples in this batch (columns 0..nh-1 of pool_df).
+            NH=1 is valid. When parallelizing, the full sample set is split into
+            batches; each batch runs as a separate subprocess with its own NH.
+        np_ : int
+            Number of P reference samples (columns nh..nh+np_-1 of pool_df).
+        k : int
+            Number of k-means probe clusters for CuBlock.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave' (resolved via PATH).
+        timeout_s : int
+            Subprocess timeout in seconds. Default: 6000 (100 minutes).
+        random_seed : int, optional
+            If provided, sets Octave's random state via `rand('state', seed)` and
+            `randn('state', seed)` in the --eval preamble before sourcing the script.
+            Ensures reproducible k-means initialization. Default: None (random).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Quantile-normalized and CuBlock-normalized expression values.
+            Shape: (n_genes, nh).
+            Row index = gene symbols. Columns = input sample names (same as
+            the first nh columns of pool_df).
+    
+        Raises
+        ------
+        OctaveExecutionError
+            If Octave exits with a non-zero return code. The exception message includes
+            the full Octave stderr, a truncated stdout excerpt (first 2000 chars), and
+            the exit code, to provide maximum debugging context.
+        OctaveOutputError
+            If stdout cannot be parsed or the resulting shape does not match
+            (n_genes, nh).
+        """
+        input_sample_names = list(pool_df.columns[:nh])
+        gene_symbols = list(pool_df.index)
+    
+        tsv_string = _format_pool_as_tsv(pool_df)
+    
+        seed_preamble = (
+            f"rand('state', {random_seed}); randn('state', {random_seed}); "
+            if random_seed is not None
+            else ""
+        )
+        eval_preamble = (
+            f"addpath('{octave_scripts_dir}'); "
+            f"{seed_preamble}"
+            f"NH={nh}; NP={np_}; k={k}; "
+            f"source('Shambhala2_piped.m');"
+        )
+    
+        try:
+            result = subprocess.run(
+                [octave_bin, "--no-gui", "--eval", eval_preamble],
+                input=tsv_string,
+                capture_output=True,
+                text=True,
+                timeout=timeout_s,
+            )
+        except FileNotFoundError:
+            raise OctaveExecutionError(
+                f"Octave executable not found: {octave_bin!r}. "
+                "Install Octave or pass the correct path via --octave-bin."
+            )
+    
+        if result.returncode != 0:
+>           raise OctaveExecutionError(
+                f"Octave exited with code {result.returncode}.\n"
+                f"--- STDERR (full) ---\n{result.stderr}\n"
+                f"--- STDOUT (first 2000 chars) ---\n{result.stdout[:2000]}"
+            )
+E           shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+E           --- STDERR (full) ---
+E           octave: X11 DISPLAY environment variable not set
+E           octave: disabling GUI features
+E           error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+E           error: ignoring const execution_exception& while preparing to exit
+E           error: ignoring const execution_exception& while preparing to exit
+E           
+E           --- STDOUT (first 2000 chars) ---
+
+shambhala/octave_bridge.py:221: OctaveExecutionError
+___________________________________________________________ test_bridge_symbol_index_correct ____________________________________________________________
+
+    @octave_required
+    def test_bridge_symbol_index_correct():
+        pool_df = _make_pool_df(n_genes=15, n_samples=3, n_p=5)
+>       result = run_octave_normalize(
+            pool_df=pool_df,
+            nh=3,
+            np_=5,
+            k=5,
+            octave_scripts_dir=str(OCTAVE_DIR),
+            octave_bin=_OCTAVE_BIN,
+            timeout_s=120,
+            random_seed=42,
+        )
+
+tests/test_octave_bridge.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+pool_df =              S0          S1          S2          P0          P1          P2          P3          P4
+G0   312.547733  4....623692  454.589657
+G14   75.531139  466.709696    2.589433  376.488752  405.263415   68.382026  209.451825  407.628139
+nh = 3, np_ = 5, k = 5, octave_scripts_dir = '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/octave'
+octave_bin = '/opt/conda/bin/octave', timeout_s = 120, random_seed = 42
+
+    def run_octave_normalize(
+        pool_df: pd.DataFrame,
+        nh: int,
+        np_: int,
+        k: int,
+        octave_scripts_dir: str,
+        octave_bin: str = "octave",
+        timeout_s: int = 6000,
+        random_seed: int = None,
+    ) -> pd.DataFrame:
+        """
+        Run the full Octave normalization pipeline (quantile normalization + CuBlock)
+        on a pool matrix.
+    
+        The Octave script Shambhala2_piped.m performs two sequential steps for
+        each of the NH input samples (Borisov et al., 2021, doi:10.1093/bioinformatics/btab105):
+            1. Quantile normalization: the input sample is combined with all NP
+               P-reference samples and the combined matrix is quantile-normalized
+               (Bolstad et al., 2003, doi:10.1093/bioinformatics/19.2.185).
+            2. CuBlock normalization: k-means clustering of genes (k clusters) followed
+               by cubic polynomial fitting per block, repeated 30 times and averaged.
+               Only the normalized values for the NH input samples are retained; the P
+               samples serve solely as the quantile-normalization anchor and are discarded.
+    
+        This function is the sole interface between Python and Octave. It:
+            1. Formats pool_df as a tab-separated string (stdin payload).
+            2. Builds the Octave --eval preamble injecting NH, NP, k, and optionally
+               a random seed for reproducible k-means initialization.
+            3. Calls Octave as a subprocess, piping the TSV via stdin.
+            4. Captures and parses Octave's stdout into a DataFrame.
+            5. Validates the output shape.
+    
+        The pool_df must be in Shambhala2 internal convention:
+            - Rows = genes (row index = HGNC gene symbols).
+            - Columns = first nh columns are input samples, next np_ columns
+              are P reference samples.
+    
+        Parameters
+        ----------
+        pool_df : pd.DataFrame
+            Merged input + P reference matrix. Shape: (n_genes, nh + np_).
+            Row index = gene symbols (used as the SYMBOL column for Octave).
+        nh : int
+            Number of input samples in this batch (columns 0..nh-1 of pool_df).
+            NH=1 is valid. When parallelizing, the full sample set is split into
+            batches; each batch runs as a separate subprocess with its own NH.
+        np_ : int
+            Number of P reference samples (columns nh..nh+np_-1 of pool_df).
+        k : int
+            Number of k-means probe clusters for CuBlock.
+        octave_scripts_dir : str
+            Absolute path to the directory containing the .m files.
+        octave_bin : str
+            Path to the Octave executable. Default: 'octave' (resolved via PATH).
+        timeout_s : int
+            Subprocess timeout in seconds. Default: 6000 (100 minutes).
+        random_seed : int, optional
+            If provided, sets Octave's random state via `rand('state', seed)` and
+            `randn('state', seed)` in the --eval preamble before sourcing the script.
+            Ensures reproducible k-means initialization. Default: None (random).
+    
+        Returns
+        -------
+        pd.DataFrame
+            Quantile-normalized and CuBlock-normalized expression values.
+            Shape: (n_genes, nh).
+            Row index = gene symbols. Columns = input sample names (same as
+            the first nh columns of pool_df).
+    
+        Raises
+        ------
+        OctaveExecutionError
+            If Octave exits with a non-zero return code. The exception message includes
+            the full Octave stderr, a truncated stdout excerpt (first 2000 chars), and
+            the exit code, to provide maximum debugging context.
+        OctaveOutputError
+            If stdout cannot be parsed or the resulting shape does not match
+            (n_genes, nh).
+        """
+        input_sample_names = list(pool_df.columns[:nh])
+        gene_symbols = list(pool_df.index)
+    
+        tsv_string = _format_pool_as_tsv(pool_df)
+    
+        seed_preamble = (
+            f"rand('state', {random_seed}); randn('state', {random_seed}); "
+            if random_seed is not None
+            else ""
+        )
+        eval_preamble = (
+            f"addpath('{octave_scripts_dir}'); "
+            f"{seed_preamble}"
+            f"NH={nh}; NP={np_}; k={k}; "
+            f"source('Shambhala2_piped.m');"
+        )
+    
+        try:
+            result = subprocess.run(
+                [octave_bin, "--no-gui", "--eval", eval_preamble],
+                input=tsv_string,
+                capture_output=True,
+                text=True,
+                timeout=timeout_s,
+            )
+        except FileNotFoundError:
+            raise OctaveExecutionError(
+                f"Octave executable not found: {octave_bin!r}. "
+                "Install Octave or pass the correct path via --octave-bin."
+            )
+    
+        if result.returncode != 0:
+>           raise OctaveExecutionError(
+                f"Octave exited with code {result.returncode}.\n"
+                f"--- STDERR (full) ---\n{result.stderr}\n"
+                f"--- STDOUT (first 2000 chars) ---\n{result.stdout[:2000]}"
+            )
+E           shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+E           --- STDERR (full) ---
+E           octave: X11 DISPLAY environment variable not set
+E           octave: disabling GUI features
+E           error: no such file, '/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/Shambhala2_piped.m'
+E           error: ignoring const execution_exception& while preparing to exit
+E           error: ignoring const execution_exception& while preparing to exit
+E           
+E           --- STDOUT (first 2000 chars) ---
+
+shambhala/octave_bridge.py:221: OctaveExecutionError
+================================================================ short test summary info ================================================================
+FAILED tests/test_integration.py::test_single_worker_matches_reference - RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4...
+FAILED tests/test_integration.py::test_parallel_matches_single - RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_...
+FAILED tests/test_integration.py::test_local_io_roundtrip - RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_5', '...
+FAILED tests/test_integration.py::test_gene_intersection_is_applied - RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', ...
+FAILED tests/test_integration.py::test_na_drop_full_pipeline - ValueError: number sections must be larger than 0.
+FAILED tests/test_integration.py::test_na_knn_full_pipeline - RuntimeError: Worker for batch 0 (samples: ['СTO_1', 'СTO_2', 'СTO_3', 'СTO_4', 'СTO_5',...
+FAILED tests/test_octave_bridge.py::test_bridge_returns_correct_shape - shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+FAILED tests/test_octave_bridge.py::test_bridge_symbol_index_correct - shambhala.octave_bridge.OctaveExecutionError: Octave exited with code 1.
+============================================================= 8 failed, 22 passed in 9.97s ==============================================================

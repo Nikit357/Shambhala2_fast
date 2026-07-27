@@ -1,0 +1,134 @@
+(collagen_3_11) (base) jovyan@<jupyter-host>:~/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized$ pytest tests/ -v --timeout=3600
+================================================================== test session starts ==================================================================
+platform linux -- Python 3.11.15, pytest-8.3.4, pluggy-1.6.0 -- /home/jovyan/venvs/collagen_3_11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized
+configfile: pyproject.toml
+plugins: typeguard-4.4.2, anyio-4.12.1, timeout-2.4.0, zarr-3.1.6
+timeout: 3600.0s
+timeout method: thread
+timeout func_only: False
+collected 104 items                                                                                                                                     
+
+tests/speed_up_tests/test_approach_a.py::test_a_qn_only PASSED                                                                                    [  0%]
+tests/speed_up_tests/test_approach_a.py::test_a_synthetic_cublock_p PASSED                                                                        [  1%]
+tests/speed_up_tests/test_approach_a.py::test_a_timing_qn_only PASSED                                                                             [  2%]
+tests/speed_up_tests/test_approach_a.py::test_a_timing_combined PASSED                                                                            [  3%]
+tests/speed_up_tests/test_approach_b.py::test_b_output_identical_to_baseline PASSED                                                               [  4%]
+tests/speed_up_tests/test_approach_b.py::test_b_timing PASSED                                                                                     [  5%]
+tests/speed_up_tests/test_approach_c.py::test_c_centroid_selection PASSED                                                                         [  6%]
+tests/speed_up_tests/test_approach_c.py::test_c_subsampling_reduces_p_size PASSED                                                                 [  7%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[40] SKIPPED (n_sub=40 >= n_original=39; subsampling has no effect.)             [  8%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[20] PASSED                                                                      [  9%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[10] PASSED                                                                      [ 10%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_produces_identical_distributions PASSED                                                     [ 11%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_matches_manual_rank_normalization PASSED                                                    [ 12%]
+tests/speed_up_tests/test_approach_d.py::test_d_synthetic_p_reference_is_sorted PASSED                                                            [ 13%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_preserves_gene_rank_order PASSED                                                            [ 14%]
+tests/speed_up_tests/test_approach_e.py::test_e_clusters_stable PASSED                                                                            [ 15%]
+tests/speed_up_tests/test_approach_e.py::test_e_clusters_shape PASSED                                                                             [ 16%]
+tests/speed_up_tests/test_approach_e.py::test_e_output_within_tolerance PASSED                                                                    [ 17%]
+tests/speed_up_tests/test_approach_e.py::test_e_timing PASSED                                                                                     [ 18%]
+tests/speed_up_tests/test_approach_g.py::test_g_cublock_output_shape PASSED                                                                       [ 19%]
+tests/speed_up_tests/test_approach_g.py::test_g_modpol_identity_on_monotone PASSED                                                                [ 20%]
+tests/speed_up_tests/test_approach_g.py::test_g_modpol_monotone_correction PASSED                                                                 [ 21%]
+tests/speed_up_tests/test_approach_g.py::test_g_cublock_matches_octave FAILED                                                                     [ 22%]
+tests/speed_up_tests/test_approach_g.py::test_g_full_pipeline_within_tolerance ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of QueueFeederThread (140144497649344) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.11/multiprocessing/queues.py", line 231, in _feed
+    nwait()
+  File "/usr/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of Thread-40 (140143925130944) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 344, in run
+    result_item, is_broken, cause = self.wait_result_broken_or_wakeup()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 417, in wait_result_broken_or_wakeup
+    ready = mp.connection.wait(readers + worker_sentinels)
+  File "/usr/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of MainThread (140144588779648) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/home/jovyan/venvs/collagen_3_11/bin/pytest", line 6, in <module>
+    sys.exit(console_main())
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/config/__init__.py", line 201, in console_main
+    code = main()
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/config/__init__.py", line 175, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 362, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 341, in from_call
+    result: TResult | None = func()
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/tests/speed_up_tests/test_approach_g.py", line 120, in test_g_full_pipeline_within_tolerance
+    result = run_pipeline(
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/tests/speed_up_tests/conftest.py", line 154, in run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 398, in harmonize_parallel
+    for future in as_completed(future_to_idx):
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 243, in as_completed
+    waiter.event.wait(wait_timeout)
+  File "/usr/lib/python3.11/threading.py", line 629, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

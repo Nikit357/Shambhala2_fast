@@ -1,0 +1,159 @@
+---
+# Before applying, replace the placeholders throughout this file:
+#   <your-namespace>  -- your Kubernetes namespace
+#   <your_key>        -- output of: cat ~/.ssh/id_ed25519.pub
+#   your-bucket       -- your S3 bucket (SHAMBHALA_S3_BUCKET, see .env.example)
+#
+# SSH public key -- paste the output of: cat ~/.ssh/id_ed25519.pub
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shambhala-ssh-pubkey
+  namespace: <your-namespace>
+data:
+  authorized_keys: |
+    <your_key>
+
+---
+# Python dependency file -- Shambhala-only, no R
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shambhala-deps
+  namespace: <your-namespace>
+data:
+  requirements.txt: |
+    boto3>=1.28.17
+    botocore>=1.31.17
+    pandas>=2.2,<3.0
+    numpy>=1.24,<2.0
+    scikit-learn>=1.3
+    qnorm>=0.4.1
+    psutil>=5.9
+    awscli>=1.44
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shambhala-bench
+  namespace: <your-namespace>
+  labels:
+    app: shambhala-bench
+spec:
+  restartPolicy: OnFailure
+  shareProcessNamespace: true
+
+  containers:
+  - name: worker
+    image: python:3.12-bookworm
+    imagePullPolicy: IfNotPresent
+
+    command: ["bash", "-c"]
+    args:
+      - |
+        set -e
+
+        # -- 1. SSH (done first so you can connect and monitor the rest) --
+        apt-get update -qq
+        apt-get install -y -qq openssh-server rsync tmux htop
+        mkdir -p /root/.ssh && chmod 700 /root/.ssh
+        cp /etc/ssh-init/authorized_keys /root/.ssh/authorized_keys
+        chmod 600 /root/.ssh/authorized_keys
+        ssh-keygen -A
+        mkdir -p /run/sshd
+        echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
+        echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config
+        echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
+        /usr/sbin/sshd -D &
+        echo "[startup] SSH ready - port-forward and connect now to watch progress"
+
+        # -- 2. System libs for Python and Octave (no R, no liboctave-dev — not in Ubuntu 24.04) --
+        apt-get install -y -qq octave octave-statistics
+        octave --version
+        python --version && pip --version
+        # Wrap octave to strip MATLAB-only flags that Shambhala2 passes via system("matlab ...")
+        printf '#!/bin/bash\nargs=()\nfor a in "$@"; do\n  case "$a" in\n    -nodesktop|-nosplash|-nodisplay) ;;\n    *) args+=("$a") ;;\n  esac\ndone\nexec octave --no-gui "${args[@]}"\n' \
+            > /usr/local/bin/matlab && chmod +x /usr/local/bin/matlab
+        echo "[startup] System libs + Octave installed"
+
+        # -- 3. Python packages (fast — no R) --
+        pip install --no-cache-dir -r /etc/shambhala-deps/requirements.txt
+        python -c "import boto3, pandas, numpy, sklearn, psutil; print('[startup] Python imports OK')"
+        echo "[startup] Python packages installed"
+
+        # -- 4. Working directory --
+        mkdir -p /app/Shambhala_containerized
+        echo 'cd /app/Shambhala_containerized' >> /root/.bashrc
+        echo "[startup] Environment ready. Sync code with rsync and run."
+
+        sleep infinity
+
+    ports:
+      - containerPort: 22
+        protocol: TCP
+        name: ssh
+
+    env:
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.name
+    # Required: shambhala_bench_shared.py raises KeyError at import without it.
+    - name: SHAMBHALA_S3_BUCKET
+      value: your-bucket
+
+    resources:
+      requests:
+        cpu: "16"
+        memory: "128Gi"
+      limits:
+        cpu: "16"
+        memory: "128Gi"
+
+    volumeMounts:
+    - name: work
+      mountPath: /workspace
+    - name: aws-credentials
+      mountPath: /root/.aws
+      readOnly: true
+    - name: dshm
+      mountPath: /dev/shm
+    - name: ssh-pubkey
+      mountPath: /etc/ssh-init
+    - name: shambhala-deps
+      mountPath: /etc/shambhala-deps
+
+  volumes:
+  - name: work
+    persistentVolumeClaim:
+      claimName: shambhala-pvc
+  - name: aws-credentials
+    secret:
+      secretName: aws-credentials
+  - name: dshm
+    emptyDir:
+      medium: Memory
+      sizeLimit: 4Gi
+  - name: ssh-pubkey
+    configMap:
+      name: shambhala-ssh-pubkey
+  - name: shambhala-deps
+    configMap:
+      name: shambhala-deps
+
+  tolerations:
+    - key: node-group
+      operator: Equal
+      value: <your-namespace>
+      effect: NoSchedule
+
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: node-group
+                operator: In
+                values:
+                  - <your-namespace>

@@ -1,0 +1,1293 @@
+[dispatcher] Scanning S3 for existing Shambhala outputs ...
+[dispatcher] Found 1300 existing Shambhala output files.
+[dispatcher] Total jobs: 54 (3 imps × 18 methods)
+Shambhala jobs to run: 54  |  Workers: 3  |  Shambhala-workers/job: 30  |  Timeout (job): 21600s  |  Timeout (Octave batch): 21600s  |  Memory guard: 10.0 GB
+[05:50:57] START strict×shambhala_ANTE_Q0std | free=54.8GB
+[05:50:57] START strict×shambhala_GTExAffy_Q0std | free=54.8GB
+[05:50:57] START strict×shambhala_ANTE_QNBKass | free=54.8GB
+  [strict×shambhala_ANTE_Q0std] 2026-05-31 05:50:58,803 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_ANTE_QNBKass] 2026-05-31 05:50:58,861 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_GTExAffy_Q0std] 2026-05-31 05:50:58,902 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_ANTE_Q0std] [05:50:59][strict×shambhala_ANTE_Q0std] S0 harmonized found on S3 (1 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_ANTE_Q0std] [05:50:59][strict×shambhala_ANTE_Q0std] Reuse path RAM pre-flight OK: 54.4 GB free.
+  [strict×shambhala_ANTE_Q0std] [05:50:59][strict×shambhala_ANTE_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_ANTE_Q0std__post0.tsv.gz ...
+  [strict×shambhala_GTExAffy_Q0std] [05:50:59][strict×shambhala_GTExAffy_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_GTExAffy_Q0std] [05:50:59][strict×shambhala_GTExAffy_Q0std] Reuse path RAM pre-flight OK: 54.4 GB free.
+  [strict×shambhala_GTExAffy_Q0std] [05:50:59][strict×shambhala_GTExAffy_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_GTExAffy_Q0std__post0.tsv.gz ...
+  [strict×shambhala_ANTE_QNBKass] [05:50:59][strict×shambhala_ANTE_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_ANTE_QNBKass] [05:50:59][strict×shambhala_ANTE_QNBKass] Reuse path RAM pre-flight OK: 54.4 GB free.
+  [strict×shambhala_ANTE_QNBKass] [05:50:59][strict×shambhala_ANTE_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_ANTE_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_ANTE_Q0std] [05:51:04][strict×shambhala_ANTE_Q0std] S0 harmonized: 7174 samples × 2366 genes (5s)
+  [strict×shambhala_ANTE_Q0std] [05:51:04][strict×shambhala_ANTE_Q0std] Downloading annotations for 1 strategy/ies ...
+  [strict×shambhala_GTExAffy_Q0std] [05:51:04][strict×shambhala_GTExAffy_Q0std] S0 harmonized: 7174 samples × 2366 genes (5s)
+  [strict×shambhala_GTExAffy_Q0std] [05:51:04][strict×shambhala_GTExAffy_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_ANTE_Q0std] [05:51:04][strict×shambhala_ANTE_Q0std] Annotations ready (0s).
+  [strict×shambhala_ANTE_Q0std] [05:51:04][strict×shambhala_ANTE_Q0std] [1/1] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_GTExAffy_Q0std] [05:51:04][strict×shambhala_GTExAffy_Q0std] Annotations ready (0s).
+  [strict×shambhala_GTExAffy_Q0std] [05:51:04][strict×shambhala_GTExAffy_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_ANTE_Q0std] [05:51:05][strict×shambhala_ANTE_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_ANTE_QNBKass] [05:51:08][strict×shambhala_ANTE_QNBKass] S0 harmonized: 7174 samples × 3447 genes (9s)
+  [strict×shambhala_ANTE_QNBKass] [05:51:08][strict×shambhala_ANTE_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_ANTE_QNBKass] [05:51:08][strict×shambhala_ANTE_QNBKass] Annotations ready (1s).
+  [strict×shambhala_ANTE_QNBKass] [05:51:08][strict×shambhala_ANTE_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_ANTE_Q0std] [05:51:10][strict×shambhala_ANTE_Q0std]   r2_batch=0.446 r2_diag=0.109 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_GTExAffy_Q0std] [05:51:10][strict×shambhala_GTExAffy_Q0std]   r2_batch=0.613 r2_diag=0.232 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_ANTE_QNBKass] [05:51:12][strict×shambhala_ANTE_QNBKass]   r2_batch=0.625 r2_diag=0.214 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_ANTE_Q0std] [05:51:24][strict×shambhala_ANTE_Q0std]   Upload complete.
+  [strict×shambhala_ANTE_Q0std] [05:51:24][strict×shambhala_ANTE_Q0std] Reuse path done: 1 derived, 27 already cached. Total elapsed: 25s
+  [1/54] strict×shambhala_ANTE_Q0std (27s) → ['ok', 'cached', 'cached'] ...
+[05:51:24] START strict×shambhala_GTExAffy_QNBKass | free=53.4GB
+  [strict×shambhala_GTExAffy_QNBKass] 2026-05-31 05:51:25,830 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_GTExAffy_Q0std] [05:51:26][strict×shambhala_GTExAffy_Q0std]   Upload complete.
+  [strict×shambhala_GTExAffy_Q0std] [05:51:26][strict×shambhala_GTExAffy_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:26][strict×shambhala_GTExAffy_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:26][strict×shambhala_GTExAffy_QNBKass] Reuse path RAM pre-flight OK: 53.2 GB free.
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:26][strict×shambhala_GTExAffy_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_GTExAffy_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_GTExAffy_Q0std] [05:51:26][strict×shambhala_GTExAffy_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_GTExAffy_Q0std] [05:51:29][strict×shambhala_GTExAffy_Q0std]   r2_batch=0.608 r2_diag=0.225 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:34][strict×shambhala_GTExAffy_QNBKass] S0 harmonized: 7174 samples × 3447 genes (8s)
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:34][strict×shambhala_GTExAffy_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:34][strict×shambhala_GTExAffy_QNBKass] Annotations ready (0s).
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:34][strict×shambhala_GTExAffy_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_GTExAffy_QNBKass] [05:51:37][strict×shambhala_GTExAffy_QNBKass]   r2_batch=0.658 r2_diag=0.220 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_ANTE_QNBKass] [05:51:43][strict×shambhala_ANTE_QNBKass]   Upload complete.
+  [strict×shambhala_ANTE_QNBKass] [05:51:43][strict×shambhala_ANTE_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_ANTE_QNBKass] [05:51:44][strict×shambhala_ANTE_QNBKass]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_GTExAffy_Q0std] [05:51:45][strict×shambhala_GTExAffy_Q0std]   Upload complete.
+  [strict×shambhala_GTExAffy_Q0std] [05:51:46][strict×shambhala_GTExAffy_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_ANTE_QNBKass] [05:51:47][strict×shambhala_ANTE_QNBKass]   r2_batch=0.617 r2_diag=0.208 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_GTExAffy_Q0std] [05:51:49][strict×shambhala_GTExAffy_Q0std]   r2_batch=0.488 r2_diag=0.099 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_GTExAffy_Q0std] [05:52:03][strict×shambhala_GTExAffy_Q0std]   Upload complete.
+  [strict×shambhala_GTExAffy_Q0std] [05:52:03][strict×shambhala_GTExAffy_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_GTExAffy_Q0std] [05:52:04][strict×shambhala_GTExAffy_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_GTExAffy_Q0std] [05:52:07][strict×shambhala_GTExAffy_Q0std]   r2_batch=0.455 r2_diag=0.109 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_GTExAffy_QNBKass] [05:52:09][strict×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [strict×shambhala_GTExAffy_QNBKass] [05:52:09][strict×shambhala_GTExAffy_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_GTExAffy_QNBKass] [05:52:09][strict×shambhala_GTExAffy_QNBKass]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_GTExAffy_QNBKass] [05:52:12][strict×shambhala_GTExAffy_QNBKass]   r2_batch=0.640 r2_diag=0.216 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_ANTE_QNBKass] [05:52:19][strict×shambhala_ANTE_QNBKass]   Upload complete.
+  [strict×shambhala_ANTE_QNBKass] [05:52:19][strict×shambhala_ANTE_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_ANTE_QNBKass] [05:52:22][strict×shambhala_ANTE_QNBKass]   r2_batch=0.492 r2_diag=0.101 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_GTExAffy_Q0std] [05:52:23][strict×shambhala_GTExAffy_Q0std]   Upload complete.
+  [strict×shambhala_GTExAffy_Q0std] [05:52:23][strict×shambhala_GTExAffy_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 84s
+  [2/54] strict×shambhala_GTExAffy_Q0std (86s) → ['ok', 'ok', 'ok'] ...
+[05:52:23] START strict×shambhala_NBBags_Q0std | free=53.3GB
+  [strict×shambhala_NBBags_Q0std] 2026-05-31 05:52:24,695 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBBags_Q0std] [05:52:25][strict×shambhala_NBBags_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBBags_Q0std] [05:52:25][strict×shambhala_NBBags_Q0std] Reuse path RAM pre-flight OK: 53.2 GB free.
+  [strict×shambhala_NBBags_Q0std] [05:52:25][strict×shambhala_NBBags_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBBags_Q0std__post0.tsv.gz ...
+  [strict×shambhala_NBBags_Q0std] [05:52:29][strict×shambhala_NBBags_Q0std] S0 harmonized: 7174 samples × 2366 genes (5s)
+  [strict×shambhala_NBBags_Q0std] [05:52:29][strict×shambhala_NBBags_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBBags_Q0std] [05:52:30][strict×shambhala_NBBags_Q0std] Annotations ready (0s).
+  [strict×shambhala_NBBags_Q0std] [05:52:30][strict×shambhala_NBBags_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBBags_Q0std] [05:52:33][strict×shambhala_NBBags_Q0std]   r2_batch=0.587 r2_diag=0.249 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_GTExAffy_QNBKass] [05:52:43][strict×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [strict×shambhala_GTExAffy_QNBKass] [05:52:44][strict×shambhala_GTExAffy_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_GTExAffy_QNBKass] [05:52:47][strict×shambhala_GTExAffy_QNBKass]   r2_batch=0.496 r2_diag=0.098 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBBags_Q0std] [05:52:50][strict×shambhala_NBBags_Q0std]   Upload complete.
+  [strict×shambhala_NBBags_Q0std] [05:52:50][strict×shambhala_NBBags_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBBags_Q0std] [05:52:50][strict×shambhala_NBBags_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBBags_Q0std] [05:52:53][strict×shambhala_NBBags_Q0std]   r2_batch=0.579 r2_diag=0.242 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_ANTE_QNBKass] [05:52:53][strict×shambhala_ANTE_QNBKass]   Upload complete.
+  [strict×shambhala_ANTE_QNBKass] [05:52:53][strict×shambhala_ANTE_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_ANTE_QNBKass] [05:52:54][strict×shambhala_ANTE_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_ANTE_QNBKass] [05:52:57][strict×shambhala_ANTE_QNBKass]   r2_batch=0.483 r2_diag=0.108 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBBags_Q0std] [05:53:09][strict×shambhala_NBBags_Q0std]   Upload complete.
+  [strict×shambhala_NBBags_Q0std] [05:53:09][strict×shambhala_NBBags_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBBags_Q0std] [05:53:11][strict×shambhala_NBBags_Q0std]   r2_batch=0.481 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_GTExAffy_QNBKass] [05:53:17][strict×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [strict×shambhala_GTExAffy_QNBKass] [05:53:17][strict×shambhala_GTExAffy_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_GTExAffy_QNBKass] [05:53:18][strict×shambhala_GTExAffy_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_GTExAffy_QNBKass] [05:53:20][strict×shambhala_GTExAffy_QNBKass]   r2_batch=0.470 r2_diag=0.099 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_ANTE_QNBKass] [05:53:25][strict×shambhala_ANTE_QNBKass]   Upload complete.
+  [strict×shambhala_ANTE_QNBKass] [05:53:25][strict×shambhala_ANTE_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 146s
+  [3/54] strict×shambhala_ANTE_QNBKass (148s) → ['ok', 'ok', 'ok'] ...
+[05:53:25] START strict×shambhala_NBBags_QNBKass | free=53.4GB
+  [strict×shambhala_NBBags_QNBKass] 2026-05-31 05:53:26,563 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBBags_QNBKass] [05:53:27][strict×shambhala_NBBags_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBBags_QNBKass] [05:53:27][strict×shambhala_NBBags_QNBKass] Reuse path RAM pre-flight OK: 53.2 GB free.
+  [strict×shambhala_NBBags_QNBKass] [05:53:27][strict×shambhala_NBBags_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBBags_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_NBBags_Q0std] [05:53:27][strict×shambhala_NBBags_Q0std]   Upload complete.
+  [strict×shambhala_NBBags_Q0std] [05:53:27][strict×shambhala_NBBags_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBBags_Q0std] [05:53:28][strict×shambhala_NBBags_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBBags_Q0std] [05:53:31][strict×shambhala_NBBags_Q0std]   r2_batch=0.479 r2_diag=0.113 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBBags_QNBKass] [05:53:35][strict×shambhala_NBBags_QNBKass] S0 harmonized: 7174 samples × 3447 genes (8s)
+  [strict×shambhala_NBBags_QNBKass] [05:53:35][strict×shambhala_NBBags_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBBags_QNBKass] [05:53:35][strict×shambhala_NBBags_QNBKass] Annotations ready (0s).
+  [strict×shambhala_NBBags_QNBKass] [05:53:35][strict×shambhala_NBBags_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBBags_QNBKass] [05:53:38][strict×shambhala_NBBags_QNBKass]   r2_batch=0.596 r2_diag=0.257 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBBags_Q0std] [05:53:45][strict×shambhala_NBBags_Q0std]   Upload complete.
+  [strict×shambhala_NBBags_Q0std] [05:53:45][strict×shambhala_NBBags_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 80s
+  [4/54] strict×shambhala_NBBags_Q0std (82s) → ['ok', 'ok', 'ok'] ...
+[05:53:46] START strict×shambhala_NBGPL570_Q0std | free=53.3GB
+  [strict×shambhala_NBGPL570_Q0std] 2026-05-31 05:53:47,059 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBGPL570_Q0std] [05:53:47][strict×shambhala_NBGPL570_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBGPL570_Q0std] [05:53:47][strict×shambhala_NBGPL570_Q0std] Reuse path RAM pre-flight OK: 53.2 GB free.
+  [strict×shambhala_NBGPL570_Q0std] [05:53:47][strict×shambhala_NBGPL570_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBGPL570_Q0std__post0.tsv.gz ...
+  [strict×shambhala_GTExAffy_QNBKass] [05:53:48][strict×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [strict×shambhala_GTExAffy_QNBKass] [05:53:48][strict×shambhala_GTExAffy_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 142s
+  [5/54] strict×shambhala_GTExAffy_QNBKass (144s) → ['ok', 'ok', 'ok'] ...
+[05:53:49] START strict×shambhala_NBGPL570_QNBKass | free=53.7GB
+  [strict×shambhala_NBGPL570_QNBKass] 2026-05-31 05:53:50,226 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBGPL570_QNBKass] [05:53:50][strict×shambhala_NBGPL570_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBGPL570_QNBKass] [05:53:50][strict×shambhala_NBGPL570_QNBKass] Reuse path RAM pre-flight OK: 53.5 GB free.
+  [strict×shambhala_NBGPL570_QNBKass] [05:53:50][strict×shambhala_NBGPL570_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBGPL570_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_NBGPL570_Q0std] [05:53:52][strict×shambhala_NBGPL570_Q0std] S0 harmonized: 7174 samples × 2366 genes (5s)
+  [strict×shambhala_NBGPL570_Q0std] [05:53:52][strict×shambhala_NBGPL570_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBGPL570_Q0std] [05:53:53][strict×shambhala_NBGPL570_Q0std] Annotations ready (0s).
+  [strict×shambhala_NBGPL570_Q0std] [05:53:53][strict×shambhala_NBGPL570_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBGPL570_Q0std] [05:53:55][strict×shambhala_NBGPL570_Q0std]   r2_batch=0.545 r2_diag=0.255 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBGPL570_QNBKass] [05:53:59][strict×shambhala_NBGPL570_QNBKass] S0 harmonized: 7174 samples × 3447 genes (8s)
+  [strict×shambhala_NBGPL570_QNBKass] [05:53:59][strict×shambhala_NBGPL570_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBGPL570_QNBKass] [05:53:59][strict×shambhala_NBGPL570_QNBKass] Annotations ready (0s).
+  [strict×shambhala_NBGPL570_QNBKass] [05:53:59][strict×shambhala_NBGPL570_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBGPL570_QNBKass] [05:54:03][strict×shambhala_NBGPL570_QNBKass]   r2_batch=0.578 r2_diag=0.265 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBBags_QNBKass] [05:54:09][strict×shambhala_NBBags_QNBKass]   Upload complete.
+  [strict×shambhala_NBBags_QNBKass] [05:54:09][strict×shambhala_NBBags_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBBags_QNBKass] [05:54:10][strict×shambhala_NBBags_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [strict×shambhala_NBBags_QNBKass] [05:54:12][strict×shambhala_NBBags_QNBKass]   r2_batch=0.597 r2_diag=0.258 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBGPL570_Q0std] [05:54:13][strict×shambhala_NBGPL570_Q0std]   Upload complete.
+  [strict×shambhala_NBGPL570_Q0std] [05:54:13][strict×shambhala_NBGPL570_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBGPL570_Q0std] [05:54:14][strict×shambhala_NBGPL570_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBGPL570_Q0std] [05:54:16][strict×shambhala_NBGPL570_Q0std]   r2_batch=0.530 r2_diag=0.248 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBGPL570_Q0std] [05:54:31][strict×shambhala_NBGPL570_Q0std]   Upload complete.
+  [strict×shambhala_NBGPL570_Q0std] [05:54:31][strict×shambhala_NBGPL570_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBGPL570_Q0std] [05:54:35][strict×shambhala_NBGPL570_Q0std]   r2_batch=0.507 r2_diag=0.101 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBGPL570_QNBKass] [05:54:35][strict×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [strict×shambhala_NBGPL570_QNBKass] [05:54:35][strict×shambhala_NBGPL570_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBGPL570_QNBKass] [05:54:35][strict×shambhala_NBGPL570_QNBKass]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBGPL570_QNBKass] [05:54:38][strict×shambhala_NBGPL570_QNBKass]   r2_batch=0.570 r2_diag=0.258 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBBags_QNBKass] [05:54:43][strict×shambhala_NBBags_QNBKass]   Upload complete.
+  [strict×shambhala_NBBags_QNBKass] [05:54:44][strict×shambhala_NBBags_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBBags_QNBKass] [05:54:46][strict×shambhala_NBBags_QNBKass]   r2_batch=0.484 r2_diag=0.107 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBGPL570_Q0std] [05:54:56][strict×shambhala_NBGPL570_Q0std]   Upload complete.
+  [strict×shambhala_NBGPL570_Q0std] [05:54:56][strict×shambhala_NBGPL570_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBGPL570_Q0std] [05:54:57][strict×shambhala_NBGPL570_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBGPL570_Q0std] [05:54:59][strict×shambhala_NBGPL570_Q0std]   r2_batch=0.478 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBGPL570_QNBKass] [05:55:09][strict×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [strict×shambhala_NBGPL570_QNBKass] [05:55:09][strict×shambhala_NBGPL570_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBGPL570_QNBKass] [05:55:11][strict×shambhala_NBGPL570_QNBKass]   r2_batch=0.484 r2_diag=0.096 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBGPL570_Q0std] [05:55:14][strict×shambhala_NBGPL570_Q0std]   Upload complete.
+  [strict×shambhala_NBGPL570_Q0std] [05:55:14][strict×shambhala_NBGPL570_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 87s
+  [6/54] strict×shambhala_NBGPL570_Q0std (89s) → ['ok', 'ok', 'ok'] ...
+[05:55:14] START strict×shambhala_NBKass_Q0std | free=53.2GB
+  [strict×shambhala_NBKass_Q0std] 2026-05-31 05:55:15,951 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBBags_QNBKass] [05:55:16][strict×shambhala_NBBags_QNBKass]   Upload complete.
+  [strict×shambhala_NBBags_QNBKass] [05:55:16][strict×shambhala_NBBags_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBKass_Q0std] [05:55:16][strict×shambhala_NBKass_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBKass_Q0std] [05:55:16][strict×shambhala_NBKass_Q0std] Reuse path RAM pre-flight OK: 53.0 GB free.
+  [strict×shambhala_NBKass_Q0std] [05:55:16][strict×shambhala_NBKass_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBKass_Q0std__post0.tsv.gz ...
+  [strict×shambhala_NBBags_QNBKass] [05:55:16][strict×shambhala_NBBags_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBBags_QNBKass] [05:55:19][strict×shambhala_NBBags_QNBKass]   r2_batch=0.483 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBKass_Q0std] [05:55:22][strict×shambhala_NBKass_Q0std] S0 harmonized: 7174 samples × 2366 genes (6s)
+  [strict×shambhala_NBKass_Q0std] [05:55:22][strict×shambhala_NBKass_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBKass_Q0std] [05:55:22][strict×shambhala_NBKass_Q0std] Annotations ready (0s).
+  [strict×shambhala_NBKass_Q0std] [05:55:22][strict×shambhala_NBKass_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBKass_Q0std] [05:55:26][strict×shambhala_NBKass_Q0std]   r2_batch=0.593 r2_diag=0.235 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBGPL570_QNBKass] [05:55:41][strict×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [strict×shambhala_NBGPL570_QNBKass] [05:55:41][strict×shambhala_NBGPL570_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBGPL570_QNBKass] [05:55:42][strict×shambhala_NBGPL570_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBGPL570_QNBKass] [05:55:44][strict×shambhala_NBGPL570_QNBKass]   r2_batch=0.481 r2_diag=0.103 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBKass_Q0std] [05:55:46][strict×shambhala_NBKass_Q0std]   Upload complete.
+  [strict×shambhala_NBKass_Q0std] [05:55:46][strict×shambhala_NBKass_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBKass_Q0std] [05:55:47][strict×shambhala_NBKass_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBBags_QNBKass] [05:55:47][strict×shambhala_NBBags_QNBKass]   Upload complete.
+  [strict×shambhala_NBBags_QNBKass] [05:55:47][strict×shambhala_NBBags_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 141s
+[05:55:48] START strict×shambhala_NBKass_QNBKass | free=53.3GB
+  [7/54] strict×shambhala_NBBags_QNBKass (143s) → ['ok', 'ok', 'ok'] ...
+  [strict×shambhala_NBKass_Q0std] [05:55:50][strict×shambhala_NBKass_Q0std]   r2_batch=0.586 r2_diag=0.228 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBKass_QNBKass] 2026-05-31 05:55:50,136 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBKass_QNBKass] [05:55:50][strict×shambhala_NBKass_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBKass_QNBKass] [05:55:50][strict×shambhala_NBKass_QNBKass] Reuse path RAM pre-flight OK: 53.2 GB free.
+  [strict×shambhala_NBKass_QNBKass] [05:55:50][strict×shambhala_NBKass_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBKass_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_NBKass_QNBKass] [05:55:57][strict×shambhala_NBKass_QNBKass] S0 harmonized: 7174 samples × 3447 genes (7s)
+  [strict×shambhala_NBKass_QNBKass] [05:55:57][strict×shambhala_NBKass_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBKass_QNBKass] [05:55:57][strict×shambhala_NBKass_QNBKass] Annotations ready (0s).
+  [strict×shambhala_NBKass_QNBKass] [05:55:57][strict×shambhala_NBKass_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBKass_QNBKass] [05:56:00][strict×shambhala_NBKass_QNBKass]   r2_batch=0.601 r2_diag=0.242 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBKass_Q0std] [05:56:06][strict×shambhala_NBKass_Q0std]   Upload complete.
+  [strict×shambhala_NBKass_Q0std] [05:56:06][strict×shambhala_NBKass_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBKass_Q0std] [05:56:08][strict×shambhala_NBKass_Q0std]   r2_batch=0.475 r2_diag=0.104 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBGPL570_QNBKass] [05:56:13][strict×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [strict×shambhala_NBGPL570_QNBKass] [05:56:13][strict×shambhala_NBGPL570_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 143s
+  [8/54] strict×shambhala_NBGPL570_QNBKass (145s) → ['ok', 'ok', 'ok'] ...
+[05:56:13] START strict×shambhala_NBRNAseq_Q0std | free=53.4GB
+  [strict×shambhala_NBRNAseq_Q0std] 2026-05-31 05:56:15,054 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:15][strict×shambhala_NBRNAseq_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:15][strict×shambhala_NBRNAseq_Q0std] Reuse path RAM pre-flight OK: 53.3 GB free.
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:15][strict×shambhala_NBRNAseq_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBRNAseq_Q0std__post0.tsv.gz ...
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:20][strict×shambhala_NBRNAseq_Q0std] S0 harmonized: 7174 samples × 2366 genes (5s)
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:20][strict×shambhala_NBRNAseq_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:20][strict×shambhala_NBRNAseq_Q0std] Annotations ready (0s).
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:20][strict×shambhala_NBRNAseq_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:24][strict×shambhala_NBRNAseq_Q0std]   r2_batch=0.584 r2_diag=0.237 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBKass_Q0std] [05:56:24][strict×shambhala_NBKass_Q0std]   Upload complete.
+  [strict×shambhala_NBKass_Q0std] [05:56:24][strict×shambhala_NBKass_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBKass_Q0std] [05:56:25][strict×shambhala_NBKass_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBKass_Q0std] [05:56:27][strict×shambhala_NBKass_Q0std]   r2_batch=0.475 r2_diag=0.113 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBKass_QNBKass] [05:56:32][strict×shambhala_NBKass_QNBKass]   Upload complete.
+  [strict×shambhala_NBKass_QNBKass] [05:56:32][strict×shambhala_NBKass_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBKass_QNBKass] [05:56:33][strict×shambhala_NBKass_QNBKass]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBKass_QNBKass] [05:56:36][strict×shambhala_NBKass_QNBKass]   r2_batch=0.596 r2_diag=0.236 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:41][strict×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:41][strict×shambhala_NBRNAseq_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:41][strict×shambhala_NBRNAseq_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBKass_Q0std] [05:56:43][strict×shambhala_NBKass_Q0std]   Upload complete.
+  [strict×shambhala_NBKass_Q0std] [05:56:43][strict×shambhala_NBKass_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 87s
+[05:56:43] START strict×shambhala_NBRNAseq_QNBKass | free=53.2GB
+  [9/54] strict×shambhala_NBKass_Q0std (89s) → ['ok', 'ok', 'ok'] ...
+  [strict×shambhala_NBRNAseq_Q0std] [05:56:44][strict×shambhala_NBRNAseq_Q0std]   r2_batch=0.579 r2_diag=0.230 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBRNAseq_QNBKass] 2026-05-31 05:56:44,755 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:45][strict×shambhala_NBRNAseq_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:45][strict×shambhala_NBRNAseq_QNBKass] Reuse path RAM pre-flight OK: 53.2 GB free.
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:45][strict×shambhala_NBRNAseq_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBRNAseq_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:52][strict×shambhala_NBRNAseq_QNBKass] S0 harmonized: 7174 samples × 3447 genes (7s)
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:52][strict×shambhala_NBRNAseq_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:52][strict×shambhala_NBRNAseq_QNBKass] Annotations ready (0s).
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:52][strict×shambhala_NBRNAseq_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBRNAseq_QNBKass] [05:56:55][strict×shambhala_NBRNAseq_QNBKass]   r2_batch=0.595 r2_diag=0.248 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:00][strict×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:00][strict×shambhala_NBRNAseq_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:03][strict×shambhala_NBRNAseq_Q0std]   r2_batch=0.476 r2_diag=0.104 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBKass_QNBKass] [05:57:07][strict×shambhala_NBKass_QNBKass]   Upload complete.
+  [strict×shambhala_NBKass_QNBKass] [05:57:07][strict×shambhala_NBKass_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBKass_QNBKass] [05:57:10][strict×shambhala_NBKass_QNBKass]   r2_batch=0.455 r2_diag=0.101 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:18][strict×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:18][strict×shambhala_NBRNAseq_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:18][strict×shambhala_NBRNAseq_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:21][strict×shambhala_NBRNAseq_Q0std]   r2_batch=0.476 r2_diag=0.113 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBRNAseq_QNBKass] [05:57:27][strict×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [strict×shambhala_NBRNAseq_QNBKass] [05:57:27][strict×shambhala_NBRNAseq_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBRNAseq_QNBKass] [05:57:28][strict×shambhala_NBRNAseq_QNBKass]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBRNAseq_QNBKass] [05:57:31][strict×shambhala_NBRNAseq_QNBKass]   r2_batch=0.590 r2_diag=0.241 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:36][strict×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [strict×shambhala_NBRNAseq_Q0std] [05:57:36][strict×shambhala_NBRNAseq_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 81s
+  [10/54] strict×shambhala_NBRNAseq_Q0std (83s) → ['ok', 'ok', 'ok'] ...
+[05:57:36] START strict×shambhala_NBext_Q0std | free=53.2GB
+  [strict×shambhala_NBext_Q0std] 2026-05-31 05:57:37,694 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBext_Q0std] [05:57:38][strict×shambhala_NBext_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBext_Q0std] [05:57:38][strict×shambhala_NBext_Q0std] Reuse path RAM pre-flight OK: 53.0 GB free.
+  [strict×shambhala_NBext_Q0std] [05:57:38][strict×shambhala_NBext_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBext_Q0std__post0.tsv.gz ...
+  [strict×shambhala_NBKass_QNBKass] [05:57:39][strict×shambhala_NBKass_QNBKass]   Upload complete.
+  [strict×shambhala_NBKass_QNBKass] [05:57:39][strict×shambhala_NBKass_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBKass_QNBKass] [05:57:40][strict×shambhala_NBKass_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBKass_QNBKass] [05:57:42][strict×shambhala_NBKass_QNBKass]   r2_batch=0.452 r2_diag=0.108 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBext_Q0std] [05:57:44][strict×shambhala_NBext_Q0std] S0 harmonized: 7174 samples × 2366 genes (6s)
+  [strict×shambhala_NBext_Q0std] [05:57:44][strict×shambhala_NBext_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBext_Q0std] [05:57:44][strict×shambhala_NBext_Q0std] Annotations ready (0s).
+  [strict×shambhala_NBext_Q0std] [05:57:44][strict×shambhala_NBext_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBext_Q0std] [05:57:47][strict×shambhala_NBext_Q0std]   r2_batch=0.590 r2_diag=0.248 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBRNAseq_QNBKass] [05:58:02][strict×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [strict×shambhala_NBRNAseq_QNBKass] [05:58:02][strict×shambhala_NBRNAseq_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBext_Q0std] [05:58:03][strict×shambhala_NBext_Q0std]   Upload complete.
+  [strict×shambhala_NBext_Q0std] [05:58:03][strict×shambhala_NBext_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBext_Q0std] [05:58:05][strict×shambhala_NBext_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_NBRNAseq_QNBKass] [05:58:07][strict×shambhala_NBRNAseq_QNBKass]   r2_batch=0.469 r2_diag=0.101 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBext_Q0std] [05:58:09][strict×shambhala_NBext_Q0std]   r2_batch=0.582 r2_diag=0.241 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBKass_QNBKass] [05:58:12][strict×shambhala_NBKass_QNBKass]   Upload complete.
+  [strict×shambhala_NBKass_QNBKass] [05:58:12][strict×shambhala_NBKass_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 142s
+  [11/54] strict×shambhala_NBKass_QNBKass (144s) → ['ok', 'ok', 'ok'] ...
+[05:58:12] START strict×shambhala_NBext_QNBKass | free=53.5GB
+  [strict×shambhala_NBext_QNBKass] 2026-05-31 05:58:13,848 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_NBext_QNBKass] [05:58:14][strict×shambhala_NBext_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_NBext_QNBKass] [05:58:14][strict×shambhala_NBext_QNBKass] Reuse path RAM pre-flight OK: 53.4 GB free.
+  [strict×shambhala_NBext_QNBKass] [05:58:14][strict×shambhala_NBext_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_NBext_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_NBext_QNBKass] [05:58:21][strict×shambhala_NBext_QNBKass] S0 harmonized: 7174 samples × 3447 genes (7s)
+  [strict×shambhala_NBext_QNBKass] [05:58:21][strict×shambhala_NBext_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_NBext_QNBKass] [05:58:21][strict×shambhala_NBext_QNBKass] Annotations ready (0s).
+  [strict×shambhala_NBext_QNBKass] [05:58:21][strict×shambhala_NBext_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBext_QNBKass] [05:58:24][strict×shambhala_NBext_QNBKass]   r2_batch=0.589 r2_diag=0.253 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBext_Q0std] [05:58:25][strict×shambhala_NBext_Q0std]   Upload complete.
+  [strict×shambhala_NBext_Q0std] [05:58:25][strict×shambhala_NBext_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBext_Q0std] [05:58:27][strict×shambhala_NBext_Q0std]   r2_batch=0.484 r2_diag=0.104 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_NBRNAseq_QNBKass] [05:58:37][strict×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [strict×shambhala_NBRNAseq_QNBKass] [05:58:37][strict×shambhala_NBRNAseq_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBRNAseq_QNBKass] [05:58:38][strict×shambhala_NBRNAseq_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBRNAseq_QNBKass] [05:58:40][strict×shambhala_NBRNAseq_QNBKass]   r2_batch=0.467 r2_diag=0.108 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBext_Q0std] [05:58:43][strict×shambhala_NBext_Q0std]   Upload complete.
+  [strict×shambhala_NBext_Q0std] [05:58:43][strict×shambhala_NBext_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBext_Q0std] [05:58:43][strict×shambhala_NBext_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBext_Q0std] [05:58:46][strict×shambhala_NBext_Q0std]   r2_batch=0.482 r2_diag=0.114 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBext_QNBKass] [05:58:56][strict×shambhala_NBext_QNBKass]   Upload complete.
+  [strict×shambhala_NBext_QNBKass] [05:58:56][strict×shambhala_NBext_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_NBext_QNBKass] [05:58:56][strict×shambhala_NBext_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [strict×shambhala_NBext_QNBKass] [05:59:00][strict×shambhala_NBext_QNBKass]   r2_batch=0.592 r2_diag=0.254 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBext_Q0std] [05:59:01][strict×shambhala_NBext_Q0std]   Upload complete.
+  [strict×shambhala_NBext_Q0std] [05:59:01][strict×shambhala_NBext_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 84s
+  [12/54] strict×shambhala_NBext_Q0std (86s) → ['ok', 'ok', 'ok'] ...
+[05:59:02] START strict×shambhala_Oncobox_Q0std | free=53.3GB
+  [strict×shambhala_Oncobox_Q0std] 2026-05-31 05:59:03,173 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_Oncobox_Q0std] [05:59:03][strict×shambhala_Oncobox_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_Oncobox_Q0std] [05:59:03][strict×shambhala_Oncobox_Q0std] Reuse path RAM pre-flight OK: 53.2 GB free.
+  [strict×shambhala_Oncobox_Q0std] [05:59:03][strict×shambhala_Oncobox_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_Oncobox_Q0std__post0.tsv.gz ...
+  [strict×shambhala_Oncobox_Q0std] [05:59:08][strict×shambhala_Oncobox_Q0std] S0 harmonized: 7174 samples × 2366 genes (5s)
+  [strict×shambhala_Oncobox_Q0std] [05:59:08][strict×shambhala_Oncobox_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_Oncobox_Q0std] [05:59:08][strict×shambhala_Oncobox_Q0std] Annotations ready (0s).
+  [strict×shambhala_Oncobox_Q0std] [05:59:08][strict×shambhala_Oncobox_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_NBRNAseq_QNBKass] [05:59:09][strict×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [strict×shambhala_NBRNAseq_QNBKass] [05:59:09][strict×shambhala_NBRNAseq_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 144s
+[05:59:09] START strict×shambhala_Oncobox_QNBKass | free=53.4GB
+  [13/54] strict×shambhala_NBRNAseq_QNBKass (146s) → ['ok', 'ok', 'ok'] ...
+  [strict×shambhala_Oncobox_Q0std] [05:59:11][strict×shambhala_Oncobox_Q0std]   r2_batch=0.614 r2_diag=0.229 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_Oncobox_QNBKass] 2026-05-31 05:59:11,384 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_Oncobox_QNBKass] [05:59:11][strict×shambhala_Oncobox_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_Oncobox_QNBKass] [05:59:11][strict×shambhala_Oncobox_QNBKass] Reuse path RAM pre-flight OK: 53.4 GB free.
+  [strict×shambhala_Oncobox_QNBKass] [05:59:11][strict×shambhala_Oncobox_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_Oncobox_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_Oncobox_QNBKass] [05:59:18][strict×shambhala_Oncobox_QNBKass] S0 harmonized: 7174 samples × 3447 genes (7s)
+  [strict×shambhala_Oncobox_QNBKass] [05:59:18][strict×shambhala_Oncobox_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_Oncobox_QNBKass] [05:59:19][strict×shambhala_Oncobox_QNBKass] Annotations ready (0s).
+  [strict×shambhala_Oncobox_QNBKass] [05:59:19][strict×shambhala_Oncobox_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_Oncobox_QNBKass] [05:59:21][strict×shambhala_Oncobox_QNBKass]   r2_batch=0.622 r2_diag=0.220 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_Oncobox_Q0std] [05:59:27][strict×shambhala_Oncobox_Q0std]   Upload complete.
+  [strict×shambhala_Oncobox_Q0std] [05:59:27][strict×shambhala_Oncobox_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_Oncobox_Q0std] [05:59:28][strict×shambhala_Oncobox_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_Oncobox_Q0std] [05:59:30][strict×shambhala_Oncobox_Q0std]   r2_batch=0.604 r2_diag=0.223 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_NBext_QNBKass] [05:59:36][strict×shambhala_NBext_QNBKass]   Upload complete.
+  [strict×shambhala_NBext_QNBKass] [05:59:36][strict×shambhala_NBext_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_NBext_QNBKass] [05:59:39][strict×shambhala_NBext_QNBKass]   r2_batch=0.469 r2_diag=0.104 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_Oncobox_Q0std] [05:59:46][strict×shambhala_Oncobox_Q0std]   Upload complete.
+  [strict×shambhala_Oncobox_Q0std] [05:59:46][strict×shambhala_Oncobox_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_Oncobox_Q0std] [05:59:49][strict×shambhala_Oncobox_Q0std]   r2_batch=0.449 r2_diag=0.100 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_Oncobox_QNBKass] [05:59:53][strict×shambhala_Oncobox_QNBKass]   Upload complete.
+  [strict×shambhala_Oncobox_QNBKass] [05:59:53][strict×shambhala_Oncobox_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_Oncobox_QNBKass] [05:59:54][strict×shambhala_Oncobox_QNBKass]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_Oncobox_QNBKass] [05:59:56][strict×shambhala_Oncobox_QNBKass]   r2_batch=0.616 r2_diag=0.213 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_Oncobox_Q0std] [06:00:05][strict×shambhala_Oncobox_Q0std]   Upload complete.
+  [strict×shambhala_Oncobox_Q0std] [06:00:05][strict×shambhala_Oncobox_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_Oncobox_Q0std] [06:00:06][strict×shambhala_Oncobox_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_Oncobox_Q0std] [06:00:09][strict×shambhala_Oncobox_Q0std]   r2_batch=0.438 r2_diag=0.110 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_NBext_QNBKass] [06:00:09][strict×shambhala_NBext_QNBKass]   Upload complete.
+  [strict×shambhala_NBext_QNBKass] [06:00:09][strict×shambhala_NBext_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_NBext_QNBKass] [06:00:10][strict×shambhala_NBext_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_NBext_QNBKass] [06:00:13][strict×shambhala_NBext_QNBKass]   r2_batch=0.469 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_Oncobox_Q0std] [06:00:24][strict×shambhala_Oncobox_Q0std]   Upload complete.
+  [strict×shambhala_Oncobox_Q0std] [06:00:24][strict×shambhala_Oncobox_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 80s
+  [14/54] strict×shambhala_Oncobox_Q0std (82s) → ['ok', 'ok', 'ok'] ...
+[06:00:24] START strict×shambhala_P0std_Q0std | free=52.8GB
+  [strict×shambhala_P0std_Q0std] 2026-05-31 06:00:25,524 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_P0std_Q0std] [06:00:26][strict×shambhala_P0std_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_P0std_Q0std] [06:00:26][strict×shambhala_P0std_Q0std] Reuse path RAM pre-flight OK: 52.7 GB free.
+  [strict×shambhala_P0std_Q0std] [06:00:26][strict×shambhala_P0std_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_P0std_Q0std__post0.tsv.gz ...
+  [strict×shambhala_Oncobox_QNBKass] [06:00:27][strict×shambhala_Oncobox_QNBKass]   Upload complete.
+  [strict×shambhala_Oncobox_QNBKass] [06:00:27][strict×shambhala_Oncobox_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_Oncobox_QNBKass] [06:00:30][strict×shambhala_Oncobox_QNBKass]   r2_batch=0.479 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_P0std_Q0std] [06:00:31][strict×shambhala_P0std_Q0std] S0 harmonized: 7174 samples × 2293 genes (6s)
+  [strict×shambhala_P0std_Q0std] [06:00:31][strict×shambhala_P0std_Q0std] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_P0std_Q0std] [06:00:32][strict×shambhala_P0std_Q0std] Annotations ready (0s).
+  [strict×shambhala_P0std_Q0std] [06:00:32][strict×shambhala_P0std_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_P0std_Q0std] [06:00:34][strict×shambhala_P0std_Q0std]   r2_batch=0.589 r2_diag=0.228 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_NBext_QNBKass] [06:00:41][strict×shambhala_NBext_QNBKass]   Upload complete.
+  [strict×shambhala_NBext_QNBKass] [06:00:41][strict×shambhala_NBext_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 147s
+  [15/54] strict×shambhala_NBext_QNBKass (149s) → ['ok', 'ok', 'ok'] ...
+[06:00:41] START strict×shambhala_P0std_QNBKass | free=53.1GB
+  [strict×shambhala_P0std_QNBKass] 2026-05-31 06:00:42,996 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [strict×shambhala_P0std_QNBKass] [06:00:43][strict×shambhala_P0std_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [strict×shambhala_P0std_QNBKass] [06:00:43][strict×shambhala_P0std_QNBKass] Reuse path RAM pre-flight OK: 53.0 GB free.
+  [strict×shambhala_P0std_QNBKass] [06:00:43][strict×shambhala_P0std_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__strict__shambhala_P0std_QNBKass__post0.tsv.gz ...
+  [strict×shambhala_P0std_Q0std] [06:00:49][strict×shambhala_P0std_Q0std]   Upload complete.
+  [strict×shambhala_P0std_Q0std] [06:00:50][strict×shambhala_P0std_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_P0std_Q0std] [06:00:50][strict×shambhala_P0std_Q0std]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_P0std_QNBKass] [06:00:50][strict×shambhala_P0std_QNBKass] S0 harmonized: 7174 samples × 3332 genes (7s)
+  [strict×shambhala_P0std_QNBKass] [06:00:50][strict×shambhala_P0std_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [strict×shambhala_P0std_QNBKass] [06:00:51][strict×shambhala_P0std_QNBKass] Annotations ready (1s).
+  [strict×shambhala_P0std_QNBKass] [06:00:51][strict×shambhala_P0std_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [strict×shambhala_P0std_Q0std] [06:00:53][strict×shambhala_P0std_Q0std]   r2_batch=0.587 r2_diag=0.220 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_P0std_QNBKass] [06:00:55][strict×shambhala_P0std_QNBKass]   r2_batch=0.594 r2_diag=0.225 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_Oncobox_QNBKass] [06:01:00][strict×shambhala_Oncobox_QNBKass]   Upload complete.
+  [strict×shambhala_Oncobox_QNBKass] [06:01:01][strict×shambhala_Oncobox_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_Oncobox_QNBKass] [06:01:01][strict×shambhala_Oncobox_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_Oncobox_QNBKass] [06:01:04][strict×shambhala_Oncobox_QNBKass]   r2_batch=0.468 r2_diag=0.113 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_P0std_Q0std] [06:01:10][strict×shambhala_P0std_Q0std]   Upload complete.
+  [strict×shambhala_P0std_Q0std] [06:01:10][strict×shambhala_P0std_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_P0std_Q0std] [06:01:13][strict×shambhala_P0std_Q0std]   r2_batch=0.520 r2_diag=0.102 — uploading K_ffpe_only×post_rm=False ...
+  [strict×shambhala_P0std_QNBKass] [06:01:26][strict×shambhala_P0std_QNBKass]   Upload complete.
+  [strict×shambhala_P0std_QNBKass] [06:01:26][strict×shambhala_P0std_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [strict×shambhala_P0std_QNBKass] [06:01:27][strict×shambhala_P0std_QNBKass]   Removing 1 outlier batch(es): ['GPL23541_FF_Unknown']
+  [strict×shambhala_P0std_Q0std] [06:01:27][strict×shambhala_P0std_Q0std]   Upload complete.
+  [strict×shambhala_P0std_Q0std] [06:01:27][strict×shambhala_P0std_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_P0std_Q0std] [06:01:28][strict×shambhala_P0std_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_P0std_QNBKass] [06:01:32][strict×shambhala_P0std_QNBKass]   r2_batch=0.591 r2_diag=0.219 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_P0std_Q0std] [06:01:32][strict×shambhala_P0std_Q0std]   r2_batch=0.458 r2_diag=0.104 — uploading K_ffpe_only×post_rm=True ...
+  [strict×shambhala_Oncobox_QNBKass] [06:01:34][strict×shambhala_Oncobox_QNBKass]   Upload complete.
+  [strict×shambhala_Oncobox_QNBKass] [06:01:34][strict×shambhala_Oncobox_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 143s
+  [16/54] strict×shambhala_Oncobox_QNBKass (145s) → ['ok', 'ok', 'ok'] ...
+[06:01:34] START knn×shambhala_ANTE_Q0std | free=53.1GB
+  [knn×shambhala_ANTE_Q0std] 2026-05-31 06:01:35,841 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_ANTE_Q0std] [06:01:36][knn×shambhala_ANTE_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_ANTE_Q0std] [06:01:36][knn×shambhala_ANTE_Q0std] Reuse path RAM pre-flight OK: 53.0 GB free.
+  [knn×shambhala_ANTE_Q0std] [06:01:36][knn×shambhala_ANTE_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_ANTE_Q0std__post0.tsv.gz ...
+  [strict×shambhala_P0std_Q0std] [06:01:46][strict×shambhala_P0std_Q0std]   Upload complete.
+  [strict×shambhala_P0std_Q0std] [06:01:46][strict×shambhala_P0std_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 80s
+  [17/54] strict×shambhala_P0std_Q0std (82s) → ['ok', 'ok', 'ok'] ...
+[06:01:46] START knn×shambhala_ANTE_QNBKass | free=52.6GB
+  [knn×shambhala_ANTE_QNBKass] 2026-05-31 06:01:47,589 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_ANTE_QNBKass] [06:01:48][knn×shambhala_ANTE_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_ANTE_QNBKass] [06:01:48][knn×shambhala_ANTE_QNBKass] Reuse path RAM pre-flight OK: 52.4 GB free.
+  [knn×shambhala_ANTE_QNBKass] [06:01:48][knn×shambhala_ANTE_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_ANTE_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_ANTE_Q0std] [06:01:56][knn×shambhala_ANTE_Q0std] S0 harmonized: 7174 samples × 8237 genes (20s)
+  [knn×shambhala_ANTE_Q0std] [06:01:56][knn×shambhala_ANTE_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_ANTE_Q0std] [06:01:56][knn×shambhala_ANTE_Q0std] Annotations ready (0s).
+  [knn×shambhala_ANTE_Q0std] [06:01:56][knn×shambhala_ANTE_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_ANTE_Q0std] [06:02:01][knn×shambhala_ANTE_Q0std]   r2_batch=0.612 r2_diag=0.223 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_P0std_QNBKass] [06:02:02][strict×shambhala_P0std_QNBKass]   Upload complete.
+  [strict×shambhala_P0std_QNBKass] [06:02:02][strict×shambhala_P0std_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [strict×shambhala_P0std_QNBKass] [06:02:05][strict×shambhala_P0std_QNBKass]   r2_batch=0.479 r2_diag=0.087 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_ANTE_QNBKass] [06:02:19][knn×shambhala_ANTE_QNBKass] S0 harmonized: 7174 samples × 11591 genes (31s)
+  [knn×shambhala_ANTE_QNBKass] [06:02:19][knn×shambhala_ANTE_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_ANTE_QNBKass] [06:02:19][knn×shambhala_ANTE_QNBKass] Annotations ready (0s).
+  [knn×shambhala_ANTE_QNBKass] [06:02:19][knn×shambhala_ANTE_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_ANTE_QNBKass] [06:02:25][knn×shambhala_ANTE_QNBKass]   r2_batch=0.602 r2_diag=0.217 — uploading J_ff_only×post_rm=False ...
+  [strict×shambhala_P0std_QNBKass] [06:02:35][strict×shambhala_P0std_QNBKass]   Upload complete.
+  [strict×shambhala_P0std_QNBKass] [06:02:35][strict×shambhala_P0std_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [strict×shambhala_P0std_QNBKass] [06:02:36][strict×shambhala_P0std_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [strict×shambhala_P0std_QNBKass] [06:02:39][strict×shambhala_P0std_QNBKass]   r2_batch=0.478 r2_diag=0.096 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_ANTE_Q0std] [06:02:58][knn×shambhala_ANTE_Q0std]   Upload complete.
+  [knn×shambhala_ANTE_Q0std] [06:02:58][knn×shambhala_ANTE_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_ANTE_Q0std] [06:02:59][knn×shambhala_ANTE_Q0std]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_ANTE_Q0std] [06:03:03][knn×shambhala_ANTE_Q0std]   r2_batch=0.608 r2_diag=0.223 — uploading J_ff_only×post_rm=True ...
+  [strict×shambhala_P0std_QNBKass] [06:03:06][strict×shambhala_P0std_QNBKass]   Upload complete.
+  [strict×shambhala_P0std_QNBKass] [06:03:06][strict×shambhala_P0std_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 143s
+  [18/54] strict×shambhala_P0std_QNBKass (145s) → ['ok', 'ok', 'ok'] ...
+[06:03:06] START knn×shambhala_GTExAffy_Q0std | free=50.6GB
+  [knn×shambhala_GTExAffy_Q0std] 2026-05-31 06:03:07,813 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_GTExAffy_Q0std] [06:03:08][knn×shambhala_GTExAffy_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_GTExAffy_Q0std] [06:03:08][knn×shambhala_GTExAffy_Q0std] Reuse path RAM pre-flight OK: 50.5 GB free.
+  [knn×shambhala_GTExAffy_Q0std] [06:03:08][knn×shambhala_GTExAffy_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_GTExAffy_Q0std__post0.tsv.gz ...
+  [knn×shambhala_GTExAffy_Q0std] [06:03:27][knn×shambhala_GTExAffy_Q0std] S0 harmonized: 7174 samples × 8370 genes (19s)
+  [knn×shambhala_GTExAffy_Q0std] [06:03:27][knn×shambhala_GTExAffy_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_GTExAffy_Q0std] [06:03:28][knn×shambhala_GTExAffy_Q0std] Annotations ready (0s).
+  [knn×shambhala_GTExAffy_Q0std] [06:03:28][knn×shambhala_GTExAffy_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_GTExAffy_Q0std] [06:03:33][knn×shambhala_GTExAffy_Q0std]   r2_batch=0.603 r2_diag=0.222 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_ANTE_Q0std] [06:03:57][knn×shambhala_ANTE_Q0std]   Upload complete.
+  [knn×shambhala_ANTE_Q0std] [06:03:57][knn×shambhala_ANTE_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_ANTE_Q0std] [06:04:02][knn×shambhala_ANTE_Q0std]   r2_batch=0.475 r2_diag=0.105 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_ANTE_QNBKass] [06:04:09][knn×shambhala_ANTE_QNBKass]   Upload complete.
+  [knn×shambhala_ANTE_QNBKass] [06:04:09][knn×shambhala_ANTE_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_ANTE_QNBKass] [06:04:10][knn×shambhala_ANTE_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_ANTE_QNBKass] [06:04:16][knn×shambhala_ANTE_QNBKass]   r2_batch=0.598 r2_diag=0.216 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_GTExAffy_Q0std] [06:04:31][knn×shambhala_GTExAffy_Q0std]   Upload complete.
+  [knn×shambhala_GTExAffy_Q0std] [06:04:31][knn×shambhala_GTExAffy_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_GTExAffy_Q0std] [06:04:33][knn×shambhala_GTExAffy_Q0std]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_GTExAffy_Q0std] [06:04:37][knn×shambhala_GTExAffy_Q0std]   r2_batch=0.598 r2_diag=0.224 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_ANTE_Q0std] [06:04:57][knn×shambhala_ANTE_Q0std]   Upload complete.
+  [knn×shambhala_ANTE_Q0std] [06:04:57][knn×shambhala_ANTE_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_ANTE_Q0std] [06:04:58][knn×shambhala_ANTE_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_ANTE_Q0std] [06:05:02][knn×shambhala_ANTE_Q0std]   r2_batch=0.463 r2_diag=0.111 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_GTExAffy_Q0std] [06:05:33][knn×shambhala_GTExAffy_Q0std]   Upload complete.
+  [knn×shambhala_GTExAffy_Q0std] [06:05:33][knn×shambhala_GTExAffy_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_GTExAffy_Q0std] [06:05:38][knn×shambhala_GTExAffy_Q0std]   r2_batch=0.499 r2_diag=0.104 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_ANTE_Q0std] [06:05:52][knn×shambhala_ANTE_Q0std]   Upload complete.
+  [knn×shambhala_ANTE_Q0std] [06:05:52][knn×shambhala_ANTE_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 256s
+  [19/54] knn×shambhala_ANTE_Q0std (258s) → ['ok', 'ok', 'ok'] ...
+[06:05:53] START knn×shambhala_GTExAffy_QNBKass | free=50.3GB
+  [knn×shambhala_GTExAffy_QNBKass] 2026-05-31 06:05:54,327 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_GTExAffy_QNBKass] [06:05:54][knn×shambhala_GTExAffy_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_GTExAffy_QNBKass] [06:05:54][knn×shambhala_GTExAffy_QNBKass] Reuse path RAM pre-flight OK: 50.2 GB free.
+  [knn×shambhala_GTExAffy_QNBKass] [06:05:54][knn×shambhala_GTExAffy_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_GTExAffy_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_ANTE_QNBKass] [06:05:59][knn×shambhala_ANTE_QNBKass]   Upload complete.
+  [knn×shambhala_ANTE_QNBKass] [06:05:59][knn×shambhala_ANTE_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_ANTE_QNBKass] [06:06:05][knn×shambhala_ANTE_QNBKass]   r2_batch=0.496 r2_diag=0.106 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_GTExAffy_QNBKass] [06:06:25][knn×shambhala_GTExAffy_QNBKass] S0 harmonized: 7174 samples × 11596 genes (30s)
+  [knn×shambhala_GTExAffy_QNBKass] [06:06:25][knn×shambhala_GTExAffy_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_GTExAffy_QNBKass] [06:06:25][knn×shambhala_GTExAffy_QNBKass] Annotations ready (0s).
+  [knn×shambhala_GTExAffy_QNBKass] [06:06:25][knn×shambhala_GTExAffy_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_GTExAffy_QNBKass] [06:06:31][knn×shambhala_GTExAffy_QNBKass]   r2_batch=0.603 r2_diag=0.219 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_GTExAffy_Q0std] [06:06:36][knn×shambhala_GTExAffy_Q0std]   Upload complete.
+  [knn×shambhala_GTExAffy_Q0std] [06:06:36][knn×shambhala_GTExAffy_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_GTExAffy_Q0std] [06:06:37][knn×shambhala_GTExAffy_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_GTExAffy_Q0std] [06:06:41][knn×shambhala_GTExAffy_Q0std]   r2_batch=0.473 r2_diag=0.111 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_GTExAffy_Q0std] [06:07:31][knn×shambhala_GTExAffy_Q0std]   Upload complete.
+  [knn×shambhala_GTExAffy_Q0std] [06:07:31][knn×shambhala_GTExAffy_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 263s
+  [20/54] knn×shambhala_GTExAffy_Q0std (265s) → ['ok', 'ok', 'ok'] ...
+[06:07:32] START knn×shambhala_NBBags_Q0std | free=49.7GB
+  [knn×shambhala_NBBags_Q0std] 2026-05-31 06:07:33,174 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBBags_Q0std] [06:07:33][knn×shambhala_NBBags_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBBags_Q0std] [06:07:33][knn×shambhala_NBBags_Q0std] Reuse path RAM pre-flight OK: 49.6 GB free.
+  [knn×shambhala_NBBags_Q0std] [06:07:33][knn×shambhala_NBBags_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBBags_Q0std__post0.tsv.gz ...
+  [knn×shambhala_ANTE_QNBKass] [06:07:44][knn×shambhala_ANTE_QNBKass]   Upload complete.
+  [knn×shambhala_ANTE_QNBKass] [06:07:44][knn×shambhala_ANTE_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_ANTE_QNBKass] [06:07:46][knn×shambhala_ANTE_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_ANTE_QNBKass] [06:07:50][knn×shambhala_ANTE_QNBKass]   r2_batch=0.478 r2_diag=0.111 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBBags_Q0std] [06:07:55][knn×shambhala_NBBags_Q0std] S0 harmonized: 7174 samples × 8378 genes (22s)
+  [knn×shambhala_NBBags_Q0std] [06:07:55][knn×shambhala_NBBags_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBBags_Q0std] [06:07:56][knn×shambhala_NBBags_Q0std] Annotations ready (0s).
+  [knn×shambhala_NBBags_Q0std] [06:07:56][knn×shambhala_NBBags_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBBags_Q0std] [06:08:00][knn×shambhala_NBBags_Q0std]   r2_batch=0.542 r2_diag=0.243 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_GTExAffy_QNBKass] [06:08:15][knn×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [knn×shambhala_GTExAffy_QNBKass] [06:08:16][knn×shambhala_GTExAffy_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_GTExAffy_QNBKass] [06:08:17][knn×shambhala_GTExAffy_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_GTExAffy_QNBKass] [06:08:23][knn×shambhala_GTExAffy_QNBKass]   r2_batch=0.599 r2_diag=0.220 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBBags_Q0std] [06:08:59][knn×shambhala_NBBags_Q0std]   Upload complete.
+  [knn×shambhala_NBBags_Q0std] [06:08:59][knn×shambhala_NBBags_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBBags_Q0std] [06:09:00][knn×shambhala_NBBags_Q0std]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_NBBags_Q0std] [06:09:05][knn×shambhala_NBBags_Q0std]   r2_batch=0.529 r2_diag=0.244 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_ANTE_QNBKass] [06:09:25][knn×shambhala_ANTE_QNBKass]   Upload complete.
+  [knn×shambhala_ANTE_QNBKass] [06:09:25][knn×shambhala_ANTE_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 457s
+  [21/54] knn×shambhala_ANTE_QNBKass (460s) → ['ok', 'ok', 'ok'] ...
+[06:09:26] START knn×shambhala_NBBags_QNBKass | free=50.4GB
+  [knn×shambhala_NBBags_QNBKass] 2026-05-31 06:09:27,225 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBBags_QNBKass] [06:09:27][knn×shambhala_NBBags_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBBags_QNBKass] [06:09:27][knn×shambhala_NBBags_QNBKass] Reuse path RAM pre-flight OK: 50.3 GB free.
+  [knn×shambhala_NBBags_QNBKass] [06:09:27][knn×shambhala_NBBags_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBBags_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_NBBags_QNBKass] [06:09:56][knn×shambhala_NBBags_QNBKass] S0 harmonized: 7174 samples × 11768 genes (28s)
+  [knn×shambhala_NBBags_QNBKass] [06:09:56][knn×shambhala_NBBags_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBBags_QNBKass] [06:09:56][knn×shambhala_NBBags_QNBKass] Annotations ready (0s).
+  [knn×shambhala_NBBags_QNBKass] [06:09:56][knn×shambhala_NBBags_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBBags_Q0std] [06:10:01][knn×shambhala_NBBags_Q0std]   Upload complete.
+  [knn×shambhala_NBBags_Q0std] [06:10:01][knn×shambhala_NBBags_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBBags_QNBKass] [06:10:02][knn×shambhala_NBBags_QNBKass]   r2_batch=0.582 r2_diag=0.245 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_GTExAffy_QNBKass] [06:10:07][knn×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [knn×shambhala_GTExAffy_QNBKass] [06:10:07][knn×shambhala_GTExAffy_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBBags_Q0std] [06:10:07][knn×shambhala_NBBags_Q0std]   r2_batch=0.475 r2_diag=0.108 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_GTExAffy_QNBKass] [06:10:14][knn×shambhala_GTExAffy_QNBKass]   r2_batch=0.533 r2_diag=0.100 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBBags_Q0std] [06:11:01][knn×shambhala_NBBags_Q0std]   Upload complete.
+  [knn×shambhala_NBBags_Q0std] [06:11:01][knn×shambhala_NBBags_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBBags_Q0std] [06:11:03][knn×shambhala_NBBags_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBBags_Q0std] [06:11:07][knn×shambhala_NBBags_Q0std]   r2_batch=0.475 r2_diag=0.116 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBBags_QNBKass] [06:11:46][knn×shambhala_NBBags_QNBKass]   Upload complete.
+  [knn×shambhala_NBBags_QNBKass] [06:11:46][knn×shambhala_NBBags_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBBags_QNBKass] [06:11:48][knn×shambhala_NBBags_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_GTExAffy_QNBKass] [06:11:48][knn×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [knn×shambhala_GTExAffy_QNBKass] [06:11:48][knn×shambhala_GTExAffy_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_GTExAffy_QNBKass] [06:11:51][knn×shambhala_GTExAffy_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBBags_QNBKass] [06:11:55][knn×shambhala_NBBags_QNBKass]   r2_batch=0.564 r2_diag=0.245 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_GTExAffy_QNBKass] [06:11:57][knn×shambhala_GTExAffy_QNBKass]   r2_batch=0.481 r2_diag=0.103 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBBags_Q0std] [06:12:00][knn×shambhala_NBBags_Q0std]   Upload complete.
+  [knn×shambhala_NBBags_Q0std] [06:12:00][knn×shambhala_NBBags_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 267s
+  [22/54] knn×shambhala_NBBags_Q0std (269s) → ['ok', 'ok', 'ok'] ...
+[06:12:01] START knn×shambhala_NBGPL570_Q0std | free=50.2GB
+  [knn×shambhala_NBGPL570_Q0std] 2026-05-31 06:12:02,283 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBGPL570_Q0std] [06:12:02][knn×shambhala_NBGPL570_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBGPL570_Q0std] [06:12:02][knn×shambhala_NBGPL570_Q0std] Reuse path RAM pre-flight OK: 50.1 GB free.
+  [knn×shambhala_NBGPL570_Q0std] [06:12:02][knn×shambhala_NBGPL570_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBGPL570_Q0std__post0.tsv.gz ...
+  [knn×shambhala_NBGPL570_Q0std] [06:12:22][knn×shambhala_NBGPL570_Q0std] S0 harmonized: 7174 samples × 8378 genes (20s)
+  [knn×shambhala_NBGPL570_Q0std] [06:12:22][knn×shambhala_NBGPL570_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBGPL570_Q0std] [06:12:23][knn×shambhala_NBGPL570_Q0std] Annotations ready (0s).
+  [knn×shambhala_NBGPL570_Q0std] [06:12:23][knn×shambhala_NBGPL570_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBGPL570_Q0std] [06:12:27][knn×shambhala_NBGPL570_Q0std]   r2_batch=0.571 r2_diag=0.244 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBGPL570_Q0std] [06:13:21][knn×shambhala_NBGPL570_Q0std]   Upload complete.
+  [knn×shambhala_NBGPL570_Q0std] [06:13:21][knn×shambhala_NBGPL570_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBGPL570_Q0std] [06:13:22][knn×shambhala_NBGPL570_Q0std]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_NBGPL570_Q0std] [06:13:26][knn×shambhala_NBGPL570_Q0std]   r2_batch=0.558 r2_diag=0.245 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_GTExAffy_QNBKass] [06:13:28][knn×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [knn×shambhala_GTExAffy_QNBKass] [06:13:28][knn×shambhala_GTExAffy_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 454s
+  [23/54] knn×shambhala_GTExAffy_QNBKass (456s) → ['ok', 'ok', 'ok'] ...
+[06:13:29] START knn×shambhala_NBGPL570_QNBKass | free=50.4GB
+  [knn×shambhala_NBGPL570_QNBKass] 2026-05-31 06:13:30,109 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBGPL570_QNBKass] [06:13:30][knn×shambhala_NBGPL570_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBGPL570_QNBKass] [06:13:30][knn×shambhala_NBGPL570_QNBKass] Reuse path RAM pre-flight OK: 50.3 GB free.
+  [knn×shambhala_NBGPL570_QNBKass] [06:13:30][knn×shambhala_NBGPL570_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBGPL570_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_NBBags_QNBKass] [06:13:38][knn×shambhala_NBBags_QNBKass]   Upload complete.
+  [knn×shambhala_NBBags_QNBKass] [06:13:38][knn×shambhala_NBBags_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBBags_QNBKass] [06:13:43][knn×shambhala_NBBags_QNBKass]   r2_batch=0.477 r2_diag=0.107 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBGPL570_QNBKass] [06:14:01][knn×shambhala_NBGPL570_QNBKass] S0 harmonized: 7174 samples × 11768 genes (31s)
+  [knn×shambhala_NBGPL570_QNBKass] [06:14:01][knn×shambhala_NBGPL570_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBGPL570_QNBKass] [06:14:01][knn×shambhala_NBGPL570_QNBKass] Annotations ready (0s).
+  [knn×shambhala_NBGPL570_QNBKass] [06:14:01][knn×shambhala_NBGPL570_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBGPL570_QNBKass] [06:14:07][knn×shambhala_NBGPL570_QNBKass]   r2_batch=0.565 r2_diag=0.253 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBGPL570_Q0std] [06:14:24][knn×shambhala_NBGPL570_Q0std]   Upload complete.
+  [knn×shambhala_NBGPL570_Q0std] [06:14:24][knn×shambhala_NBGPL570_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBGPL570_Q0std] [06:14:28][knn×shambhala_NBGPL570_Q0std]   r2_batch=0.478 r2_diag=0.109 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBBags_QNBKass] [06:15:19][knn×shambhala_NBBags_QNBKass]   Upload complete.
+  [knn×shambhala_NBBags_QNBKass] [06:15:19][knn×shambhala_NBBags_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBGPL570_Q0std] [06:15:19][knn×shambhala_NBGPL570_Q0std]   Upload complete.
+  [knn×shambhala_NBGPL570_Q0std] [06:15:19][knn×shambhala_NBGPL570_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBBags_QNBKass] [06:15:20][knn×shambhala_NBBags_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBGPL570_Q0std] [06:15:21][knn×shambhala_NBGPL570_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBGPL570_Q0std] [06:15:28][knn×shambhala_NBGPL570_Q0std]   r2_batch=0.475 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBBags_QNBKass] [06:15:28][knn×shambhala_NBBags_QNBKass]   r2_batch=0.473 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBGPL570_QNBKass] [06:15:50][knn×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [knn×shambhala_NBGPL570_QNBKass] [06:15:51][knn×shambhala_NBGPL570_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBGPL570_QNBKass] [06:15:52][knn×shambhala_NBGPL570_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_NBGPL570_QNBKass] [06:15:58][knn×shambhala_NBGPL570_QNBKass]   r2_batch=0.545 r2_diag=0.249 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBGPL570_Q0std] [06:16:19][knn×shambhala_NBGPL570_Q0std]   Upload complete.
+  [knn×shambhala_NBGPL570_Q0std] [06:16:19][knn×shambhala_NBGPL570_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 256s
+  [24/54] knn×shambhala_NBGPL570_Q0std (258s) → ['ok', 'ok', 'ok'] ...
+[06:16:19] START knn×shambhala_NBKass_Q0std | free=49.9GB
+  [knn×shambhala_NBKass_Q0std] 2026-05-31 06:16:20,688 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBKass_Q0std] [06:16:21][knn×shambhala_NBKass_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBKass_Q0std] [06:16:21][knn×shambhala_NBKass_Q0std] Reuse path RAM pre-flight OK: 49.7 GB free.
+  [knn×shambhala_NBKass_Q0std] [06:16:21][knn×shambhala_NBKass_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBKass_Q0std__post0.tsv.gz ...
+  [knn×shambhala_NBKass_Q0std] [06:16:40][knn×shambhala_NBKass_Q0std] S0 harmonized: 7174 samples × 8378 genes (20s)
+  [knn×shambhala_NBKass_Q0std] [06:16:40][knn×shambhala_NBKass_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBKass_Q0std] [06:16:41][knn×shambhala_NBKass_Q0std] Annotations ready (0s).
+  [knn×shambhala_NBKass_Q0std] [06:16:41][knn×shambhala_NBKass_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBKass_Q0std] [06:16:46][knn×shambhala_NBKass_Q0std]   r2_batch=0.506 r2_diag=0.220 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBBags_QNBKass] [06:16:59][knn×shambhala_NBBags_QNBKass]   Upload complete.
+  [knn×shambhala_NBBags_QNBKass] [06:16:59][knn×shambhala_NBBags_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 452s
+  [25/54] knn×shambhala_NBBags_QNBKass (454s) → ['ok', 'ok', 'ok'] ...
+[06:17:00] START knn×shambhala_NBKass_QNBKass | free=50.3GB
+  [knn×shambhala_NBKass_QNBKass] 2026-05-31 06:17:01,337 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBKass_QNBKass] [06:17:01][knn×shambhala_NBKass_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBKass_QNBKass] [06:17:01][knn×shambhala_NBKass_QNBKass] Reuse path RAM pre-flight OK: 50.2 GB free.
+  [knn×shambhala_NBKass_QNBKass] [06:17:01][knn×shambhala_NBKass_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBKass_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_NBKass_QNBKass] [06:17:29][knn×shambhala_NBKass_QNBKass] S0 harmonized: 7174 samples × 11768 genes (28s)
+  [knn×shambhala_NBKass_QNBKass] [06:17:29][knn×shambhala_NBKass_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBKass_QNBKass] [06:17:30][knn×shambhala_NBKass_QNBKass] Annotations ready (0s).
+  [knn×shambhala_NBKass_QNBKass] [06:17:30][knn×shambhala_NBKass_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBKass_QNBKass] [06:17:35][knn×shambhala_NBKass_QNBKass]   r2_batch=0.582 r2_diag=0.233 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBGPL570_QNBKass] [06:17:39][knn×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [knn×shambhala_NBGPL570_QNBKass] [06:17:40][knn×shambhala_NBGPL570_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBKass_Q0std] [06:17:43][knn×shambhala_NBKass_Q0std]   Upload complete.
+  [knn×shambhala_NBKass_Q0std] [06:17:43][knn×shambhala_NBKass_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBGPL570_QNBKass] [06:17:44][knn×shambhala_NBGPL570_QNBKass]   r2_batch=0.464 r2_diag=0.104 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBKass_Q0std] [06:17:45][knn×shambhala_NBKass_Q0std]   Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [knn×shambhala_NBKass_Q0std] [06:17:49][knn×shambhala_NBKass_Q0std]   r2_batch=0.516 r2_diag=0.220 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBKass_Q0std] [06:18:42][knn×shambhala_NBKass_Q0std]   Upload complete.
+  [knn×shambhala_NBKass_Q0std] [06:18:42][knn×shambhala_NBKass_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBKass_Q0std] [06:18:46][knn×shambhala_NBKass_Q0std]   r2_batch=0.486 r2_diag=0.104 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBKass_QNBKass] [06:19:18][knn×shambhala_NBKass_QNBKass]   Upload complete.
+  [knn×shambhala_NBKass_QNBKass] [06:19:18][knn×shambhala_NBKass_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBKass_QNBKass] [06:19:20][knn×shambhala_NBKass_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_NBGPL570_QNBKass] [06:19:20][knn×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [knn×shambhala_NBGPL570_QNBKass] [06:19:20][knn×shambhala_NBGPL570_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBGPL570_QNBKass] [06:19:22][knn×shambhala_NBGPL570_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBKass_QNBKass] [06:19:27][knn×shambhala_NBKass_QNBKass]   r2_batch=0.552 r2_diag=0.230 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBGPL570_QNBKass] [06:19:29][knn×shambhala_NBGPL570_QNBKass]   r2_batch=0.458 r2_diag=0.110 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBKass_Q0std] [06:19:43][knn×shambhala_NBKass_Q0std]   Upload complete.
+  [knn×shambhala_NBKass_Q0std] [06:19:43][knn×shambhala_NBKass_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBKass_Q0std] [06:19:44][knn×shambhala_NBKass_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBKass_Q0std] [06:19:47][knn×shambhala_NBKass_Q0std]   r2_batch=0.486 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBKass_Q0std] [06:20:35][knn×shambhala_NBKass_Q0std]   Upload complete.
+  [knn×shambhala_NBKass_Q0std] [06:20:35][knn×shambhala_NBKass_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 254s
+  [26/54] knn×shambhala_NBKass_Q0std (256s) → ['ok', 'ok', 'ok'] ...
+[06:20:35] START knn×shambhala_NBRNAseq_Q0std | free=49.5GB
+  [knn×shambhala_NBRNAseq_Q0std] 2026-05-31 06:20:36,828 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBRNAseq_Q0std] [06:20:37][knn×shambhala_NBRNAseq_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBRNAseq_Q0std] [06:20:37][knn×shambhala_NBRNAseq_Q0std] Reuse path RAM pre-flight OK: 49.4 GB free.
+  [knn×shambhala_NBRNAseq_Q0std] [06:20:37][knn×shambhala_NBRNAseq_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBRNAseq_Q0std__post0.tsv.gz ...
+  [knn×shambhala_NBRNAseq_Q0std] [06:20:57][knn×shambhala_NBRNAseq_Q0std] S0 harmonized: 7174 samples × 8378 genes (20s)
+  [knn×shambhala_NBRNAseq_Q0std] [06:20:57][knn×shambhala_NBRNAseq_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBRNAseq_Q0std] [06:20:57][knn×shambhala_NBRNAseq_Q0std] Annotations ready (0s).
+  [knn×shambhala_NBRNAseq_Q0std] [06:20:57][knn×shambhala_NBRNAseq_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBGPL570_QNBKass] [06:20:59][knn×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [knn×shambhala_NBGPL570_QNBKass] [06:20:59][knn×shambhala_NBGPL570_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 449s
+[06:20:59] START knn×shambhala_NBRNAseq_QNBKass | free=49.8GB
+  [27/54] knn×shambhala_NBGPL570_QNBKass (451s) → ['ok', 'ok', 'ok'] ...
+  [knn×shambhala_NBRNAseq_QNBKass] 2026-05-31 06:21:01,274 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:01][knn×shambhala_NBRNAseq_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:01][knn×shambhala_NBRNAseq_QNBKass] Reuse path RAM pre-flight OK: 49.7 GB free.
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:01][knn×shambhala_NBRNAseq_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBRNAseq_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_NBRNAseq_Q0std] [06:21:02][knn×shambhala_NBRNAseq_Q0std]   r2_batch=0.496 r2_diag=0.224 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBKass_QNBKass] [06:21:10][knn×shambhala_NBKass_QNBKass]   Upload complete.
+  [knn×shambhala_NBKass_QNBKass] [06:21:10][knn×shambhala_NBKass_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBKass_QNBKass] [06:21:15][knn×shambhala_NBKass_QNBKass]   r2_batch=0.493 r2_diag=0.107 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:31][knn×shambhala_NBRNAseq_QNBKass] S0 harmonized: 7174 samples × 11768 genes (30s)
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:31][knn×shambhala_NBRNAseq_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:32][knn×shambhala_NBRNAseq_QNBKass] Annotations ready (0s).
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:32][knn×shambhala_NBRNAseq_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBRNAseq_QNBKass] [06:21:37][knn×shambhala_NBRNAseq_QNBKass]   r2_batch=0.565 r2_diag=0.233 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBRNAseq_Q0std] [06:22:01][knn×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [knn×shambhala_NBRNAseq_Q0std] [06:22:01][knn×shambhala_NBRNAseq_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBRNAseq_Q0std] [06:22:02][knn×shambhala_NBRNAseq_Q0std]   Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [knn×shambhala_NBRNAseq_Q0std] [06:22:07][knn×shambhala_NBRNAseq_Q0std]   r2_batch=0.499 r2_diag=0.223 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBKass_QNBKass] [06:22:53][knn×shambhala_NBKass_QNBKass]   Upload complete.
+  [knn×shambhala_NBKass_QNBKass] [06:22:53][knn×shambhala_NBKass_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBKass_QNBKass] [06:22:54][knn×shambhala_NBKass_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBKass_QNBKass] [06:22:59][knn×shambhala_NBKass_QNBKass]   r2_batch=0.493 r2_diag=0.114 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBRNAseq_Q0std] [06:23:03][knn×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [knn×shambhala_NBRNAseq_Q0std] [06:23:03][knn×shambhala_NBRNAseq_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBRNAseq_Q0std] [06:23:07][knn×shambhala_NBRNAseq_Q0std]   r2_batch=0.487 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBRNAseq_QNBKass] [06:23:20][knn×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [knn×shambhala_NBRNAseq_QNBKass] [06:23:20][knn×shambhala_NBRNAseq_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBRNAseq_QNBKass] [06:23:21][knn×shambhala_NBRNAseq_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_NBRNAseq_QNBKass] [06:23:26][knn×shambhala_NBRNAseq_QNBKass]   r2_batch=0.544 r2_diag=0.232 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBRNAseq_Q0std] [06:24:00][knn×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [knn×shambhala_NBRNAseq_Q0std] [06:24:00][knn×shambhala_NBRNAseq_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBRNAseq_Q0std] [06:24:01][knn×shambhala_NBRNAseq_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBRNAseq_Q0std] [06:24:05][knn×shambhala_NBRNAseq_Q0std]   r2_batch=0.487 r2_diag=0.111 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBKass_QNBKass] [06:24:37][knn×shambhala_NBKass_QNBKass]   Upload complete.
+  [knn×shambhala_NBKass_QNBKass] [06:24:37][knn×shambhala_NBKass_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 455s
+  [28/54] knn×shambhala_NBKass_QNBKass (457s) → ['ok', 'ok', 'ok'] ...
+[06:24:37] START knn×shambhala_NBext_Q0std | free=50.2GB
+  [knn×shambhala_NBext_Q0std] 2026-05-31 06:24:38,706 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBext_Q0std] [06:24:39][knn×shambhala_NBext_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBext_Q0std] [06:24:39][knn×shambhala_NBext_Q0std] Reuse path RAM pre-flight OK: 50.0 GB free.
+  [knn×shambhala_NBext_Q0std] [06:24:39][knn×shambhala_NBext_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBext_Q0std__post0.tsv.gz ...
+  [knn×shambhala_NBRNAseq_Q0std] [06:24:54][knn×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [knn×shambhala_NBRNAseq_Q0std] [06:24:55][knn×shambhala_NBRNAseq_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 258s
+  [29/54] knn×shambhala_NBRNAseq_Q0std (260s) → ['ok', 'ok', 'ok'] ...
+[06:24:55] START knn×shambhala_NBext_QNBKass | free=50.5GB
+  [knn×shambhala_NBext_QNBKass] 2026-05-31 06:24:56,446 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_NBext_QNBKass] [06:24:56][knn×shambhala_NBext_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_NBext_QNBKass] [06:24:56][knn×shambhala_NBext_QNBKass] Reuse path RAM pre-flight OK: 50.2 GB free.
+  [knn×shambhala_NBext_QNBKass] [06:24:56][knn×shambhala_NBext_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_NBext_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_NBext_Q0std] [06:24:59][knn×shambhala_NBext_Q0std] S0 harmonized: 7174 samples × 8378 genes (21s)
+  [knn×shambhala_NBext_Q0std] [06:24:59][knn×shambhala_NBext_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBext_Q0std] [06:25:00][knn×shambhala_NBext_Q0std] Annotations ready (0s).
+  [knn×shambhala_NBext_Q0std] [06:25:00][knn×shambhala_NBext_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBext_Q0std] [06:25:05][knn×shambhala_NBext_Q0std]   r2_batch=0.530 r2_diag=0.243 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBRNAseq_QNBKass] [06:25:08][knn×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [knn×shambhala_NBRNAseq_QNBKass] [06:25:08][knn×shambhala_NBRNAseq_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBRNAseq_QNBKass] [06:25:13][knn×shambhala_NBRNAseq_QNBKass]   r2_batch=0.500 r2_diag=0.107 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBext_QNBKass] [06:25:28][knn×shambhala_NBext_QNBKass] S0 harmonized: 7174 samples × 11768 genes (32s)
+  [knn×shambhala_NBext_QNBKass] [06:25:28][knn×shambhala_NBext_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_NBext_QNBKass] [06:25:29][knn×shambhala_NBext_QNBKass] Annotations ready (0s).
+  [knn×shambhala_NBext_QNBKass] [06:25:29][knn×shambhala_NBext_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_NBext_QNBKass] [06:25:34][knn×shambhala_NBext_QNBKass]   r2_batch=0.557 r2_diag=0.248 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBext_Q0std] [06:26:03][knn×shambhala_NBext_Q0std]   Upload complete.
+  [knn×shambhala_NBext_Q0std] [06:26:04][knn×shambhala_NBext_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBext_Q0std] [06:26:05][knn×shambhala_NBext_Q0std]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_NBext_Q0std] [06:26:09][knn×shambhala_NBext_Q0std]   r2_batch=0.516 r2_diag=0.244 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBRNAseq_QNBKass] [06:26:49][knn×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [knn×shambhala_NBRNAseq_QNBKass] [06:26:49][knn×shambhala_NBRNAseq_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBRNAseq_QNBKass] [06:26:50][knn×shambhala_NBRNAseq_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBRNAseq_QNBKass] [06:26:55][knn×shambhala_NBRNAseq_QNBKass]   r2_batch=0.499 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBext_Q0std] [06:27:04][knn×shambhala_NBext_Q0std]   Upload complete.
+  [knn×shambhala_NBext_Q0std] [06:27:05][knn×shambhala_NBext_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBext_Q0std] [06:27:09][knn×shambhala_NBext_Q0std]   r2_batch=0.485 r2_diag=0.109 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_NBext_QNBKass] [06:27:17][knn×shambhala_NBext_QNBKass]   Upload complete.
+  [knn×shambhala_NBext_QNBKass] [06:27:18][knn×shambhala_NBext_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_NBext_QNBKass] [06:27:19][knn×shambhala_NBext_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_NBext_QNBKass] [06:27:24][knn×shambhala_NBext_QNBKass]   r2_batch=0.546 r2_diag=0.252 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBext_Q0std] [06:28:02][knn×shambhala_NBext_Q0std]   Upload complete.
+  [knn×shambhala_NBext_Q0std] [06:28:02][knn×shambhala_NBext_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBext_Q0std] [06:28:03][knn×shambhala_NBext_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_NBext_Q0std] [06:28:08][knn×shambhala_NBext_Q0std]   r2_batch=0.485 r2_diag=0.117 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBRNAseq_QNBKass] [06:28:29][knn×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [knn×shambhala_NBRNAseq_QNBKass] [06:28:29][knn×shambhala_NBRNAseq_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 447s
+  [30/54] knn×shambhala_NBRNAseq_QNBKass (450s) → ['ok', 'ok', 'ok'] ...
+[06:28:29] START knn×shambhala_Oncobox_Q0std | free=50.3GB
+  [knn×shambhala_Oncobox_Q0std] 2026-05-31 06:28:30,765 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_Oncobox_Q0std] [06:28:31][knn×shambhala_Oncobox_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_Oncobox_Q0std] [06:28:31][knn×shambhala_Oncobox_Q0std] Reuse path RAM pre-flight OK: 50.1 GB free.
+  [knn×shambhala_Oncobox_Q0std] [06:28:31][knn×shambhala_Oncobox_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_Oncobox_Q0std__post0.tsv.gz ...
+  [knn×shambhala_Oncobox_Q0std] [06:28:50][knn×shambhala_Oncobox_Q0std] S0 harmonized: 7174 samples × 8237 genes (19s)
+  [knn×shambhala_Oncobox_Q0std] [06:28:50][knn×shambhala_Oncobox_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_Oncobox_Q0std] [06:28:50][knn×shambhala_Oncobox_Q0std] Annotations ready (0s).
+  [knn×shambhala_Oncobox_Q0std] [06:28:50][knn×shambhala_Oncobox_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_Oncobox_Q0std] [06:28:55][knn×shambhala_Oncobox_Q0std]   r2_batch=0.600 r2_diag=0.230 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_NBext_Q0std] [06:28:58][knn×shambhala_NBext_Q0std]   Upload complete.
+  [knn×shambhala_NBext_Q0std] [06:28:58][knn×shambhala_NBext_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 259s
+  [31/54] knn×shambhala_NBext_Q0std (261s) → ['ok', 'ok', 'ok'] ...
+[06:28:59] START knn×shambhala_Oncobox_QNBKass | free=50.3GB
+  [knn×shambhala_Oncobox_QNBKass] 2026-05-31 06:29:00,163 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_Oncobox_QNBKass] [06:29:00][knn×shambhala_Oncobox_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_Oncobox_QNBKass] [06:29:00][knn×shambhala_Oncobox_QNBKass] Reuse path RAM pre-flight OK: 50.1 GB free.
+  [knn×shambhala_Oncobox_QNBKass] [06:29:00][knn×shambhala_Oncobox_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_Oncobox_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_NBext_QNBKass] [06:29:05][knn×shambhala_NBext_QNBKass]   Upload complete.
+  [knn×shambhala_NBext_QNBKass] [06:29:05][knn×shambhala_NBext_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBext_QNBKass] [06:29:09][knn×shambhala_NBext_QNBKass]   r2_batch=0.483 r2_diag=0.107 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_Oncobox_QNBKass] [06:29:29][knn×shambhala_Oncobox_QNBKass] S0 harmonized: 7174 samples × 11591 genes (29s)
+  [knn×shambhala_Oncobox_QNBKass] [06:29:29][knn×shambhala_Oncobox_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_Oncobox_QNBKass] [06:29:30][knn×shambhala_Oncobox_QNBKass] Annotations ready (0s).
+  [knn×shambhala_Oncobox_QNBKass] [06:29:30][knn×shambhala_Oncobox_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_Oncobox_QNBKass] [06:29:35][knn×shambhala_Oncobox_QNBKass]   r2_batch=0.608 r2_diag=0.216 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_Oncobox_Q0std] [06:29:52][knn×shambhala_Oncobox_Q0std]   Upload complete.
+  [knn×shambhala_Oncobox_Q0std] [06:29:52][knn×shambhala_Oncobox_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_Oncobox_Q0std] [06:29:53][knn×shambhala_Oncobox_Q0std]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_Oncobox_Q0std] [06:29:57][knn×shambhala_Oncobox_Q0std]   r2_batch=0.595 r2_diag=0.231 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_NBext_QNBKass] [06:30:45][knn×shambhala_NBext_QNBKass]   Upload complete.
+  [knn×shambhala_NBext_QNBKass] [06:30:45][knn×shambhala_NBext_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_NBext_QNBKass] [06:30:46][knn×shambhala_NBext_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_Oncobox_Q0std] [06:30:50][knn×shambhala_Oncobox_Q0std]   Upload complete.
+  [knn×shambhala_Oncobox_Q0std] [06:30:50][knn×shambhala_Oncobox_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_NBext_QNBKass] [06:30:51][knn×shambhala_NBext_QNBKass]   r2_batch=0.480 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_Oncobox_Q0std] [06:30:55][knn×shambhala_Oncobox_Q0std]   r2_batch=0.466 r2_diag=0.106 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_Oncobox_QNBKass] [06:31:16][knn×shambhala_Oncobox_QNBKass]   Upload complete.
+  [knn×shambhala_Oncobox_QNBKass] [06:31:16][knn×shambhala_Oncobox_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_Oncobox_QNBKass] [06:31:17][knn×shambhala_Oncobox_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_Oncobox_QNBKass] [06:31:22][knn×shambhala_Oncobox_QNBKass]   r2_batch=0.604 r2_diag=0.216 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_Oncobox_Q0std] [06:31:47][knn×shambhala_Oncobox_Q0std]   Upload complete.
+  [knn×shambhala_Oncobox_Q0std] [06:31:47][knn×shambhala_Oncobox_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_Oncobox_Q0std] [06:31:48][knn×shambhala_Oncobox_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_Oncobox_Q0std] [06:31:53][knn×shambhala_Oncobox_Q0std]   r2_batch=0.463 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_NBext_QNBKass] [06:32:24][knn×shambhala_NBext_QNBKass]   Upload complete.
+  [knn×shambhala_NBext_QNBKass] [06:32:24][knn×shambhala_NBext_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 447s
+  [32/54] knn×shambhala_NBext_QNBKass (450s) → ['ok', 'ok', 'ok'] ...
+[06:32:24] START knn×shambhala_P0std_Q0std | free=50.2GB
+  [knn×shambhala_P0std_Q0std] 2026-05-31 06:32:26,032 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_P0std_Q0std] [06:32:26][knn×shambhala_P0std_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_P0std_Q0std] [06:32:26][knn×shambhala_P0std_Q0std] Reuse path RAM pre-flight OK: 50.1 GB free.
+  [knn×shambhala_P0std_Q0std] [06:32:26][knn×shambhala_P0std_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_P0std_Q0std__post0.tsv.gz ...
+  [knn×shambhala_Oncobox_Q0std] [06:32:43][knn×shambhala_Oncobox_Q0std]   Upload complete.
+  [knn×shambhala_Oncobox_Q0std] [06:32:43][knn×shambhala_Oncobox_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 252s
+  [33/54] knn×shambhala_Oncobox_Q0std (254s) → ['ok', 'ok', 'ok'] ...
+[06:32:43] START knn×shambhala_P0std_QNBKass | free=50.6GB
+  [knn×shambhala_P0std_Q0std] [06:32:44][knn×shambhala_P0std_Q0std] S0 harmonized: 7174 samples × 7751 genes (18s)
+  [knn×shambhala_P0std_Q0std] [06:32:44][knn×shambhala_P0std_Q0std] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_P0std_Q0std] [06:32:45][knn×shambhala_P0std_Q0std] Annotations ready (0s).
+  [knn×shambhala_P0std_QNBKass] 2026-05-31 06:32:45,171 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [knn×shambhala_P0std_Q0std] [06:32:45][knn×shambhala_P0std_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_P0std_QNBKass] [06:32:45][knn×shambhala_P0std_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [knn×shambhala_P0std_QNBKass] [06:32:45][knn×shambhala_P0std_QNBKass] Reuse path RAM pre-flight OK: 50.0 GB free.
+  [knn×shambhala_P0std_QNBKass] [06:32:45][knn×shambhala_P0std_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__knn__shambhala_P0std_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_P0std_Q0std] [06:32:50][knn×shambhala_P0std_Q0std]   r2_batch=0.587 r2_diag=0.220 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_Oncobox_QNBKass] [06:33:05][knn×shambhala_Oncobox_QNBKass]   Upload complete.
+  [knn×shambhala_Oncobox_QNBKass] [06:33:05][knn×shambhala_Oncobox_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_Oncobox_QNBKass] [06:33:11][knn×shambhala_Oncobox_QNBKass]   r2_batch=0.481 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_P0std_QNBKass] [06:33:15][knn×shambhala_P0std_QNBKass] S0 harmonized: 7174 samples × 10664 genes (30s)
+  [knn×shambhala_P0std_QNBKass] [06:33:15][knn×shambhala_P0std_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [knn×shambhala_P0std_QNBKass] [06:33:16][knn×shambhala_P0std_QNBKass] Annotations ready (0s).
+  [knn×shambhala_P0std_QNBKass] [06:33:16][knn×shambhala_P0std_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [knn×shambhala_P0std_QNBKass] [06:33:21][knn×shambhala_P0std_QNBKass]   r2_batch=0.577 r2_diag=0.214 — uploading J_ff_only×post_rm=False ...
+  [knn×shambhala_P0std_Q0std] [06:33:46][knn×shambhala_P0std_Q0std]   Upload complete.
+  [knn×shambhala_P0std_Q0std] [06:33:46][knn×shambhala_P0std_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_P0std_Q0std] [06:33:47][knn×shambhala_P0std_Q0std]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_P0std_Q0std] [06:33:51][knn×shambhala_P0std_Q0std]   r2_batch=0.569 r2_diag=0.221 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_P0std_Q0std] [06:34:39][knn×shambhala_P0std_Q0std]   Upload complete.
+  [knn×shambhala_P0std_Q0std] [06:34:39][knn×shambhala_P0std_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_P0std_Q0std] [06:34:43][knn×shambhala_P0std_Q0std]   r2_batch=0.511 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [knn×shambhala_Oncobox_QNBKass] [06:34:51][knn×shambhala_Oncobox_QNBKass]   Upload complete.
+  [knn×shambhala_Oncobox_QNBKass] [06:34:51][knn×shambhala_Oncobox_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_Oncobox_QNBKass] [06:34:53][knn×shambhala_Oncobox_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_P0std_QNBKass] [06:34:54][knn×shambhala_P0std_QNBKass]   Upload complete.
+  [knn×shambhala_P0std_QNBKass] [06:34:54][knn×shambhala_P0std_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [knn×shambhala_P0std_QNBKass] [06:34:56][knn×shambhala_P0std_QNBKass]   Removing 1 outlier batch(es): ['GPL17077_FF_Unknown']
+  [knn×shambhala_Oncobox_QNBKass] [06:34:59][knn×shambhala_Oncobox_QNBKass]   r2_batch=0.471 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_P0std_QNBKass] [06:35:02][knn×shambhala_P0std_QNBKass]   r2_batch=0.555 r2_diag=0.210 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_P0std_Q0std] [06:35:33][knn×shambhala_P0std_Q0std]   Upload complete.
+  [knn×shambhala_P0std_Q0std] [06:35:33][knn×shambhala_P0std_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_P0std_Q0std] [06:35:35][knn×shambhala_P0std_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_P0std_Q0std] [06:35:38][knn×shambhala_P0std_Q0std]   r2_batch=0.459 r2_diag=0.107 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_P0std_Q0std] [06:36:22][knn×shambhala_P0std_Q0std]   Upload complete.
+  [knn×shambhala_P0std_Q0std] [06:36:23][knn×shambhala_P0std_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 236s
+  [34/54] knn×shambhala_P0std_Q0std (238s) → ['ok', 'ok', 'ok'] ...
+[06:36:23] START softimpute×shambhala_ANTE_Q0std | free=49.5GB
+  [softimpute×shambhala_ANTE_Q0std] 2026-05-31 06:36:24,391 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_ANTE_Q0std] [06:36:25][softimpute×shambhala_ANTE_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_ANTE_Q0std] [06:36:25][softimpute×shambhala_ANTE_Q0std] Reuse path RAM pre-flight OK: 49.3 GB free.
+  [softimpute×shambhala_ANTE_Q0std] [06:36:25][softimpute×shambhala_ANTE_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_ANTE_Q0std__post0.tsv.gz ...
+  [knn×shambhala_Oncobox_QNBKass] [06:36:28][knn×shambhala_Oncobox_QNBKass]   Upload complete.
+  [knn×shambhala_Oncobox_QNBKass] [06:36:28][knn×shambhala_Oncobox_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 448s
+  [35/54] knn×shambhala_Oncobox_QNBKass (450s) → ['ok', 'ok', 'ok'] ...
+[06:36:28] START softimpute×shambhala_ANTE_QNBKass | free=51.1GB
+  [softimpute×shambhala_ANTE_QNBKass] 2026-05-31 06:36:29,934 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_ANTE_QNBKass] [06:36:30][softimpute×shambhala_ANTE_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_ANTE_QNBKass] [06:36:30][softimpute×shambhala_ANTE_QNBKass] Reuse path RAM pre-flight OK: 50.9 GB free.
+  [softimpute×shambhala_ANTE_QNBKass] [06:36:30][softimpute×shambhala_ANTE_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_ANTE_QNBKass__post0.tsv.gz ...
+  [knn×shambhala_P0std_QNBKass] [06:36:33][knn×shambhala_P0std_QNBKass]   Upload complete.
+  [knn×shambhala_P0std_QNBKass] [06:36:33][knn×shambhala_P0std_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [knn×shambhala_P0std_QNBKass] [06:36:38][knn×shambhala_P0std_QNBKass]   r2_batch=0.490 r2_diag=0.094 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_ANTE_Q0std] [06:36:47][softimpute×shambhala_ANTE_Q0std] S0 harmonized: 7174 samples × 8237 genes (23s)
+  [softimpute×shambhala_ANTE_Q0std] [06:36:47][softimpute×shambhala_ANTE_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_ANTE_Q0std] [06:36:48][softimpute×shambhala_ANTE_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_ANTE_Q0std] [06:36:48][softimpute×shambhala_ANTE_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_ANTE_Q0std] [06:36:52][softimpute×shambhala_ANTE_Q0std]   r2_batch=0.605 r2_diag=0.228 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_ANTE_QNBKass] [06:37:02][softimpute×shambhala_ANTE_QNBKass] S0 harmonized: 7174 samples × 11591 genes (32s)
+  [softimpute×shambhala_ANTE_QNBKass] [06:37:02][softimpute×shambhala_ANTE_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_ANTE_QNBKass] [06:37:02][softimpute×shambhala_ANTE_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_ANTE_QNBKass] [06:37:02][softimpute×shambhala_ANTE_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_ANTE_QNBKass] [06:37:08][softimpute×shambhala_ANTE_QNBKass]   r2_batch=0.610 r2_diag=0.218 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_ANTE_Q0std] [06:37:42][softimpute×shambhala_ANTE_Q0std]   Upload complete.
+  [softimpute×shambhala_ANTE_Q0std] [06:37:42][softimpute×shambhala_ANTE_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_ANTE_Q0std] [06:37:43][softimpute×shambhala_ANTE_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_ANTE_Q0std] [06:37:48][softimpute×shambhala_ANTE_Q0std]   r2_batch=0.604 r2_diag=0.228 — uploading J_ff_only×post_rm=True ...
+  [knn×shambhala_P0std_QNBKass] [06:38:07][knn×shambhala_P0std_QNBKass]   Upload complete.
+  [knn×shambhala_P0std_QNBKass] [06:38:08][knn×shambhala_P0std_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [knn×shambhala_P0std_QNBKass] [06:38:09][knn×shambhala_P0std_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [knn×shambhala_P0std_QNBKass] [06:38:13][knn×shambhala_P0std_QNBKass]   r2_batch=0.487 r2_diag=0.100 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_ANTE_Q0std] [06:38:38][softimpute×shambhala_ANTE_Q0std]   Upload complete.
+  [softimpute×shambhala_ANTE_Q0std] [06:38:38][softimpute×shambhala_ANTE_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_ANTE_Q0std] [06:38:42][softimpute×shambhala_ANTE_Q0std]   r2_batch=0.508 r2_diag=0.106 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_ANTE_QNBKass] [06:38:45][softimpute×shambhala_ANTE_QNBKass]   Upload complete.
+  [softimpute×shambhala_ANTE_QNBKass] [06:38:46][softimpute×shambhala_ANTE_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_ANTE_QNBKass] [06:38:47][softimpute×shambhala_ANTE_QNBKass]   Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [softimpute×shambhala_ANTE_QNBKass] [06:38:52][softimpute×shambhala_ANTE_QNBKass]   r2_batch=0.603 r2_diag=0.217 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_ANTE_Q0std] [06:39:30][softimpute×shambhala_ANTE_Q0std]   Upload complete.
+  [softimpute×shambhala_ANTE_Q0std] [06:39:30][softimpute×shambhala_ANTE_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_ANTE_Q0std] [06:39:31][softimpute×shambhala_ANTE_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_ANTE_Q0std] [06:39:36][softimpute×shambhala_ANTE_Q0std]   r2_batch=0.471 r2_diag=0.111 — uploading K_ffpe_only×post_rm=True ...
+  [knn×shambhala_P0std_QNBKass] [06:39:37][knn×shambhala_P0std_QNBKass]   Upload complete.
+  [knn×shambhala_P0std_QNBKass] [06:39:38][knn×shambhala_P0std_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 412s
+  [36/54] knn×shambhala_P0std_QNBKass (414s) → ['ok', 'ok', 'ok'] ...
+[06:39:38] START softimpute×shambhala_GTExAffy_Q0std | free=50.0GB
+  [softimpute×shambhala_GTExAffy_Q0std] 2026-05-31 06:39:39,450 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_GTExAffy_Q0std] [06:39:40][softimpute×shambhala_GTExAffy_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_GTExAffy_Q0std] [06:39:40][softimpute×shambhala_GTExAffy_Q0std] Reuse path RAM pre-flight OK: 49.8 GB free.
+  [softimpute×shambhala_GTExAffy_Q0std] [06:39:40][softimpute×shambhala_GTExAffy_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_GTExAffy_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_GTExAffy_Q0std] [06:39:59][softimpute×shambhala_GTExAffy_Q0std] S0 harmonized: 7174 samples × 8370 genes (20s)
+  [softimpute×shambhala_GTExAffy_Q0std] [06:39:59][softimpute×shambhala_GTExAffy_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_GTExAffy_Q0std] [06:40:00][softimpute×shambhala_GTExAffy_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_GTExAffy_Q0std] [06:40:00][softimpute×shambhala_GTExAffy_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_GTExAffy_Q0std] [06:40:05][softimpute×shambhala_GTExAffy_Q0std]   r2_batch=0.609 r2_diag=0.224 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_ANTE_Q0std] [06:40:22][softimpute×shambhala_ANTE_Q0std]   Upload complete.
+  [softimpute×shambhala_ANTE_Q0std] [06:40:22][softimpute×shambhala_ANTE_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 238s
+  [37/54] softimpute×shambhala_ANTE_Q0std (240s) → ['ok', 'ok', 'ok'] ...
+[06:40:23] START softimpute×shambhala_GTExAffy_QNBKass | free=49.8GB
+  [softimpute×shambhala_GTExAffy_QNBKass] 2026-05-31 06:40:24,182 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:40:24][softimpute×shambhala_GTExAffy_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:40:24][softimpute×shambhala_GTExAffy_QNBKass] Reuse path RAM pre-flight OK: 49.7 GB free.
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:40:24][softimpute×shambhala_GTExAffy_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_GTExAffy_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_ANTE_QNBKass] [06:40:27][softimpute×shambhala_ANTE_QNBKass]   Upload complete.
+  [softimpute×shambhala_ANTE_QNBKass] [06:40:27][softimpute×shambhala_ANTE_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_ANTE_QNBKass] [06:40:33][softimpute×shambhala_ANTE_QNBKass]   r2_batch=0.565 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:40:55][softimpute×shambhala_GTExAffy_QNBKass] S0 harmonized: 7174 samples × 11596 genes (30s)
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:40:55][softimpute×shambhala_GTExAffy_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:40:55][softimpute×shambhala_GTExAffy_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:40:55][softimpute×shambhala_GTExAffy_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_GTExAffy_Q0std] [06:40:58][softimpute×shambhala_GTExAffy_Q0std]   Upload complete.
+  [softimpute×shambhala_GTExAffy_Q0std] [06:40:58][softimpute×shambhala_GTExAffy_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_GTExAffy_Q0std] [06:41:00][softimpute×shambhala_GTExAffy_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:41:01][softimpute×shambhala_GTExAffy_QNBKass]   r2_batch=0.623 r2_diag=0.219 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_GTExAffy_Q0std] [06:41:05][softimpute×shambhala_GTExAffy_Q0std]   r2_batch=0.607 r2_diag=0.224 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_GTExAffy_Q0std] [06:41:54][softimpute×shambhala_GTExAffy_Q0std]   Upload complete.
+  [softimpute×shambhala_GTExAffy_Q0std] [06:41:54][softimpute×shambhala_GTExAffy_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_GTExAffy_Q0std] [06:41:59][softimpute×shambhala_GTExAffy_Q0std]   r2_batch=0.537 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_ANTE_QNBKass] [06:42:05][softimpute×shambhala_ANTE_QNBKass]   Upload complete.
+  [softimpute×shambhala_ANTE_QNBKass] [06:42:05][softimpute×shambhala_ANTE_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_ANTE_QNBKass] [06:42:07][softimpute×shambhala_ANTE_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_ANTE_QNBKass] [06:42:13][softimpute×shambhala_ANTE_QNBKass]   r2_batch=0.490 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:42:38][softimpute×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:42:38][softimpute×shambhala_GTExAffy_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:42:39][softimpute×shambhala_GTExAffy_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:42:45][softimpute×shambhala_GTExAffy_QNBKass]   r2_batch=0.621 r2_diag=0.219 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_GTExAffy_Q0std] [06:42:52][softimpute×shambhala_GTExAffy_Q0std]   Upload complete.
+  [softimpute×shambhala_GTExAffy_Q0std] [06:42:52][softimpute×shambhala_GTExAffy_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_GTExAffy_Q0std] [06:42:53][softimpute×shambhala_GTExAffy_Q0std]   Removing 1 outlier batch(es): ['GPL14951_FFPE_Unknown']
+  [softimpute×shambhala_GTExAffy_Q0std] [06:42:57][softimpute×shambhala_GTExAffy_Q0std]   r2_batch=0.496 r2_diag=0.116 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_GTExAffy_Q0std] [06:43:33][softimpute×shambhala_GTExAffy_Q0std]   Upload complete.
+  [softimpute×shambhala_GTExAffy_Q0std] [06:43:33][softimpute×shambhala_GTExAffy_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 233s
+  [38/54] softimpute×shambhala_GTExAffy_Q0std (235s) → ['ok', 'ok', 'ok'] ...
+[06:43:33] START softimpute×shambhala_NBBags_Q0std | free=49.3GB
+  [softimpute×shambhala_NBBags_Q0std] 2026-05-31 06:43:34,609 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBBags_Q0std] [06:43:35][softimpute×shambhala_NBBags_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBBags_Q0std] [06:43:35][softimpute×shambhala_NBBags_Q0std] Reuse path RAM pre-flight OK: 49.1 GB free.
+  [softimpute×shambhala_NBBags_Q0std] [06:43:35][softimpute×shambhala_NBBags_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBBags_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_ANTE_QNBKass] [06:43:42][softimpute×shambhala_ANTE_QNBKass]   Upload complete.
+  [softimpute×shambhala_ANTE_QNBKass] [06:43:42][softimpute×shambhala_ANTE_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 432s
+  [39/54] softimpute×shambhala_ANTE_QNBKass (434s) → ['ok', 'ok', 'ok'] ...
+[06:43:42] START softimpute×shambhala_NBBags_QNBKass | free=50.6GB
+  [softimpute×shambhala_NBBags_QNBKass] 2026-05-31 06:43:43,619 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBBags_QNBKass] [06:43:44][softimpute×shambhala_NBBags_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBBags_QNBKass] [06:43:44][softimpute×shambhala_NBBags_QNBKass] Reuse path RAM pre-flight OK: 50.4 GB free.
+  [softimpute×shambhala_NBBags_QNBKass] [06:43:44][softimpute×shambhala_NBBags_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBBags_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_NBBags_Q0std] [06:43:56][softimpute×shambhala_NBBags_Q0std] S0 harmonized: 7174 samples × 8378 genes (21s)
+  [softimpute×shambhala_NBBags_Q0std] [06:43:56][softimpute×shambhala_NBBags_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBBags_Q0std] [06:43:56][softimpute×shambhala_NBBags_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_NBBags_Q0std] [06:43:56][softimpute×shambhala_NBBags_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBBags_Q0std] [06:44:01][softimpute×shambhala_NBBags_Q0std]   r2_batch=0.512 r2_diag=0.244 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBBags_QNBKass] [06:44:14][softimpute×shambhala_NBBags_QNBKass] S0 harmonized: 7174 samples × 11768 genes (30s)
+  [softimpute×shambhala_NBBags_QNBKass] [06:44:14][softimpute×shambhala_NBBags_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBBags_QNBKass] [06:44:14][softimpute×shambhala_NBBags_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_NBBags_QNBKass] [06:44:15][softimpute×shambhala_NBBags_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBBags_QNBKass] [06:44:20][softimpute×shambhala_NBBags_QNBKass]   r2_batch=0.529 r2_diag=0.249 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:44:21][softimpute×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:44:21][softimpute×shambhala_GTExAffy_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:44:26][softimpute×shambhala_GTExAffy_QNBKass]   r2_batch=0.558 r2_diag=0.096 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBBags_Q0std] [06:44:55][softimpute×shambhala_NBBags_Q0std]   Upload complete.
+  [softimpute×shambhala_NBBags_Q0std] [06:44:55][softimpute×shambhala_NBBags_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBBags_Q0std] [06:44:56][softimpute×shambhala_NBBags_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBBags_Q0std] [06:45:01][softimpute×shambhala_NBBags_Q0std]   r2_batch=0.508 r2_diag=0.243 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBBags_Q0std] [06:45:51][softimpute×shambhala_NBBags_Q0std]   Upload complete.
+  [softimpute×shambhala_NBBags_Q0std] [06:45:51][softimpute×shambhala_NBBags_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBBags_Q0std] [06:45:56][softimpute×shambhala_NBBags_Q0std]   r2_batch=0.489 r2_diag=0.105 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:45:58][softimpute×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:45:58][softimpute×shambhala_GTExAffy_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBBags_QNBKass] [06:45:59][softimpute×shambhala_NBBags_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBBags_QNBKass] [06:45:59][softimpute×shambhala_NBBags_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:46:00][softimpute×shambhala_GTExAffy_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBBags_QNBKass] [06:46:01][softimpute×shambhala_NBBags_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:46:08][softimpute×shambhala_GTExAffy_QNBKass]   r2_batch=0.487 r2_diag=0.104 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBBags_QNBKass] [06:46:09][softimpute×shambhala_NBBags_QNBKass]   r2_batch=0.527 r2_diag=0.249 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBBags_Q0std] [06:46:54][softimpute×shambhala_NBBags_Q0std]   Upload complete.
+  [softimpute×shambhala_NBBags_Q0std] [06:46:54][softimpute×shambhala_NBBags_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBBags_Q0std] [06:46:55][softimpute×shambhala_NBBags_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBBags_Q0std] [06:47:00][softimpute×shambhala_NBBags_Q0std]   r2_batch=0.488 r2_diag=0.117 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:47:32][softimpute×shambhala_GTExAffy_QNBKass]   Upload complete.
+  [softimpute×shambhala_GTExAffy_QNBKass] [06:47:32][softimpute×shambhala_GTExAffy_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 428s
+  [40/54] softimpute×shambhala_GTExAffy_QNBKass (430s) → ['ok', 'ok', 'ok'] ...
+[06:47:33] START softimpute×shambhala_NBGPL570_Q0std | free=49.7GB
+  [softimpute×shambhala_NBGPL570_Q0std] 2026-05-31 06:47:34,246 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBGPL570_Q0std] [06:47:34][softimpute×shambhala_NBGPL570_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBGPL570_Q0std] [06:47:34][softimpute×shambhala_NBGPL570_Q0std] Reuse path RAM pre-flight OK: 49.6 GB free.
+  [softimpute×shambhala_NBGPL570_Q0std] [06:47:34][softimpute×shambhala_NBGPL570_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBGPL570_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_NBBags_QNBKass] [06:47:43][softimpute×shambhala_NBBags_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBBags_QNBKass] [06:47:43][softimpute×shambhala_NBBags_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBBags_QNBKass] [06:47:48][softimpute×shambhala_NBBags_QNBKass]   r2_batch=0.487 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBBags_Q0std] [06:47:49][softimpute×shambhala_NBBags_Q0std]   Upload complete.
+  [softimpute×shambhala_NBBags_Q0std] [06:47:50][softimpute×shambhala_NBBags_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 255s
+  [41/54] softimpute×shambhala_NBBags_Q0std (257s) → ['ok', 'ok', 'ok'] ...
+[06:47:50] START softimpute×shambhala_NBGPL570_QNBKass | free=50.5GB
+  [softimpute×shambhala_NBGPL570_QNBKass] 2026-05-31 06:47:51,461 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:47:52][softimpute×shambhala_NBGPL570_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:47:52][softimpute×shambhala_NBGPL570_QNBKass] Reuse path RAM pre-flight OK: 50.3 GB free.
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:47:52][softimpute×shambhala_NBGPL570_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBGPL570_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_NBGPL570_Q0std] [06:47:58][softimpute×shambhala_NBGPL570_Q0std] S0 harmonized: 7174 samples × 8378 genes (24s)
+  [softimpute×shambhala_NBGPL570_Q0std] [06:47:58][softimpute×shambhala_NBGPL570_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBGPL570_Q0std] [06:47:59][softimpute×shambhala_NBGPL570_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_NBGPL570_Q0std] [06:47:59][softimpute×shambhala_NBGPL570_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBGPL570_Q0std] [06:48:03][softimpute×shambhala_NBGPL570_Q0std]   r2_batch=0.547 r2_diag=0.255 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:48:22][softimpute×shambhala_NBGPL570_QNBKass] S0 harmonized: 7174 samples × 11768 genes (30s)
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:48:22][softimpute×shambhala_NBGPL570_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:48:22][softimpute×shambhala_NBGPL570_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:48:22][softimpute×shambhala_NBGPL570_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:48:28][softimpute×shambhala_NBGPL570_QNBKass]   r2_batch=0.551 r2_diag=0.247 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBGPL570_Q0std] [06:48:56][softimpute×shambhala_NBGPL570_Q0std]   Upload complete.
+  [softimpute×shambhala_NBGPL570_Q0std] [06:48:56][softimpute×shambhala_NBGPL570_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBGPL570_Q0std] [06:48:58][softimpute×shambhala_NBGPL570_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBGPL570_Q0std] [06:49:02][softimpute×shambhala_NBGPL570_Q0std]   r2_batch=0.547 r2_diag=0.256 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBBags_QNBKass] [06:49:23][softimpute×shambhala_NBBags_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBBags_QNBKass] [06:49:23][softimpute×shambhala_NBBags_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBBags_QNBKass] [06:49:25][softimpute×shambhala_NBBags_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBBags_QNBKass] [06:49:30][softimpute×shambhala_NBBags_QNBKass]   r2_batch=0.487 r2_diag=0.116 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBGPL570_Q0std] [06:49:55][softimpute×shambhala_NBGPL570_Q0std]   Upload complete.
+  [softimpute×shambhala_NBGPL570_Q0std] [06:49:56][softimpute×shambhala_NBGPL570_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBGPL570_Q0std] [06:50:00][softimpute×shambhala_NBGPL570_Q0std]   r2_batch=0.508 r2_diag=0.109 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:50:09][softimpute×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:50:10][softimpute×shambhala_NBGPL570_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:50:11][softimpute×shambhala_NBGPL570_QNBKass]   Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:50:18][softimpute×shambhala_NBGPL570_QNBKass]   r2_batch=0.544 r2_diag=0.246 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBGPL570_Q0std] [06:50:52][softimpute×shambhala_NBGPL570_Q0std]   Upload complete.
+  [softimpute×shambhala_NBGPL570_Q0std] [06:50:52][softimpute×shambhala_NBGPL570_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBGPL570_Q0std] [06:50:53][softimpute×shambhala_NBGPL570_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBGPL570_Q0std] [06:50:58][softimpute×shambhala_NBGPL570_Q0std]   r2_batch=0.482 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBBags_QNBKass] [06:51:01][softimpute×shambhala_NBBags_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBBags_QNBKass] [06:51:01][softimpute×shambhala_NBBags_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 437s
+  [42/54] softimpute×shambhala_NBBags_QNBKass (439s) → ['ok', 'ok', 'ok'] ...
+[06:51:01] START softimpute×shambhala_NBKass_Q0std | free=50.0GB
+  [softimpute×shambhala_NBKass_Q0std] 2026-05-31 06:51:02,818 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBKass_Q0std] [06:51:03][softimpute×shambhala_NBKass_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBKass_Q0std] [06:51:03][softimpute×shambhala_NBKass_Q0std] Reuse path RAM pre-flight OK: 49.9 GB free.
+  [softimpute×shambhala_NBKass_Q0std] [06:51:03][softimpute×shambhala_NBKass_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBKass_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_NBKass_Q0std] [06:51:23][softimpute×shambhala_NBKass_Q0std] S0 harmonized: 7174 samples × 8378 genes (20s)
+  [softimpute×shambhala_NBKass_Q0std] [06:51:23][softimpute×shambhala_NBKass_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBKass_Q0std] [06:51:23][softimpute×shambhala_NBKass_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_NBKass_Q0std] [06:51:23][softimpute×shambhala_NBKass_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBKass_Q0std] [06:51:28][softimpute×shambhala_NBKass_Q0std]   r2_batch=0.526 r2_diag=0.234 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBGPL570_Q0std] [06:51:47][softimpute×shambhala_NBGPL570_Q0std]   Upload complete.
+  [softimpute×shambhala_NBGPL570_Q0std] [06:51:47][softimpute×shambhala_NBGPL570_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 252s
+  [43/54] softimpute×shambhala_NBGPL570_Q0std (254s) → ['ok', 'ok', 'ok'] ...
+[06:51:47] START softimpute×shambhala_NBKass_QNBKass | free=49.8GB
+  [softimpute×shambhala_NBKass_QNBKass] 2026-05-31 06:51:48,727 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBKass_QNBKass] [06:51:49][softimpute×shambhala_NBKass_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBKass_QNBKass] [06:51:49][softimpute×shambhala_NBKass_QNBKass] Reuse path RAM pre-flight OK: 49.6 GB free.
+  [softimpute×shambhala_NBKass_QNBKass] [06:51:49][softimpute×shambhala_NBKass_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBKass_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:51:57][softimpute×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:51:57][softimpute×shambhala_NBGPL570_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:52:02][softimpute×shambhala_NBGPL570_QNBKass]   r2_batch=0.479 r2_diag=0.100 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBKass_QNBKass] [06:52:20][softimpute×shambhala_NBKass_QNBKass] S0 harmonized: 7174 samples × 11768 genes (31s)
+  [softimpute×shambhala_NBKass_QNBKass] [06:52:20][softimpute×shambhala_NBKass_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBKass_QNBKass] [06:52:20][softimpute×shambhala_NBKass_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_NBKass_QNBKass] [06:52:20][softimpute×shambhala_NBKass_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBKass_Q0std] [06:52:21][softimpute×shambhala_NBKass_Q0std]   Upload complete.
+  [softimpute×shambhala_NBKass_Q0std] [06:52:22][softimpute×shambhala_NBKass_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBKass_Q0std] [06:52:23][softimpute×shambhala_NBKass_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBKass_QNBKass] [06:52:28][softimpute×shambhala_NBKass_QNBKass]   r2_batch=0.562 r2_diag=0.242 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBKass_Q0std] [06:52:30][softimpute×shambhala_NBKass_Q0std]   r2_batch=0.523 r2_diag=0.233 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBKass_Q0std] [06:53:19][softimpute×shambhala_NBKass_Q0std]   Upload complete.
+  [softimpute×shambhala_NBKass_Q0std] [06:53:19][softimpute×shambhala_NBKass_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBKass_Q0std] [06:53:23][softimpute×shambhala_NBKass_Q0std]   r2_batch=0.544 r2_diag=0.105 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:53:37][softimpute×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:53:37][softimpute×shambhala_NBGPL570_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:53:39][softimpute×shambhala_NBGPL570_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:53:44][softimpute×shambhala_NBGPL570_QNBKass]   r2_batch=0.467 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBKass_QNBKass] [06:54:07][softimpute×shambhala_NBKass_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBKass_QNBKass] [06:54:07][softimpute×shambhala_NBKass_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBKass_QNBKass] [06:54:09][softimpute×shambhala_NBKass_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBKass_QNBKass] [06:54:15][softimpute×shambhala_NBKass_QNBKass]   r2_batch=0.562 r2_diag=0.242 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBKass_Q0std] [06:54:17][softimpute×shambhala_NBKass_Q0std]   Upload complete.
+  [softimpute×shambhala_NBKass_Q0std] [06:54:17][softimpute×shambhala_NBKass_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBKass_Q0std] [06:54:18][softimpute×shambhala_NBKass_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBKass_Q0std] [06:54:22][softimpute×shambhala_NBKass_Q0std]   r2_batch=0.495 r2_diag=0.113 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBKass_Q0std] [06:55:08][softimpute×shambhala_NBKass_Q0std]   Upload complete.
+  [softimpute×shambhala_NBKass_Q0std] [06:55:08][softimpute×shambhala_NBKass_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 245s
+  [44/54] softimpute×shambhala_NBKass_Q0std (247s) → ['ok', 'ok', 'ok'] ...
+[06:55:08] START softimpute×shambhala_NBRNAseq_Q0std | free=49.2GB
+  [softimpute×shambhala_NBRNAseq_Q0std] 2026-05-31 06:55:09,583 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:10][softimpute×shambhala_NBRNAseq_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:10][softimpute×shambhala_NBRNAseq_Q0std] Reuse path RAM pre-flight OK: 49.1 GB free.
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:10][softimpute×shambhala_NBRNAseq_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBRNAseq_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:55:15][softimpute×shambhala_NBGPL570_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBGPL570_QNBKass] [06:55:15][softimpute×shambhala_NBGPL570_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 443s
+  [45/54] softimpute×shambhala_NBGPL570_QNBKass (445s) → ['ok', 'ok', 'ok'] ...
+[06:55:15] START softimpute×shambhala_NBRNAseq_QNBKass | free=50.8GB
+  [softimpute×shambhala_NBRNAseq_QNBKass] 2026-05-31 06:55:16,575 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:17][softimpute×shambhala_NBRNAseq_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:17][softimpute×shambhala_NBRNAseq_QNBKass] Reuse path RAM pre-flight OK: 50.5 GB free.
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:17][softimpute×shambhala_NBRNAseq_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBRNAseq_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:31][softimpute×shambhala_NBRNAseq_Q0std] S0 harmonized: 7174 samples × 8378 genes (22s)
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:31][softimpute×shambhala_NBRNAseq_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:32][softimpute×shambhala_NBRNAseq_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:32][softimpute×shambhala_NBRNAseq_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:55:37][softimpute×shambhala_NBRNAseq_Q0std]   r2_batch=0.517 r2_diag=0.235 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:47][softimpute×shambhala_NBRNAseq_QNBKass] S0 harmonized: 7174 samples × 11768 genes (31s)
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:47][softimpute×shambhala_NBRNAseq_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:48][softimpute×shambhala_NBRNAseq_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:48][softimpute×shambhala_NBRNAseq_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:55:53][softimpute×shambhala_NBRNAseq_QNBKass]   r2_batch=0.560 r2_diag=0.239 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBKass_QNBKass] [06:56:00][softimpute×shambhala_NBKass_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBKass_QNBKass] [06:56:00][softimpute×shambhala_NBKass_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBKass_QNBKass] [06:56:06][softimpute×shambhala_NBKass_QNBKass]   r2_batch=0.568 r2_diag=0.110 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:56:31][softimpute×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:56:31][softimpute×shambhala_NBRNAseq_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:56:33][softimpute×shambhala_NBRNAseq_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:56:37][softimpute×shambhala_NBRNAseq_Q0std]   r2_batch=0.514 r2_diag=0.234 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:57:27][softimpute×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:57:27][softimpute×shambhala_NBRNAseq_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:57:31][softimpute×shambhala_NBRNAseq_Q0std]   r2_batch=0.516 r2_diag=0.103 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:57:33][softimpute×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:57:34][softimpute×shambhala_NBRNAseq_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:57:35][softimpute×shambhala_NBRNAseq_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:57:41][softimpute×shambhala_NBRNAseq_QNBKass]   r2_batch=0.559 r2_diag=0.239 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBKass_QNBKass] [06:57:42][softimpute×shambhala_NBKass_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBKass_QNBKass] [06:57:42][softimpute×shambhala_NBKass_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBKass_QNBKass] [06:57:43][softimpute×shambhala_NBKass_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBKass_QNBKass] [06:57:49][softimpute×shambhala_NBKass_QNBKass]   r2_batch=0.497 r2_diag=0.114 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:58:24][softimpute×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:58:24][softimpute×shambhala_NBRNAseq_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:58:25][softimpute×shambhala_NBRNAseq_Q0std]   Removing 1 outlier batch(es): ['GPL570_FFPE_Unknown']
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:58:29][softimpute×shambhala_NBRNAseq_Q0std]   r2_batch=0.520 r2_diag=0.122 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:59:04][softimpute×shambhala_NBRNAseq_Q0std]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_Q0std] [06:59:04][softimpute×shambhala_NBRNAseq_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 235s
+  [46/54] softimpute×shambhala_NBRNAseq_Q0std (237s) → ['ok', 'ok', 'ok'] ...
+[06:59:05] START softimpute×shambhala_NBext_Q0std | free=49.1GB
+  [softimpute×shambhala_NBext_Q0std] 2026-05-31 06:59:06,294 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBext_Q0std] [06:59:06][softimpute×shambhala_NBext_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBext_Q0std] [06:59:06][softimpute×shambhala_NBext_Q0std] Reuse path RAM pre-flight OK: 49.0 GB free.
+  [softimpute×shambhala_NBext_Q0std] [06:59:06][softimpute×shambhala_NBext_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBext_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_NBKass_QNBKass] [06:59:16][softimpute×shambhala_NBKass_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBKass_QNBKass] [06:59:16][softimpute×shambhala_NBKass_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 447s
+  [47/54] softimpute×shambhala_NBKass_QNBKass (450s) → ['ok', 'ok', 'ok'] ...
+[06:59:17] START softimpute×shambhala_NBext_QNBKass | free=50.3GB
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:59:18][softimpute×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:59:18][softimpute×shambhala_NBRNAseq_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBext_QNBKass] 2026-05-31 06:59:18,710 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_NBext_QNBKass] [06:59:19][softimpute×shambhala_NBext_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_NBext_QNBKass] [06:59:19][softimpute×shambhala_NBext_QNBKass] Reuse path RAM pre-flight OK: 49.9 GB free.
+  [softimpute×shambhala_NBext_QNBKass] [06:59:19][softimpute×shambhala_NBext_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_NBext_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_NBRNAseq_QNBKass] [06:59:24][softimpute×shambhala_NBRNAseq_QNBKass]   r2_batch=0.539 r2_diag=0.106 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBext_Q0std] [06:59:29][softimpute×shambhala_NBext_Q0std] S0 harmonized: 7174 samples × 8378 genes (23s)
+  [softimpute×shambhala_NBext_Q0std] [06:59:29][softimpute×shambhala_NBext_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBext_Q0std] [06:59:30][softimpute×shambhala_NBext_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_NBext_Q0std] [06:59:30][softimpute×shambhala_NBext_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBext_Q0std] [06:59:35][softimpute×shambhala_NBext_Q0std]   r2_batch=0.505 r2_diag=0.244 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBext_QNBKass] [06:59:51][softimpute×shambhala_NBext_QNBKass] S0 harmonized: 7174 samples × 11768 genes (32s)
+  [softimpute×shambhala_NBext_QNBKass] [06:59:51][softimpute×shambhala_NBext_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_NBext_QNBKass] [06:59:51][softimpute×shambhala_NBext_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_NBext_QNBKass] [06:59:51][softimpute×shambhala_NBext_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_NBext_QNBKass] [06:59:57][softimpute×shambhala_NBext_QNBKass]   r2_batch=0.538 r2_diag=0.250 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBext_Q0std] [07:00:27][softimpute×shambhala_NBext_Q0std]   Upload complete.
+  [softimpute×shambhala_NBext_Q0std] [07:00:27][softimpute×shambhala_NBext_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBext_Q0std] [07:00:29][softimpute×shambhala_NBext_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBext_Q0std] [07:00:33][softimpute×shambhala_NBext_Q0std]   r2_batch=0.502 r2_diag=0.243 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBRNAseq_QNBKass] [07:00:57][softimpute×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_QNBKass] [07:00:57][softimpute×shambhala_NBRNAseq_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBRNAseq_QNBKass] [07:00:59][softimpute×shambhala_NBRNAseq_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBRNAseq_QNBKass] [07:01:04][softimpute×shambhala_NBRNAseq_QNBKass]   r2_batch=0.503 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBext_Q0std] [07:01:27][softimpute×shambhala_NBext_Q0std]   Upload complete.
+  [softimpute×shambhala_NBext_Q0std] [07:01:27][softimpute×shambhala_NBext_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_NBext_Q0std] [07:01:31][softimpute×shambhala_NBext_Q0std]   r2_batch=0.491 r2_diag=0.105 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBext_QNBKass] [07:01:36][softimpute×shambhala_NBext_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBext_QNBKass] [07:01:36][softimpute×shambhala_NBext_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_NBext_QNBKass] [07:01:38][softimpute×shambhala_NBext_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_NBext_QNBKass] [07:01:43][softimpute×shambhala_NBext_QNBKass]   r2_batch=0.538 r2_diag=0.250 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_NBext_Q0std] [07:02:23][softimpute×shambhala_NBext_Q0std]   Upload complete.
+  [softimpute×shambhala_NBext_Q0std] [07:02:23][softimpute×shambhala_NBext_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBext_Q0std] [07:02:24][softimpute×shambhala_NBext_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBext_Q0std] [07:02:29][softimpute×shambhala_NBext_Q0std]   r2_batch=0.493 r2_diag=0.117 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_NBRNAseq_QNBKass] [07:02:34][softimpute×shambhala_NBRNAseq_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBRNAseq_QNBKass] [07:02:35][softimpute×shambhala_NBRNAseq_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 438s
+  [48/54] softimpute×shambhala_NBRNAseq_QNBKass (440s) → ['ok', 'ok', 'ok'] ...
+[07:02:35] START softimpute×shambhala_Oncobox_Q0std | free=49.9GB
+  [softimpute×shambhala_Oncobox_Q0std] 2026-05-31 07:02:36,518 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_Oncobox_Q0std] [07:02:37][softimpute×shambhala_Oncobox_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_Oncobox_Q0std] [07:02:37][softimpute×shambhala_Oncobox_Q0std] Reuse path RAM pre-flight OK: 49.8 GB free.
+  [softimpute×shambhala_Oncobox_Q0std] [07:02:37][softimpute×shambhala_Oncobox_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_Oncobox_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_Oncobox_Q0std] [07:02:57][softimpute×shambhala_Oncobox_Q0std] S0 harmonized: 7174 samples × 8237 genes (20s)
+  [softimpute×shambhala_Oncobox_Q0std] [07:02:57][softimpute×shambhala_Oncobox_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_Oncobox_Q0std] [07:02:57][softimpute×shambhala_Oncobox_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_Oncobox_Q0std] [07:02:57][softimpute×shambhala_Oncobox_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_Oncobox_Q0std] [07:03:02][softimpute×shambhala_Oncobox_Q0std]   r2_batch=0.591 r2_diag=0.235 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_NBext_Q0std] [07:03:19][softimpute×shambhala_NBext_Q0std]   Upload complete.
+  [softimpute×shambhala_NBext_Q0std] [07:03:19][softimpute×shambhala_NBext_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 253s
+  [49/54] softimpute×shambhala_NBext_Q0std (255s) → ['ok', 'ok', 'ok'] ...
+[07:03:20] START softimpute×shambhala_Oncobox_QNBKass | free=49.8GB
+  [softimpute×shambhala_NBext_QNBKass] [07:03:20][softimpute×shambhala_NBext_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBext_QNBKass] [07:03:20][softimpute×shambhala_NBext_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_Oncobox_QNBKass] 2026-05-31 07:03:21,304 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:22][softimpute×shambhala_Oncobox_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:22][softimpute×shambhala_Oncobox_QNBKass] Reuse path RAM pre-flight OK: 49.4 GB free.
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:22][softimpute×shambhala_Oncobox_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_Oncobox_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_NBext_QNBKass] [07:03:25][softimpute×shambhala_NBext_QNBKass]   r2_batch=0.490 r2_diag=0.102 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:51][softimpute×shambhala_Oncobox_QNBKass] S0 harmonized: 7174 samples × 11591 genes (29s)
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:51][softimpute×shambhala_Oncobox_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:51][softimpute×shambhala_Oncobox_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:51][softimpute×shambhala_Oncobox_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_Oncobox_QNBKass] [07:03:56][softimpute×shambhala_Oncobox_QNBKass]   r2_batch=0.612 r2_diag=0.217 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_Oncobox_Q0std] [07:03:56][softimpute×shambhala_Oncobox_Q0std]   Upload complete.
+  [softimpute×shambhala_Oncobox_Q0std] [07:03:57][softimpute×shambhala_Oncobox_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_Oncobox_Q0std] [07:03:58][softimpute×shambhala_Oncobox_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_Oncobox_Q0std] [07:04:02][softimpute×shambhala_Oncobox_Q0std]   r2_batch=0.587 r2_diag=0.236 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_Oncobox_Q0std] [07:04:51][softimpute×shambhala_Oncobox_Q0std]   Upload complete.
+  [softimpute×shambhala_Oncobox_Q0std] [07:04:51][softimpute×shambhala_Oncobox_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_Oncobox_Q0std] [07:04:55][softimpute×shambhala_Oncobox_Q0std]   r2_batch=0.506 r2_diag=0.109 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_NBext_QNBKass] [07:05:01][softimpute×shambhala_NBext_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBext_QNBKass] [07:05:01][softimpute×shambhala_NBext_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_NBext_QNBKass] [07:05:03][softimpute×shambhala_NBext_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_NBext_QNBKass] [07:05:08][softimpute×shambhala_NBext_QNBKass]   r2_batch=0.489 r2_diag=0.115 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_Oncobox_QNBKass] [07:05:35][softimpute×shambhala_Oncobox_QNBKass]   Upload complete.
+  [softimpute×shambhala_Oncobox_QNBKass] [07:05:35][softimpute×shambhala_Oncobox_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_Oncobox_QNBKass] [07:05:37][softimpute×shambhala_Oncobox_QNBKass]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_Oncobox_QNBKass] [07:05:42][softimpute×shambhala_Oncobox_QNBKass]   r2_batch=0.609 r2_diag=0.217 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_Oncobox_Q0std] [07:05:47][softimpute×shambhala_Oncobox_Q0std]   Upload complete.
+  [softimpute×shambhala_Oncobox_Q0std] [07:05:47][softimpute×shambhala_Oncobox_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_Oncobox_Q0std] [07:05:49][softimpute×shambhala_Oncobox_Q0std]   Removing 1 outlier batch(es): ['GPL14951_FFPE_Unknown']
+  [softimpute×shambhala_Oncobox_Q0std] [07:05:52][softimpute×shambhala_Oncobox_Q0std]   r2_batch=0.492 r2_diag=0.119 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_Oncobox_Q0std] [07:06:27][softimpute×shambhala_Oncobox_Q0std]   Upload complete.
+  [softimpute×shambhala_Oncobox_Q0std] [07:06:27][softimpute×shambhala_Oncobox_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 230s
+  [50/54] softimpute×shambhala_Oncobox_Q0std (232s) → ['ok', 'ok', 'ok'] ...
+[07:06:27] START softimpute×shambhala_P0std_Q0std | free=49.1GB
+  [softimpute×shambhala_P0std_Q0std] 2026-05-31 07:06:28,496 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_P0std_Q0std] [07:06:29][softimpute×shambhala_P0std_Q0std] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_P0std_Q0std] [07:06:29][softimpute×shambhala_P0std_Q0std] Reuse path RAM pre-flight OK: 49.0 GB free.
+  [softimpute×shambhala_P0std_Q0std] [07:06:29][softimpute×shambhala_P0std_Q0std] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_P0std_Q0std__post0.tsv.gz ...
+  [softimpute×shambhala_NBext_QNBKass] [07:06:38][softimpute×shambhala_NBext_QNBKass]   Upload complete.
+  [softimpute×shambhala_NBext_QNBKass] [07:06:38][softimpute×shambhala_NBext_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 439s
+  [51/54] softimpute×shambhala_NBext_QNBKass (441s) → ['ok', 'ok', 'ok'] ...
+[07:06:38] START softimpute×shambhala_P0std_QNBKass | free=50.6GB
+  [softimpute×shambhala_P0std_QNBKass] 2026-05-31 07:06:39,675 botocore.credentials INFO Found credentials in shared credentials file: ~/.aws/credentials
+  [softimpute×shambhala_P0std_QNBKass] [07:06:40][softimpute×shambhala_P0std_QNBKass] S0 harmonized found on S3 (4 output(s) missing). Deriving without re-harmonizing.
+  [softimpute×shambhala_P0std_QNBKass] [07:06:40][softimpute×shambhala_P0std_QNBKass] Reuse path RAM pre-flight OK: 50.3 GB free.
+  [softimpute×shambhala_P0std_QNBKass] [07:06:40][softimpute×shambhala_P0std_QNBKass] Downloading S0 harmonized matrix from FL_batch_correction/exp/S0_no_removal__softimpute__shambhala_P0std_QNBKass__post0.tsv.gz ...
+  [softimpute×shambhala_P0std_Q0std] [07:06:45][softimpute×shambhala_P0std_Q0std] S0 harmonized: 7174 samples × 7751 genes (16s)
+  [softimpute×shambhala_P0std_Q0std] [07:06:45][softimpute×shambhala_P0std_Q0std] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_P0std_Q0std] [07:06:46][softimpute×shambhala_P0std_Q0std] Annotations ready (0s).
+  [softimpute×shambhala_P0std_Q0std] [07:06:46][softimpute×shambhala_P0std_Q0std] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_P0std_Q0std] [07:06:51][softimpute×shambhala_P0std_Q0std]   r2_batch=0.576 r2_diag=0.222 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_P0std_QNBKass] [07:07:07][softimpute×shambhala_P0std_QNBKass] S0 harmonized: 7174 samples × 10664 genes (27s)
+  [softimpute×shambhala_P0std_QNBKass] [07:07:07][softimpute×shambhala_P0std_QNBKass] Downloading annotations for 2 strategy/ies ...
+  [softimpute×shambhala_P0std_QNBKass] [07:07:08][softimpute×shambhala_P0std_QNBKass] Annotations ready (0s).
+  [softimpute×shambhala_P0std_QNBKass] [07:07:08][softimpute×shambhala_P0std_QNBKass] [1/4] J_ff_only×post_rm=False: 3167 samples after filter
+  [softimpute×shambhala_P0std_QNBKass] [07:07:13][softimpute×shambhala_P0std_QNBKass]   r2_batch=0.587 r2_diag=0.217 — uploading J_ff_only×post_rm=False ...
+  [softimpute×shambhala_Oncobox_QNBKass] [07:07:21][softimpute×shambhala_Oncobox_QNBKass]   Upload complete.
+  [softimpute×shambhala_Oncobox_QNBKass] [07:07:21][softimpute×shambhala_Oncobox_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_Oncobox_QNBKass] [07:07:26][softimpute×shambhala_Oncobox_QNBKass]   r2_batch=0.540 r2_diag=0.106 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_P0std_Q0std] [07:07:41][softimpute×shambhala_P0std_Q0std]   Upload complete.
+  [softimpute×shambhala_P0std_Q0std] [07:07:41][softimpute×shambhala_P0std_Q0std] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_P0std_Q0std] [07:07:42][softimpute×shambhala_P0std_Q0std]   Removing 1 outlier batch(es): ['GPL16686_FF_Unknown']
+  [softimpute×shambhala_P0std_Q0std] [07:07:47][softimpute×shambhala_P0std_Q0std]   r2_batch=0.574 r2_diag=0.221 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_P0std_Q0std] [07:08:32][softimpute×shambhala_P0std_Q0std]   Upload complete.
+  [softimpute×shambhala_P0std_Q0std] [07:08:32][softimpute×shambhala_P0std_Q0std] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_P0std_Q0std] [07:08:37][softimpute×shambhala_P0std_Q0std]   r2_batch=0.516 r2_diag=0.095 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_P0std_QNBKass] [07:08:44][softimpute×shambhala_P0std_QNBKass]   Upload complete.
+  [softimpute×shambhala_P0std_QNBKass] [07:08:44][softimpute×shambhala_P0std_QNBKass] [2/4] J_ff_only×post_rm=True: 3167 samples after filter
+  [softimpute×shambhala_P0std_QNBKass] [07:08:45][softimpute×shambhala_P0std_QNBKass]   Removing 1 outlier batch(es): ['GPL13158_FF_Unknown']
+  [softimpute×shambhala_P0std_QNBKass] [07:08:50][softimpute×shambhala_P0std_QNBKass]   r2_batch=0.579 r2_diag=0.216 — uploading J_ff_only×post_rm=True ...
+  [softimpute×shambhala_Oncobox_QNBKass] [07:09:01][softimpute×shambhala_Oncobox_QNBKass]   Upload complete.
+  [softimpute×shambhala_Oncobox_QNBKass] [07:09:01][softimpute×shambhala_Oncobox_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_Oncobox_QNBKass] [07:09:02][softimpute×shambhala_Oncobox_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_Oncobox_QNBKass] [07:09:08][softimpute×shambhala_Oncobox_QNBKass]   r2_batch=0.484 r2_diag=0.112 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_P0std_Q0std] [07:09:25][softimpute×shambhala_P0std_Q0std]   Upload complete.
+  [softimpute×shambhala_P0std_Q0std] [07:09:25][softimpute×shambhala_P0std_Q0std] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_P0std_Q0std] [07:09:26][softimpute×shambhala_P0std_Q0std]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_P0std_Q0std] [07:09:30][softimpute×shambhala_P0std_Q0std]   r2_batch=0.452 r2_diag=0.104 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_P0std_Q0std] [07:10:13][softimpute×shambhala_P0std_Q0std]   Upload complete.
+  [softimpute×shambhala_P0std_Q0std] [07:10:13][softimpute×shambhala_P0std_Q0std] Reuse path done: 4 derived, 24 already cached. Total elapsed: 224s
+  [52/54] softimpute×shambhala_P0std_Q0std (226s) → ['ok', 'ok', 'ok'] ...
+  [softimpute×shambhala_P0std_QNBKass] [07:10:18][softimpute×shambhala_P0std_QNBKass]   Upload complete.
+  [softimpute×shambhala_P0std_QNBKass] [07:10:18][softimpute×shambhala_P0std_QNBKass] [3/4] K_ffpe_only×post_rm=False: 3000 samples after filter
+  [softimpute×shambhala_P0std_QNBKass] [07:10:22][softimpute×shambhala_P0std_QNBKass]   r2_batch=0.509 r2_diag=0.098 — uploading K_ffpe_only×post_rm=False ...
+  [softimpute×shambhala_Oncobox_QNBKass] [07:10:35][softimpute×shambhala_Oncobox_QNBKass]   Upload complete.
+  [softimpute×shambhala_Oncobox_QNBKass] [07:10:35][softimpute×shambhala_Oncobox_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 433s
+  [53/54] softimpute×shambhala_Oncobox_QNBKass (436s) → ['ok', 'ok', 'ok'] ...
+  [softimpute×shambhala_P0std_QNBKass] [07:11:41][softimpute×shambhala_P0std_QNBKass]   Upload complete.
+  [softimpute×shambhala_P0std_QNBKass] [07:11:41][softimpute×shambhala_P0std_QNBKass] [4/4] K_ffpe_only×post_rm=True: 3000 samples after filter
+  [softimpute×shambhala_P0std_QNBKass] [07:11:42][softimpute×shambhala_P0std_QNBKass]   Removing 1 outlier batch(es): ['GPL13938_FFPE_Unknown']
+  [softimpute×shambhala_P0std_QNBKass] [07:11:46][softimpute×shambhala_P0std_QNBKass]   r2_batch=0.493 r2_diag=0.100 — uploading K_ffpe_only×post_rm=True ...
+  [softimpute×shambhala_P0std_QNBKass] [07:12:59][softimpute×shambhala_P0std_QNBKass]   Upload complete.
+  [softimpute×shambhala_P0std_QNBKass] [07:12:59][softimpute×shambhala_P0std_QNBKass] Reuse path done: 4 derived, 24 already cached. Total elapsed: 379s
+  [54/54] softimpute×shambhala_P0std_QNBKass (381s) → ['ok', 'ok', 'ok'] ...
+Consolidated metrics uploaded: s3://your-bucket/FL_batch_correction/shambhala_metrics.csv (1512 rows)
+
+[dispatcher] Summary: 54 succeeded, 0 failed. Failed keys saved to /home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/harmonization_scripts/failed_jobs_shambhala.txt

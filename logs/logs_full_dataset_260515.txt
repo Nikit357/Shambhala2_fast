@@ -1,0 +1,98 @@
+[INFO] Step 2/11 — Reading input: s3://your-bucket/FL_batch_correction/prepared/S0_no_removal__strict__exp.tsv.gz
+[DEBUG] Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+[DEBUG] Changing event name from before-call.apigateway to before-call.api-gateway
+[DEBUG] Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+[DEBUG] Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+[DEBUG] Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+[DEBUG] Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+[DEBUG] Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+[DEBUG] Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+[DEBUG] Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+[DEBUG] Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+[DEBUG] Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+[DEBUG] IMDS ENDPOINT: http://169.254.169.254/
+[DEBUG] Looking for credentials via: env
+[DEBUG] Looking for credentials via: assume-role
+[DEBUG] Looking for credentials via: assume-role-with-web-identity
+[DEBUG] Looking for credentials via: sso
+[DEBUG] Looking for credentials via: shared-credentials-file
+[INFO] Found credentials in shared credentials file: ~/.aws/credentials
+[DEBUG] Loading JSON file: /home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/botocore/data/endpoints.json
+[DEBUG] Loading JSON file: /home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/botocore/data/sdk-default-configuration.json
+[DEBUG] Event choose-service-name: calling handler <function handle_service_name_alias at 0x7fcbdfa700e0>
+[DEBUG] Loading JSON file: /home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/botocore/data/s3/2006-03-01/service-2.json
+[DEBUG] Loading JSON file: /home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+[DEBUG] Loading JSON file: /home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/botocore/data/partitions.json
+[DEBUG] Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7fcbdf9df9c0>
+[DEBUG] Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7fcbdfe35760>
+[DEBUG] Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7fcbdf9df740>
+[DEBUG] Looking for endpoint for s3 via: environment_service
+[DEBUG] Looking for endpoint for s3 via: environment_global
+[DEBUG] Looking for endpoint for s3 via: config_service
+[DEBUG] Looking for endpoint for s3 via: config_global
+[DEBUG] No configured endpoint found.
+[DEBUG] Setting s3 timeout as (60, 60)
+[DEBUG] Loading JSON file: /home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/botocore/data/_retry.json
+[DEBUG] Registering retry handlers for service: s3
+[DEBUG] Registering S3 region redirector handler
+[DEBUG] Event before-parameter-build.s3.GetObject: calling handler <function sse_md5 at 0x7fcbdf8c8f40>
+[DEBUG] Event before-parameter-build.s3.GetObject: calling handler <function validate_bucket_name at 0x7fcbdf8c8ea0>
+[DEBUG] Event before-parameter-build.s3.GetObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7fcbdf8cafc0>
+[DEBUG] Event before-parameter-build.s3.GetObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7fcbdf0a9610>>
+[DEBUG] Event before-parameter-build.s3.GetObject: calling handler <function generate_idempotent_uuid at 0x7fcbdf8c8cc0>
+[DEBUG] Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7fcbdf8cb1a0>
+[DEBUG] Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7fcbdf0a9610>>
+[DEBUG] Calling endpoint provider with parameters: {'Bucket': 'your-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+[DEBUG] Endpoint provider result: https://your-bucket.s3.amazonaws.com
+[DEBUG] Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+[DEBUG] Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+[DEBUG] Event before-call.s3.GetObject: calling handler <function add_expect_header at 0x7fcbdf8c9260>
+[DEBUG] Event before-call.s3.GetObject: calling handler <function add_recursion_detection_header at 0x7fcbdfa93c40>
+[DEBUG] Event before-call.s3.GetObject: calling handler <function inject_api_version_header_if_needed at 0x7fcbdf8ca7a0>
+[DEBUG] Making request for OperationModel(name=GetObject) with params: {'url_path': '/FL_batch_correction/prepared/S0_no_removal__strict__exp.tsv.gz', 'query_string': {}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.28.17 md/Botocore#1.31.17 ua/2.0 os/linux#6.12.80-106.156.amzn2023.x86_64 md/arch#x86_64 lang/python#3.11.15 md/pyimpl#CPython cfg/retry-mode#legacy Botocore/1.31.17'}, 'body': b'', 'auth_path': '/your-bucket/FL_batch_correction/prepared/S0_no_removal__strict__exp.tsv.gz', 'url': 'https://your-bucket.s3.amazonaws.com/FL_batch_correction/prepared/S0_no_removal__strict__exp.tsv.gz', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7fcbdf09b410>, 'has_streaming_input': False, 'auth_type': 'v4', 's3_redirect': {'redirected': False, 'bucket': 'your-bucket', 'params': {'Bucket': 'your-bucket', 'Key': 'FL_batch_correction/prepared/S0_no_removal__strict__exp.tsv.gz'}}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}}}
+[DEBUG] Event request-created.s3.GetObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7fcbdf09b3d0>>
+[DEBUG] Event choose-signer.s3.GetObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7fcbdf57f0d0>>
+[DEBUG] Event choose-signer.s3.GetObject: calling handler <function set_operation_specific_signer at 0x7fcbdf8c8b80>
+[DEBUG] Event before-sign.s3.GetObject: calling handler <function remove_arn_from_signing_path at 0x7fcbdf8cb100>
+[DEBUG] Calculating signature using v4 auth.
+[DEBUG] CanonicalRequest:
+GET
+/FL_batch_correction/prepared/S0_no_removal__strict__exp.tsv.gz
+
+host:your-bucket.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20260515T182403Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+[DEBUG] StringToSign:
+AWS4-HMAC-SHA256
+20260515T182403Z
+20260515/us-east-1/s3/aws4_request
+17359f065492248db469e4d44a11b39f2834de2159abafac61a180110e84ae9f
+[DEBUG] Signature:
+786d68d12a7328e8feed0178005b6b937a5d11ea59d0c45a679d5469dcdf850e
+[DEBUG] Event request-created.s3.GetObject: calling handler <function add_retry_headers at 0x7fcbdf8caf20>
+[DEBUG] Certificate path: /home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/certifi/cacert.pem
+[DEBUG] Starting new HTTPS connection (1): your-bucket.s3.amazonaws.com:443
+[DEBUG] https://your-bucket.s3.amazonaws.com:443 "GET /FL_batch_correction/prepared/S0_no_removal__strict__exp.tsv.gz HTTP/1.1" 200 169015484
+[DEBUG] Response headers: {'x-amz-id-2': '5dPLzCHjMWY1PUHvQAyScOf/kFTKiOfoiA00n60QwrWpyDZXpkplK1wwamngQpPXuGQ+eI4EZ3liIR5p3/z/RtzOIRzxv+8w', 'x-amz-request-id': '1R4XF35N193NK7KM', 'Date': 'Fri, 15 May 2026 18:24:04 GMT', 'Last-Modified': 'Fri, 24 Apr 2026 16:11:54 GMT', 'ETag': '"f820d5e9e11b368a9e1e1591da98151b-21"', 'x-amz-storage-class': 'INTELLIGENT_TIERING', 'x-amz-server-side-encryption': 'AES256', 'Accept-Ranges': 'bytes', 'Content-Type': 'binary/octet-stream', 'Content-Length': '169015484', 'Server': 'AmazonS3'}
+[DEBUG] Response body:
+<botocore.response.StreamingBody object at 0x7fcbdf0bcac0>
+[DEBUG] Event needs-retry.s3.GetObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7fcbdf0b1650>
+[DEBUG] No retry needed.
+[DEBUG] Event needs-retry.s3.GetObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7fcbdf0a9610>>
+[INFO]   Input shape: 7174 samples × 3447 genes
+[INFO] Step 2/11 — Reading P reference: ../Calibration_datasets/P0_standard.csv
+[INFO]   P shape: 39 samples × 11768 genes
+[INFO] Step 2/11 — Reading Q reference: ../Calibration_datasets/Q0_standard.csv
+[INFO]   Q shape: 100 samples × 11887 genes
+[INFO] Step 3/11 — Transposing to internal convention (genes × samples).
+[INFO] Step 4/11 — Computing gene intersection across input, P, and Q.
+[INFO]   Common genes: 2293 (dropped 1154 from input, 9475 from P, 9594 from Q).
+[INFO] Step 5/11 — Applying NA strategy 'drop' to input matrix.
+[INFO]   Genes affected: 0 dropped, strategy='drop'.
+[INFO] Step 6/11 — Computing Q statistics (q_pseudocount=1.00e-06).
+[INFO]   Q statistics computed for 2293 genes.
+[INFO] Step 7/11 — Dispatching 7174 samples across 3 workers.
+[INFO] Dispatching 7174 samples across 3 workers (2391–2392 samples/worker).

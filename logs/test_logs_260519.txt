@@ -1,0 +1,482 @@
+(collagen_3_11) (base) jovyan@<jupyter-host>:~/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized$ pytest tests/ -v
+================================================================== test session starts ==================================================================
+platform linux -- Python 3.11.15, pytest-8.3.4, pluggy-1.6.0 -- /home/jovyan/venvs/collagen_3_11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized
+configfile: pyproject.toml
+plugins: typeguard-4.4.2, anyio-4.12.1, zarr-3.1.6
+collected 104 items                                                                                                                                     
+
+tests/speed_up_tests/test_approach_a.py::test_a_qn_only FAILED                                                                                    [  0%]
+tests/speed_up_tests/test_approach_a.py::test_a_synthetic_cublock_p FAILED                                                                        [  1%]
+tests/speed_up_tests/test_approach_a.py::test_a_timing_qn_only PASSED                                                                             [  2%]
+tests/speed_up_tests/test_approach_a.py::test_a_timing_combined PASSED                                                                            [  3%]
+tests/speed_up_tests/test_approach_b.py::test_b_output_identical_to_baseline PASSED                                                               [  4%]
+tests/speed_up_tests/test_approach_b.py::test_b_timing PASSED                                                                                     [  5%]
+tests/speed_up_tests/test_approach_c.py::test_c_centroid_selection PASSED                                                                         [  6%]
+tests/speed_up_tests/test_approach_c.py::test_c_subsampling_reduces_p_size PASSED                                                                 [  7%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[40] SKIPPED (n_sub=40 >= n_original=39; subsampling has no effect.)             [  8%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[20] PASSED                                                                      [  9%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[10] PASSED                                                                      [ 10%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_produces_identical_distributions PASSED                                                     [ 11%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_matches_manual_rank_normalization PASSED                                                    [ 12%]
+tests/speed_up_tests/test_approach_d.py::test_d_synthetic_p_reference_is_sorted PASSED                                                            [ 13%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_preserves_gene_rank_order PASSED                                                            [ 14%]
+tests/speed_up_tests/test_approach_e.py::test_e_clusters_stable PASSED                                                                            [ 15%]
+tests/speed_up_tests/test_approach_e.py::test_e_clusters_shape PASSED                                                                             [ 16%]
+tests/speed_up_tests/test_approach_e.py::test_e_output_within_tolerance FAILED                                                                    [ 17%]
+tests/speed_up_tests/test_approach_e.py::test_e_timing PASSED                                                                                     [ 18%]
+tests/speed_up_tests/test_approach_g.py::test_g_cublock_output_shape PASSED                                                                       [ 19%]
+tests/speed_up_tests/test_approach_g.py::test_g_modpol_identity_on_monotone PASSED                                                                [ 20%]
+tests/speed_up_tests/test_approach_g.py::test_g_modpol_monotone_correction PASSED                                                                 [ 21%]
+tests/speed_up_tests/test_approach_g.py::test_g_cublock_matches_octave FAILED                                                                     [ 22%]
+tests/speed_up_tests/test_approach_g.py::test_g_full_pipeline_within_tolerance 
+
+
+^C^C^C
+
+======================================================================= FAILURES ========================================================================
+____________________________________________________________________ test_a_qn_only _____________________________________________________________________
+
+    @octave_required
+    @qnorm_required
+    @pytest.mark.timeout(300)
+    def test_a_qn_only():
+        """Approach A (--precompute-qn-reference only): output within atol=0.05 of reference."""
+        input_df, p_df, q_df, expected_df = load_fixtures()
+        result = run_pipeline(
+            input_df, p_df, q_df,
+            n_workers=1,
+            random_seed=42,
+            precompute_qn_reference=True,
+            synthetic_cublock_p=False,
+        )
+        metrics = compare_to_expected(result, expected_df)
+    
+        print(f"\nApproach A (QN only) faithfulness metrics:")
+        print(f"  max_abs_diff  = {metrics['max_abs_diff']:.6f}")
+        print(f"  mean_abs_diff = {metrics['mean_abs_diff']:.6f}")
+        print(f"  mean_rel_diff = {metrics['mean_rel_diff']:.4%}")
+        print(f"  %within_1pct  = {metrics['pct_within_1pct']:.1f}%")
+    
+>       assert metrics["max_abs_diff"] < 0.05, (
+            f"Approach A max_abs_diff={metrics['max_abs_diff']:.4f} exceeds atol=0.05."
+        )
+E       AssertionError: Approach A max_abs_diff=5544.0310 exceeds atol=0.05.
+E       assert 5544.030965799022 < 0.05
+
+tests/speed_up_tests/test_approach_a.py:54: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+Approach A (QN only) faithfulness metrics:
+  max_abs_diff  = 5544.030966
+  mean_abs_diff = 6.613447
+  mean_rel_diff = 0.3421%
+  %within_1pct  = 91.9%
+----------------------------------------------------------------- Captured stderr call ------------------------------------------------------------------
+[06:49:36][Worker 1]  1/10 (10%)  elapsed 0s
+[06:49:40][Worker 1]  2/10 (20%)  elapsed 4s
+[06:49:44][Worker 1]  3/10 (30%)  elapsed 8s
+[06:49:49][Worker 1]  4/10 (40%)  elapsed 12s
+[06:49:53][Worker 1]  5/10 (50%)  elapsed 17s
+[06:49:59][Worker 1]  6/10 (60%)  elapsed 23s
+[06:50:04][Worker 1]  7/10 (70%)  elapsed 28s
+[06:50:08][Worker 1]  8/10 (80%)  elapsed 32s
+[06:50:12][Worker 1]  9/10 (90%)  elapsed 36s
+[06:50:18][Worker 1]  10/10 (100%)  elapsed 41s
+[06:50:23][Worker 1]  10/10 (100%)  elapsed 47s
+______________________________________________________________ test_a_synthetic_cublock_p _______________________________________________________________
+
+    @octave_required
+    @qnorm_required
+    @pytest.mark.timeout(300)
+    def test_a_synthetic_cublock_p():
+        """Approach A + --synthetic-cublock-p: output within atol=0.05 of reference."""
+        input_df, p_df, q_df, expected_df = load_fixtures()
+        result = run_pipeline(
+            input_df, p_df, q_df,
+            n_workers=1,
+            random_seed=42,
+            precompute_qn_reference=True,
+            synthetic_cublock_p=True,
+        )
+        metrics = compare_to_expected(result, expected_df)
+    
+        print(f"\nApproach A + synthetic_cublock_p faithfulness metrics:")
+        print(f"  max_abs_diff  = {metrics['max_abs_diff']:.6f}")
+        print(f"  mean_abs_diff = {metrics['mean_abs_diff']:.6f}")
+        print(f"  mean_rel_diff = {metrics['mean_rel_diff']:.4%}")
+        print(f"  %within_1pct  = {metrics['pct_within_1pct']:.1f}%")
+    
+>       assert metrics["max_abs_diff"] < 0.05, (
+            f"A+synthetic_cublock_p max_abs_diff={metrics['max_abs_diff']:.4f} exceeds atol=0.05."
+        )
+E       AssertionError: A+synthetic_cublock_p max_abs_diff=106045.0072 exceeds atol=0.05.
+E       assert 106045.00717943982 < 0.05
+
+tests/speed_up_tests/test_approach_a.py:80: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+Approach A + synthetic_cublock_p faithfulness metrics:
+  max_abs_diff  = 106045.007179
+  mean_abs_diff = 374.918195
+  mean_rel_diff = 14.6585%
+  %within_1pct  = 4.0%
+----------------------------------------------------------------- Captured stderr call ------------------------------------------------------------------
+[06:50:25][Worker 1]  1/10 (10%)  elapsed 0s
+[06:50:25][Worker 1]  2/10 (20%)  elapsed 0s
+[06:50:26][Worker 1]  3/10 (30%)  elapsed 1s
+[06:50:27][Worker 1]  4/10 (40%)  elapsed 2s
+[06:50:28][Worker 1]  5/10 (50%)  elapsed 2s
+[06:50:29][Worker 1]  6/10 (60%)  elapsed 3s
+[06:50:29][Worker 1]  7/10 (70%)  elapsed 4s
+[06:50:30][Worker 1]  8/10 (80%)  elapsed 5s
+[06:50:31][Worker 1]  9/10 (90%)  elapsed 6s
+[06:50:31][Worker 1]  10/10 (100%)  elapsed 6s
+[06:50:34][Worker 1]  10/10 (100%)  elapsed 8s
+____________________________________________________________ test_e_output_within_tolerance _____________________________________________________________
+
+    @octave_required
+    def test_e_output_within_tolerance():
+        input_df, p_df, q_df, expected_df = load_fixtures()
+        result = run_pipeline(
+            input_df=input_df,
+            p_df=p_df,
+            q_df=q_df,
+            n_workers=1,
+            precompute_cublock_clusters=True,
+            random_seed=42,
+        )
+        metrics = compare_to_expected(result, expected_df)
+>       assert metrics["max_abs_diff"] < 0.10, (
+            f"max_abs_diff={metrics['max_abs_diff']:.4f} exceeds tolerance 0.10"
+        )
+E       AssertionError: max_abs_diff=16048.7456 exceeds tolerance 0.10
+E       assert 16048.745570448766 < 0.1
+
+tests/speed_up_tests/test_approach_e.py:55: AssertionError
+----------------------------------------------------------------- Captured stderr call ------------------------------------------------------------------
+[06:57:34][Worker 1]  1/10 (10%)  elapsed 0s
+[06:57:34][Worker 1]  2/10 (20%)  elapsed 0s
+[06:57:34][Worker 1]  3/10 (30%)  elapsed 0s
+[06:57:34][Worker 1]  4/10 (40%)  elapsed 0s
+[06:57:34][Worker 1]  5/10 (50%)  elapsed 0s
+[06:57:34][Worker 1]  6/10 (60%)  elapsed 0s
+[06:57:35][Worker 1]  7/10 (70%)  elapsed 1s
+[06:57:35][Worker 1]  8/10 (80%)  elapsed 1s
+[06:57:35][Worker 1]  9/10 (90%)  elapsed 1s
+[06:57:35][Worker 1]  10/10 (100%)  elapsed 1s
+[06:57:37][Worker 1]  10/10 (100%)  elapsed 3s
+_____________________________________________________________ test_g_cublock_matches_octave _____________________________________________________________
+
+    @octave_required
+    def test_g_cublock_matches_octave():
+        """
+        Run cublock_python and CuBlock.m on the same 10-sample input+P fixture.
+        Tolerance is relaxed to 0.5 due to different k-means init between sklearn and Octave
+        kmeans.m (30-rep averaging reduces but doesn't eliminate the divergence).
+        """
+        from shambhala.octave_bridge import run_octave_normalize
+        from tests.speed_up_tests.conftest import OCTAVE_DIR, OCTAVE_BIN
+        import qnorm as qnorm_lib
+        import pathlib
+    
+        _, p_df, _, _ = load_fixtures()
+        rng = np.random.default_rng(42)
+        data_col = rng.random(p_df.shape[1]).astype(float)
+        p_T = p_df.T
+        pool_np = np.column_stack([data_col, p_T.values])
+        pool_genes = p_T.index
+    
+        import pandas as pd
+        batch_sample = ["test_sample"]
+        pool_df = pd.DataFrame(pool_np, index=pool_genes, columns=batch_sample + list(p_T.columns))
+    
+        # Octave path
+        octave_result = run_octave_normalize(
+            pool_df=pool_df,
+            nh=1,
+            np_=p_T.shape[1],
+            k=5,
+            octave_scripts_dir=str(OCTAVE_DIR),
+            octave_bin=OCTAVE_BIN,
+            timeout_s=300,
+            random_seed=42,
+        )
+        octave_col = octave_result.values[:, 0]
+    
+        # Python path
+        qn_pool = qnorm_lib.quantile_normalize(pool_np, axis=1)
+        python_col = cublock_python(qn_pool, n_reps=30, k=5, random_seed=42)[:, 0]
+    
+        # Note: k-means init differs; 30 reps average reduces but doesn't eliminate divergence
+        common_mask = ~(np.isnan(octave_col) | np.isnan(python_col))
+        max_diff = float(np.abs(octave_col[common_mask] - python_col[common_mask]).max())
+        print(f"\nApproach G vs Octave CuBlock: max_abs_diff={max_diff:.4f}")
+>       assert max_diff < 0.5, f"max_abs_diff={max_diff:.4f} exceeds tolerance 0.5"
+E       AssertionError: max_abs_diff=1.9704 exceeds tolerance 0.5
+E       assert 1.9704258176051377 < 0.5
+
+tests/speed_up_tests/test_approach_g.py:101: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+Approach G vs Octave CuBlock: max_abs_diff=1.9704
+================================================================ short test summary info ================================================================
+FAILED tests/speed_up_tests/test_approach_a.py::test_a_qn_only - AssertionError: Approach A max_abs_diff=5544.0310 exceeds atol=0.05.
+FAILED tests/speed_up_tests/test_approach_a.py::test_a_synthetic_cublock_p - AssertionError: A+synthetic_cublock_p max_abs_diff=106045.0072 exceeds atol=0.05.
+FAILED tests/speed_up_tests/test_approach_e.py::test_e_output_within_tolerance - AssertionError: max_abs_diff=16048.7456 exceeds tolerance 0.10
+FAILED tests/speed_up_tests/test_approach_g.py::test_g_cublock_matches_octave - AssertionError: max_abs_diff=1.9704 exceeds tolerance 0.5
+================================================= 4 failed, 18 passed, 1 skipped in 13103.57s (3:38:23) =================================================
+Traceback (most recent call last):
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 392, in harmonize_parallel
+    for future in as_completed(future_to_idx):
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 243, in as_completed
+    waiter.event.wait(wait_timeout)
+  File "/usr/lib/python3.11/threading.py", line 629, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/logging.py", line 803, in pytest_runtestloop
+    return (yield)  # Run all the tests.
+            ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/terminal.py", line 673, in pytest_runtestloop
+    result = yield
+             ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 362, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/warnings.py", line 112, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/assertion/__init__.py", line 176, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/unittest.py", line 429, in pytest_runtest_protocol
+    res = yield
+          ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/faulthandler.py", line 88, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 341, in from_call
+    result: TResult | None = func()
+                             ^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/threadexception.py", line 92, in pytest_runtest_call
+    yield from thread_exception_runtest_hook()
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/threadexception.py", line 68, in thread_exception_runtest_hook
+    yield
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/unraisableexception.py", line 95, in pytest_runtest_call
+    yield from unraisable_exception_runtest_hook()
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/unraisableexception.py", line 70, in unraisable_exception_runtest_hook
+    yield
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/logging.py", line 846, in pytest_runtest_call
+    yield from self._runtest_for(item, "call")
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/logging.py", line 829, in _runtest_for
+    yield
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/capture.py", line 880, in pytest_runtest_call
+    return (yield)
+            ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/skipping.py", line 257, in pytest_runtest_call
+    return (yield)
+            ^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/tests/speed_up_tests/test_approach_g.py", line 107, in test_g_full_pipeline_within_tolerance
+    result = run_pipeline(
+             ^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/tests/speed_up_tests/conftest.py", line 119, in run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized/shambhala/parallel.py", line 372, in harmonize_parallel
+    with ProcessPoolExecutor(max_workers=effective_workers) as executor:
+  File "/usr/lib/python3.11/concurrent/futures/_base.py", line 647, in __exit__
+    self.shutdown(wait=True)
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 851, in shutdown
+    self._executor_manager_thread.join()
+  File "/usr/lib/python3.11/threading.py", line 1119, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.11/threading.py", line 1139, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jovyan/venvs/collagen_3_11/bin/pytest", line 6, in <module>
+    sys.exit(console_main())
+             ^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/config/__init__.py", line 201, in console_main
+    code = main()
+           ^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/config/__init__.py", line 175, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/main.py", line 297, in wrap_session
+    config.hook.pytest_keyboard_interrupt(excinfo=excinfo)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/terminal.py", line 932, in pytest_keyboard_interrupt
+    self._keyboardinterrupt_memo = excinfo.getrepr(funcargs=True)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/code.py", line 690, in getrepr
+    return fmt.repr_excinfo(self)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/code.py", line 1058, in repr_excinfo
+    reprtraceback = self.repr_traceback(excinfo_)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/code.py", line 991, in repr_traceback
+    entries = [
+              ^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/code.py", line 992, in <listcomp>
+    self.repr_traceback_entry(entry, excinfo if last == entry else None)
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/code.py", line 930, in repr_traceback_entry
+    source = self._getentrysource(entry)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/code.py", line 828, in _getentrysource
+    source = entry.getsource(self.astcache)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/code.py", line 262, in getsource
+    astnode, _, end = getstatementrange_ast(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/source.py", line 183, in getstatementrange_ast
+    start, end = get_statement_startend2(lineno, astnode)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/venvs/collagen_3_11/lib/python3.11/site-packages/_pytest/_code/source.py", line 147, in get_statement_startend2
+    for x in ast.walk(node):
+  File "/usr/lib/python3.11/ast.py", line 390, in walk
+    todo.extend(iter_child_nodes(node))
+  File "/usr/lib/python3.11/ast.py", line 272, in iter_child_nodes
+    for name, field in iter_fields(node):
+  File "/usr/lib/python3.11/ast.py", line 262, in iter_fields
+    yield field, getattr(node, field)
+                 ^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+^CException ignored in atexit callback: <function _exit_function at 0x7fc0735c47c0>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/multiprocessing/util.py", line 360, in _exit_function
+    p.join()
+  File "/usr/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/multiprocessing/popen_fork.py", line 43, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt: 

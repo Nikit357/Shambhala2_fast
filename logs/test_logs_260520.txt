@@ -1,0 +1,826 @@
+================================================================== test session starts ==================================================================
+platform linux -- Python 3.11.15, pytest-8.3.4, pluggy-1.6.0 -- /home/jovyan/venvs/collagen_3_11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /home/jovyan/Projects/Follicular_lymphoma_disser/shambhala_adoption/Shambhala_containerized
+configfile: pyproject.toml
+plugins: typeguard-4.4.2, anyio-4.12.1, timeout-2.4.0, zarr-3.1.6
+timeout: 1200.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 104 items
+
+tests/speed_up_tests/test_approach_a.py::test_a_qn_only PASSED                                                                                    [  0%]
+tests/speed_up_tests/test_approach_a.py::test_a_synthetic_cublock_p PASSED                                                                        [  1%]
+tests/speed_up_tests/test_approach_a.py::test_a_timing_qn_only PASSED                                                                             [  2%]
+tests/speed_up_tests/test_approach_a.py::test_a_timing_combined PASSED                                                                            [  3%]
+tests/speed_up_tests/test_approach_b.py::test_b_output_identical_to_baseline PASSED                                                               [  4%]
+tests/speed_up_tests/test_approach_b.py::test_b_timing PASSED                                                                                     [  5%]
+tests/speed_up_tests/test_approach_c.py::test_c_centroid_selection PASSED                                                                         [  6%]
+tests/speed_up_tests/test_approach_c.py::test_c_subsampling_reduces_p_size PASSED                                                                 [  7%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[40] SKIPPED (n_sub=40 >= n_original=39; subsampling has no effect.)             [  8%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[20] PASSED                                                                      [  9%]
+tests/speed_up_tests/test_approach_c.py::test_c_output_and_timing[10] PASSED                                                                      [ 10%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_produces_identical_distributions PASSED                                                     [ 11%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_matches_manual_rank_normalization PASSED                                                    [ 12%]
+tests/speed_up_tests/test_approach_d.py::test_d_synthetic_p_reference_is_sorted PASSED                                                            [ 13%]
+tests/speed_up_tests/test_approach_d.py::test_d_qnorm_preserves_gene_rank_order PASSED                                                            [ 14%]
+tests/speed_up_tests/test_approach_e.py::test_e_clusters_stable PASSED                                                                            [ 15%]
+tests/speed_up_tests/test_approach_e.py::test_e_clusters_shape PASSED                                                                             [ 16%]
+tests/speed_up_tests/test_approach_e.py::test_e_output_within_tolerance PASSED                                                                    [ 17%]
+tests/speed_up_tests/test_approach_e.py::test_e_timing PASSED                                                                                     [ 18%]
+tests/speed_up_tests/test_approach_g.py::test_g_cublock_output_shape PASSED                                                                       [ 19%]
+tests/speed_up_tests/test_approach_g.py::test_g_modpol_identity_on_monotone PASSED                                                                [ 20%]
+tests/speed_up_tests/test_approach_g.py::test_g_modpol_monotone_correction PASSED                                                                 [ 21%]
+tests/speed_up_tests/test_approach_g.py::test_g_cublock_matches_octave FAILED                                                                     [ 22%]
+tests/speed_up_tests/test_approach_g.py::test_g_full_pipeline_within_tolerance ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of QueueFeederThread (140308692072128) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.11/multiprocessing/queues.py", line 231, in _feed
+    nwait()
+  File "/usr/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of Thread-16 (140307857405632) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 344, in run
+    result_item, is_broken, cause = self.wait_result_broken_or_wakeup()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 417, in wait_result_broken_or_wakeup
+    ready = mp.connection.wait(readers + worker_sentinels)
+  File "/usr/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FAILED                                                                                                                                            [ 23%]
+tests/speed_up_tests/test_approach_g.py::test_g_timing ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of QueueFeederThread (140308692072128) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.11/multiprocessing/queues.py", line 231, in _feed
+    nwait()
+  File "/usr/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of Thread-18 (140307857405632) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 344, in run
+    result_item, is_broken, cause = self.wait_result_broken_or_wakeup()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 417, in wait_result_broken_or_wakeup
+    ready = mp.connection.wait(readers + worker_sentinels)
+  File "/usr/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FAILED                                                                                                                                            [ 24%]
+tests/speed_up_tests/test_combinations.py::test_combination[baseline] PASSED                                                                      [ 25%]
+tests/speed_up_tests/test_combinations.py::test_combination[A_only] FAILED                                                                        [ 25%]
+tests/speed_up_tests/test_combinations.py::test_combination[A_D] FAILED                                                                           [ 26%]
+tests/speed_up_tests/test_combinations.py::test_combination[C_40] PASSED                                                                          [ 27%]
+tests/speed_up_tests/test_combinations.py::test_combination[C_20] FAILED                                                                          [ 28%]
+tests/speed_up_tests/test_combinations.py::test_combination[E] FAILED                                                                             [ 29%]
+tests/speed_up_tests/test_combinations.py::test_combination[A_E] FAILED                                                                           [ 30%]
+tests/speed_up_tests/test_combinations.py::test_combination[G] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of QueueFeederThread (140308645934784) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.11/multiprocessing/queues.py", line 231, in _feed
+    nwait()
+  File "/usr/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of Thread-27 (140307857405632) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 344, in run
+    result_item, is_broken, cause = self.wait_result_broken_or_wakeup()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 417, in wait_result_broken_or_wakeup
+    ready = mp.connection.wait(readers + worker_sentinels)
+  File "/usr/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FAILED                                                                                                                                            [ 31%]
+tests/speed_up_tests/test_combinations.py::test_combination[A_D_E] FAILED                                                                         [ 32%]
+tests/speed_up_tests/test_combinations.py::test_combination[A_D_G] ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of QueueFeederThread (140308553660096) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.11/multiprocessing/queues.py", line 231, in _feed
+    nwait()
+  File "/usr/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Stack of Thread-29 (140307811268288) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 344, in run
+    result_item, is_broken, cause = self.wait_result_broken_or_wakeup()
+  File "/usr/lib/python3.11/concurrent/futures/process.py", line 417, in wait_result_broken_or_wakeup
+    ready = mp.connection.wait(readers + worker_sentinels)
+  File "/usr/lib/python3.11/multiprocessing/connection.py", line 948, in wait
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.11/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Timeout ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+FAILED                                                                                                                                            [ 33%]
+tests/test_integration.py::test_single_worker_matches_reference PASSED                                                                            [ 34%]
+tests/test_integration.py::test_parallel_matches_single PASSED                                                                                    [ 35%]
+tests/test_integration.py::test_local_io_roundtrip PASSED                                                                                         [ 36%]
+tests/test_integration.py::test_gene_intersection_is_applied PASSED                                                                               [ 37%]
+tests/test_integration.py::test_na_drop_full_pipeline PASSED                                                                                      [ 38%]
+tests/test_integration.py::test_na_knn_full_pipeline PASSED                                                                                       [ 39%]
+tests/test_io_utils.py::test_read_local_csv PASSED                                                                                                [ 40%]
+tests/test_io_utils.py::test_read_local_tsv_gz PASSED                                                                                             [ 41%]
+tests/test_io_utils.py::test_write_and_read_roundtrip PASSED                                                                                      [ 42%]
+tests/test_io_utils.py::test_parse_s3_uri PASSED                                                                                                  [ 43%]
+tests/test_io_utils.py::test_s3_read_mocked PASSED                                                                                                [ 44%]
+tests/test_na_handling.py::test_detect_na_genes_correct PASSED                                                                                    [ 45%]
+tests/test_na_handling.py::test_drop_removes_na_genes PASSED                                                                                      [ 46%]
+tests/test_na_handling.py::test_knn_fills_nas PASSED                                                                                              [ 47%]
+tests/test_na_handling.py::test_restore_preserves_original_order PASSED                                                                           [ 48%]
+tests/test_na_handling.py::test_restore_inserts_nan_correct_columns PASSED                                                                        [ 49%]
+tests/test_na_handling.py::test_all_na_gene_handled_gracefully PASSED                                                                             [ 50%]
+tests/test_octave_bridge.py::test_bridge_returns_correct_shape PASSED                                                                             [ 50%]
+tests/test_octave_bridge.py::test_bridge_symbol_index_correct PASSED                                                                              [ 51%]
+tests/test_octave_bridge.py::test_bridge_raises_on_nonzero_exit PASSED                                                                            [ 52%]
+tests/test_octave_bridge.py::test_bridge_error_message_contains_stderr PASSED                                                                     [ 53%]
+tests/test_octave_bridge.py::test_bridge_raises_on_unparseable_stdout PASSED                                                                      [ 54%]
+tests/test_octave_bridge.py::test_tsv_formatting_round_trip PASSED                                                                                [ 55%]
+tests/test_octave_bridge.py::test_is_progress_line_true PASSED                                                                                    [ 56%]
+tests/test_octave_bridge.py::test_is_progress_line_true_extra_spaces PASSED                                                                       [ 57%]
+tests/test_octave_bridge.py::test_is_progress_line_false_data_line PASSED                                                                         [ 58%]
+tests/test_octave_bridge.py::test_is_progress_line_false_empty PASSED                                                                             [ 59%]
+tests/test_octave_bridge.py::test_is_progress_line_false_partial PASSED                                                                           [ 60%]
+tests/test_octave_bridge.py::test_parse_progress_line_valid PASSED                                                                                [ 61%]
+tests/test_octave_bridge.py::test_parse_progress_line_extra_spaces PASSED                                                                         [ 62%]
+tests/test_octave_bridge.py::test_parse_progress_line_invalid_raises PASSED                                                                       [ 63%]
+tests/test_octave_bridge.py::test_streaming_bad_binary_raises PASSED                                                                              [ 64%]
+tests/test_octave_bridge.py::test_streaming_no_queue_matches_blocking PASSED                                                                      [ 65%]
+tests/test_octave_bridge.py::test_streaming_sends_progress_events PASSED                                                                          [ 66%]
+tests/test_octave_bridge.py::test_random_seed_injected_in_preamble PASSED                                                                         [ 67%]
+tests/test_progress_display.py::test_progress_event_fields PASSED                                                                                 [ 68%]
+tests/test_progress_display.py::test_progress_event_is_namedtuple PASSED                                                                          [ 69%]
+tests/test_progress_display.py::test_format_eta_zero PASSED                                                                                       [ 70%]
+tests/test_progress_display.py::test_format_eta_negative PASSED                                                                                   [ 71%]
+tests/test_progress_display.py::test_format_eta_seconds_only PASSED                                                                               [ 72%]
+tests/test_progress_display.py::test_format_eta_minutes_seconds PASSED                                                                            [ 73%]
+tests/test_progress_display.py::test_format_eta_hours PASSED                                                                                      [ 74%]
+tests/test_progress_display.py::test_format_eta_exact_minute PASSED                                                                               [ 75%]
+tests/test_progress_display.py::test_format_eta_exact_hour PASSED                                                                                 [ 75%]
+tests/test_progress_display.py::test_format_speed_zero_done PASSED                                                                                [ 76%]
+tests/test_progress_display.py::test_format_speed_nonzero PASSED                                                                                  [ 77%]
+tests/test_progress_display.py::test_format_speed_one_sample PASSED                                                                               [ 78%]
+tests/test_progress_display.py::test_format_bar_width PASSED                                                                                      [ 79%]
+tests/test_progress_display.py::test_format_bar_custom_width PASSED                                                                               [ 80%]
+tests/test_progress_display.py::test_format_bar_full PASSED                                                                                       [ 81%]
+tests/test_progress_display.py::test_format_bar_empty PASSED                                                                                      [ 82%]
+tests/test_progress_display.py::test_format_bar_zero_total PASSED                                                                                 [ 83%]
+tests/test_progress_display.py::test_format_bar_half PASSED                                                                                       [ 84%]
+tests/test_progress_display.py::test_render_row_contains_bar PASSED                                                                               [ 85%]
+tests/test_progress_display.py::test_render_row_finished_shows_done PASSED                                                                        [ 86%]
+tests/test_progress_display.py::test_render_row_unfinished_shows_eta PASSED                                                                       [ 87%]
+tests/test_progress_display.py::test_render_row_bar_width PASSED                                                                                  [ 88%]
+tests/test_progress_display.py::test_renderer_plain_text_emits_lines PASSED                                                                       [ 89%]
+tests/test_progress_display.py::test_renderer_plain_text_final_always_emitted PASSED                                                              [ 90%]
+tests/test_progress_display.py::test_renderer_stop_exits_cleanly PASSED                                                                           [ 91%]
+tests/test_progress_display.py::test_renderer_stop_after_empty_queue_exits PASSED                                                                 [ 92%]
+tests/test_progress_display.py::test_renderer_does_not_crash_on_extra_none PASSED                                                                 [ 93%]
+tests/test_progress_display.py::test_renderer_processes_all_events_before_stop PASSED                                                             [ 94%]
+tests/test_q_rescale.py::test_rescale_known_values PASSED                                                                                         [ 95%]
+tests/test_q_rescale.py::test_compute_q_statistics_shape PASSED                                                                                   [ 96%]
+tests/test_q_rescale.py::test_pseudocount_prevents_log_zero PASSED                                                                                [ 97%]
+tests/test_q_rescale.py::test_pseudocount_zero_excludes_with_warning PASSED                                                                       [ 98%]
+tests/test_q_rescale.py::test_rescale_raises_on_negative_q PASSED                                                                                 [ 99%]
+tests/test_q_rescale.py::test_rescale_gene_intersection PASSED                                                                                    [100%]
+
+======================================================================= FAILURES ========================================================================
+_____________________________________________________________ test_g_cublock_matches_octave _____________________________________________________________
+
+    @octave_required
+    @pytest.mark.timeout(300)
+    def test_g_cublock_matches_octave():
+        """
+        Run cublock_python and CuBlock.m on the same 10-sample input+P fixture.
+        Uses mean_rel_diff as primary metric; thresholds calibrated from observed PRNG divergence
+        between NumPy default_rng and Octave's rand('state', seed) — different random sequences
+        even from the same seed value, causing systematic k-means cluster differences across 30 reps.
+        """
+        from shambhala.octave_bridge import run_octave_normalize
+        from tests.speed_up_tests.conftest import OCTAVE_DIR, OCTAVE_BIN
+        import qnorm as qnorm_lib
+    
+        _, p_df, _, _ = load_fixtures()
+        rng = np.random.default_rng(42)
+        data_col = rng.random(p_df.shape[1]).astype(float)
+        p_T = p_df.T
+        pool_np = np.column_stack([data_col, p_T.values])
+        pool_genes = p_T.index
+    
+        batch_sample = ["test_sample"]
+        pool_df = pd.DataFrame(pool_np, index=pool_genes, columns=batch_sample + list(p_T.columns))
+    
+        octave_result = run_octave_normalize(
+            pool_df=pool_df,
+            nh=1,
+            np_=p_T.shape[1],
+            k=5,
+            octave_scripts_dir=str(OCTAVE_DIR),
+            octave_bin=OCTAVE_BIN,
+            timeout_s=300,
+            random_seed=42,
+        )
+        octave_col = octave_result.values[:, 0]
+    
+        qn_pool = qnorm_lib.quantile_normalize(pool_np, axis=1)
+        python_col = cublock_python(qn_pool, n_reps=30, k=5, random_seed=42)[:, 0]
+    
+        common_mask = ~(np.isnan(octave_col) | np.isnan(python_col))
+        diff = np.abs(octave_col[common_mask] - python_col[common_mask])
+        denom = np.abs(octave_col[common_mask])
+        rel_diff = np.where(denom > 0, diff / denom, 0.0)
+    
+        metrics: dict[str, float] = {
+            "max_abs_diff": float(diff.max()),
+            "mean_abs_diff": float(diff.mean()),
+            "mean_rel_diff": float(rel_diff.mean()),
+            "pct_within_1pct": float(
+                (diff <= 0.01 * np.maximum(np.abs(octave_col[common_mask]), 1e-9)).mean() * 100
+            ),
+        }
+>       assert_mean_rel_diff(
+            metrics,
+            warn_threshold=0.01,
+            fail_threshold=0.05,
+            label="Approach G vs Octave CuBlock",
+        )
+
+tests/speed_up_tests/test_approach_g.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+metrics = {'max_abs_diff': 1.9704258176051377, 'mean_abs_diff': 0.1132347950046677, 'mean_rel_diff': 2.261206685822404, 'pct_within_1pct': 0.5883356070941337}
+warn_threshold = 0.01, fail_threshold = 0.05, label = 'Approach G vs Octave CuBlock'
+
+    def assert_mean_rel_diff(
+        metrics: dict[str, float],
+        warn_threshold: float = 0.01,
+        fail_threshold: float = 0.05,
+        label: str = "",
+    ) -> None:
+        """
+        Print all four metrics and assert two-tier mean_rel_diff thresholds.
+    
+        < warn_threshold  → STATUS: PASSED (production-safe)
+        warn–fail range   → STATUS: WARNING (exploratory only, test still passes)
+        > fail_threshold  → AssertionError (unacceptable distortion)
+        """
+        mrd = metrics["mean_rel_diff"]
+        header = f"\n{label} metrics:" if label else "\nMetrics:"
+        print(header)
+        print(f"  max_abs_diff  = {metrics['max_abs_diff']:.4f}")
+        print(f"  mean_abs_diff = {metrics['mean_abs_diff']:.4f}")
+        print(f"  mean_rel_diff = {mrd:.4%}")
+        print(f"  %within_1pct  = {metrics['pct_within_1pct']:.1f}%")
+    
+        if mrd < warn_threshold:
+            print(f"  STATUS: PASSED — production-safe (< {warn_threshold:.0%})")
+        elif mrd < fail_threshold:
+            print(
+                f"  STATUS: WARNING — exploratory only "
+                f"({warn_threshold:.0%}–{fail_threshold:.0%} range). "
+                f"Do not use for benchmarking."
+            )
+    
+>       assert mrd < fail_threshold, (
+            f"mean_rel_diff={mrd:.4%} exceeds fail threshold {fail_threshold:.0%}"
+        )
+E       AssertionError: mean_rel_diff=226.1207% exceeds fail threshold 5%
+E       assert 2.261206685822404 < 0.05
+
+tests/speed_up_tests/conftest.py:53: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+Approach G vs Octave CuBlock metrics:
+  max_abs_diff  = 1.9704
+  mean_abs_diff = 0.1132
+  mean_rel_diff = 226.1207%
+  %within_1pct  = 0.6%
+_________________________________________________________ test_g_full_pipeline_within_tolerance _________________________________________________________
+
+    @octave_required
+    @pytest.mark.timeout(600)
+    def test_g_full_pipeline_within_tolerance():
+        input_df, p_df, q_df, expected_df = load_fixtures()
+>       result = run_pipeline(
+            input_df=input_df,
+            p_df=p_df,
+            q_df=q_df,
+            n_workers=1,
+            python_cublock=True,
+            random_seed=42,
+        )
+
+tests/speed_up_tests/test_approach_g.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/speed_up_tests/conftest.py:170: in run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+shambhala/parallel.py:402: in harmonize_parallel
+    for future in as_completed(future_to_idx):
+/usr/lib/python3.11/concurrent/futures/_base.py:243: in as_completed
+    waiter.event.wait(wait_timeout)
+/usr/lib/python3.11/threading.py:629: in wait
+    signaled = self._cond.wait(timeout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Condition(<unlocked _thread.lock object at 0x7f9be7571e80>, 0)>, timeout = None
+
+    def wait(self, timeout=None):
+        """Wait until notified or until a timeout occurs.
+    
+        If the calling thread has not acquired the lock when this method is
+        called, a RuntimeError is raised.
+    
+        This method releases the underlying lock, and then blocks until it is
+        awakened by a notify() or notify_all() call for the same condition
+        variable in another thread, or until the optional timeout occurs. Once
+        awakened or timed out, it re-acquires the lock and returns.
+    
+        When the timeout argument is present and not None, it should be a
+        floating point number specifying a timeout for the operation in seconds
+        (or fractions thereof).
+    
+        When the underlying lock is an RLock, it is not released using its
+        release() method, since this may not actually unlock the lock when it
+        was acquired multiple times recursively. Instead, an internal interface
+        of the RLock class is used, which really unlocks it even when it has
+        been recursively acquired several times. Another internal interface is
+        then used to restore the recursion level when the lock is reacquired.
+    
+        """
+        if not self._is_owned():
+            raise RuntimeError("cannot wait on un-acquired lock")
+        waiter = _allocate_lock()
+        waiter.acquire()
+        self._waiters.append(waiter)
+        saved_state = self._release_save()
+        gotit = False
+        try:    # restore state no matter what (e.g., KeyboardInterrupt)
+            if timeout is None:
+>               waiter.acquire()
+E               Failed: Timeout (>600.0s) from pytest-timeout.
+
+/usr/lib/python3.11/threading.py:327: Failed
+_____________________________________________________________________ test_g_timing _____________________________________________________________________
+
+    @octave_required
+    @pytest.mark.timeout(3600)
+    @pytest.mark.slow
+    def test_g_timing():
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t_base:
+            run_pipeline(input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42)
+        with measure_wall_time() as t_g:
+>           run_pipeline(
+                input_df=input_df,
+                p_df=p_df,
+                q_df=q_df,
+                n_workers=1,
+                python_cublock=True,
+                random_seed=42,
+            )
+
+tests/speed_up_tests/test_approach_g.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/speed_up_tests/conftest.py:170: in run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+shambhala/parallel.py:402: in harmonize_parallel
+    for future in as_completed(future_to_idx):
+/usr/lib/python3.11/concurrent/futures/_base.py:243: in as_completed
+    waiter.event.wait(wait_timeout)
+/usr/lib/python3.11/threading.py:629: in wait
+    signaled = self._cond.wait(timeout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Condition(<unlocked _thread.lock object at 0x7f9c2fa75840>, 0)>, timeout = None
+
+    def wait(self, timeout=None):
+        """Wait until notified or until a timeout occurs.
+    
+        If the calling thread has not acquired the lock when this method is
+        called, a RuntimeError is raised.
+    
+        This method releases the underlying lock, and then blocks until it is
+        awakened by a notify() or notify_all() call for the same condition
+        variable in another thread, or until the optional timeout occurs. Once
+        awakened or timed out, it re-acquires the lock and returns.
+    
+        When the timeout argument is present and not None, it should be a
+        floating point number specifying a timeout for the operation in seconds
+        (or fractions thereof).
+    
+        When the underlying lock is an RLock, it is not released using its
+        release() method, since this may not actually unlock the lock when it
+        was acquired multiple times recursively. Instead, an internal interface
+        of the RLock class is used, which really unlocks it even when it has
+        been recursively acquired several times. Another internal interface is
+        then used to restore the recursion level when the lock is reacquired.
+    
+        """
+        if not self._is_owned():
+            raise RuntimeError("cannot wait on un-acquired lock")
+        waiter = _allocate_lock()
+        waiter.acquire()
+        self._waiters.append(waiter)
+        saved_state = self._release_save()
+        gotit = False
+        try:    # restore state no matter what (e.g., KeyboardInterrupt)
+            if timeout is None:
+>               waiter.acquire()
+E               Failed: Timeout (>3600.0s) from pytest-timeout.
+
+/usr/lib/python3.11/threading.py:327: Failed
+_______________________________________________________________ test_combination[A_only] ________________________________________________________________
+
+combo_id = 'A_only', kwargs = {'precompute_qn_reference': True}, tol = 0.05, desc = 'A: Python QN reference'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+            result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+        metrics = compare_to_expected(result, expected_df)
+        speedup = baseline_time / max(t[0], 1e-3)
+        print(
+            f"\n[{combo_id}] {desc}\n"
+            f"  max_abs_diff={metrics['max_abs_diff']:.4f}  mean_abs_diff={metrics['mean_abs_diff']:.4f}"
+            f"  pct_within_1pct={metrics['pct_within_1pct']:.1f}%  "
+            f"time={t[0]:.1f}s  speedup={speedup:.2f}x"
+        )
+>       assert metrics["max_abs_diff"] <= tol, (
+            f"[{combo_id}] max_abs_diff={metrics['max_abs_diff']:.4f} exceeds tolerance {tol}"
+        )
+E       AssertionError: [A_only] max_abs_diff=16253.0651 exceeds tolerance 0.05
+E       assert 16253.065058627297 <= 0.05
+
+tests/speed_up_tests/test_combinations.py:71: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+[A_only] A: Python QN reference
+  max_abs_diff=16253.0651  mean_abs_diff=29.7449  pct_within_1pct=82.0%  time=47.0s  speedup=1.04x
+_________________________________________________________________ test_combination[A_D] _________________________________________________________________
+
+combo_id = 'A_D', kwargs = {'precompute_qn_reference': True, 'synthetic_cublock_p': True}, tol = 0.05
+desc = 'A+D: Python QN + synthetic 1-col P for CuBlock'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+            result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+        metrics = compare_to_expected(result, expected_df)
+        speedup = baseline_time / max(t[0], 1e-3)
+        print(
+            f"\n[{combo_id}] {desc}\n"
+            f"  max_abs_diff={metrics['max_abs_diff']:.4f}  mean_abs_diff={metrics['mean_abs_diff']:.4f}"
+            f"  pct_within_1pct={metrics['pct_within_1pct']:.1f}%  "
+            f"time={t[0]:.1f}s  speedup={speedup:.2f}x"
+        )
+>       assert metrics["max_abs_diff"] <= tol, (
+            f"[{combo_id}] max_abs_diff={metrics['max_abs_diff']:.4f} exceeds tolerance {tol}"
+        )
+E       AssertionError: [A_D] max_abs_diff=105985.6395 exceeds tolerance 0.05
+E       assert 105985.63946191414 <= 0.05
+
+tests/speed_up_tests/test_combinations.py:71: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+[A_D] A+D: Python QN + synthetic 1-col P for CuBlock
+  max_abs_diff=105985.6395  mean_abs_diff=375.0084  pct_within_1pct=4.0%  time=9.1s  speedup=5.34x
+________________________________________________________________ test_combination[C_20] _________________________________________________________________
+
+combo_id = 'C_20', kwargs = {'max_p_samples': 20}, tol = 0.1, desc = 'C: centroid P subsample to 20'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+            result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+        metrics = compare_to_expected(result, expected_df)
+        speedup = baseline_time / max(t[0], 1e-3)
+        print(
+            f"\n[{combo_id}] {desc}\n"
+            f"  max_abs_diff={metrics['max_abs_diff']:.4f}  mean_abs_diff={metrics['mean_abs_diff']:.4f}"
+            f"  pct_within_1pct={metrics['pct_within_1pct']:.1f}%  "
+            f"time={t[0]:.1f}s  speedup={speedup:.2f}x"
+        )
+>       assert metrics["max_abs_diff"] <= tol, (
+            f"[{combo_id}] max_abs_diff={metrics['max_abs_diff']:.4f} exceeds tolerance {tol}"
+        )
+E       AssertionError: [C_20] max_abs_diff=211150.0548 exceeds tolerance 0.1
+E       assert 211150.05484939704 <= 0.1
+
+tests/speed_up_tests/test_combinations.py:71: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+[C_20] C: centroid P subsample to 20
+  max_abs_diff=211150.0548  mean_abs_diff=94.6892  pct_within_1pct=65.4%  time=29.6s  speedup=1.64x
+__________________________________________________________________ test_combination[E] __________________________________________________________________
+
+combo_id = 'E', kwargs = {'precompute_cublock_clusters': True}, tol = 0.1, desc = 'E: precomputed k-means clusters'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+            result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+        metrics = compare_to_expected(result, expected_df)
+        speedup = baseline_time / max(t[0], 1e-3)
+        print(
+            f"\n[{combo_id}] {desc}\n"
+            f"  max_abs_diff={metrics['max_abs_diff']:.4f}  mean_abs_diff={metrics['mean_abs_diff']:.4f}"
+            f"  pct_within_1pct={metrics['pct_within_1pct']:.1f}%  "
+            f"time={t[0]:.1f}s  speedup={speedup:.2f}x"
+        )
+>       assert metrics["max_abs_diff"] <= tol, (
+            f"[{combo_id}] max_abs_diff={metrics['max_abs_diff']:.4f} exceeds tolerance {tol}"
+        )
+E       AssertionError: [E] max_abs_diff=16048.7456 exceeds tolerance 0.1
+E       assert 16048.745570448766 <= 0.1
+
+tests/speed_up_tests/test_combinations.py:71: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+[E] E: precomputed k-means clusters
+  max_abs_diff=16048.7456  mean_abs_diff=45.5385  pct_within_1pct=74.4%  time=4.6s  speedup=10.63x
+_________________________________________________________________ test_combination[A_E] _________________________________________________________________
+
+combo_id = 'A_E', kwargs = {'precompute_cublock_clusters': True, 'precompute_qn_reference': True}, tol = 0.1
+desc = 'A+E: Python QN + precomputed clusters'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+            result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+        metrics = compare_to_expected(result, expected_df)
+        speedup = baseline_time / max(t[0], 1e-3)
+        print(
+            f"\n[{combo_id}] {desc}\n"
+            f"  max_abs_diff={metrics['max_abs_diff']:.4f}  mean_abs_diff={metrics['mean_abs_diff']:.4f}"
+            f"  pct_within_1pct={metrics['pct_within_1pct']:.1f}%  "
+            f"time={t[0]:.1f}s  speedup={speedup:.2f}x"
+        )
+>       assert metrics["max_abs_diff"] <= tol, (
+            f"[{combo_id}] max_abs_diff={metrics['max_abs_diff']:.4f} exceeds tolerance {tol}"
+        )
+E       AssertionError: [A_E] max_abs_diff=16404.7977 exceeds tolerance 0.1
+E       assert 16404.797722590025 <= 0.1
+
+tests/speed_up_tests/test_combinations.py:71: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+[A_E] A+E: Python QN + precomputed clusters
+  max_abs_diff=16404.7977  mean_abs_diff=46.3665  pct_within_1pct=70.9%  time=5.6s  speedup=8.63x
+__________________________________________________________________ test_combination[G] __________________________________________________________________
+
+combo_id = 'G', kwargs = {'python_cublock': True}, tol = 0.1, desc = 'G: Python CuBlock'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+>           result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+
+tests/speed_up_tests/test_combinations.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/speed_up_tests/conftest.py:170: in run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+shambhala/parallel.py:402: in harmonize_parallel
+    for future in as_completed(future_to_idx):
+/usr/lib/python3.11/concurrent/futures/_base.py:243: in as_completed
+    waiter.event.wait(wait_timeout)
+/usr/lib/python3.11/threading.py:629: in wait
+    signaled = self._cond.wait(timeout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Condition(<unlocked _thread.lock object at 0x7f9c2f32cbc0>, 0)>, timeout = None
+
+    def wait(self, timeout=None):
+        """Wait until notified or until a timeout occurs.
+    
+        If the calling thread has not acquired the lock when this method is
+        called, a RuntimeError is raised.
+    
+        This method releases the underlying lock, and then blocks until it is
+        awakened by a notify() or notify_all() call for the same condition
+        variable in another thread, or until the optional timeout occurs. Once
+        awakened or timed out, it re-acquires the lock and returns.
+    
+        When the timeout argument is present and not None, it should be a
+        floating point number specifying a timeout for the operation in seconds
+        (or fractions thereof).
+    
+        When the underlying lock is an RLock, it is not released using its
+        release() method, since this may not actually unlock the lock when it
+        was acquired multiple times recursively. Instead, an internal interface
+        of the RLock class is used, which really unlocks it even when it has
+        been recursively acquired several times. Another internal interface is
+        then used to restore the recursion level when the lock is reacquired.
+    
+        """
+        if not self._is_owned():
+            raise RuntimeError("cannot wait on un-acquired lock")
+        waiter = _allocate_lock()
+        waiter.acquire()
+        self._waiters.append(waiter)
+        saved_state = self._release_save()
+        gotit = False
+        try:    # restore state no matter what (e.g., KeyboardInterrupt)
+            if timeout is None:
+>               waiter.acquire()
+E               Failed: Timeout (>1200.0s) from pytest-timeout.
+
+/usr/lib/python3.11/threading.py:327: Failed
+________________________________________________________________ test_combination[A_D_E] ________________________________________________________________
+
+combo_id = 'A_D_E', kwargs = {'precompute_cublock_clusters': True, 'precompute_qn_reference': True, 'synthetic_cublock_p': True}, tol = 0.1
+desc = 'A+D+E: Python QN + synthetic P + precomputed clusters'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+            result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+        metrics = compare_to_expected(result, expected_df)
+        speedup = baseline_time / max(t[0], 1e-3)
+        print(
+            f"\n[{combo_id}] {desc}\n"
+            f"  max_abs_diff={metrics['max_abs_diff']:.4f}  mean_abs_diff={metrics['mean_abs_diff']:.4f}"
+            f"  pct_within_1pct={metrics['pct_within_1pct']:.1f}%  "
+            f"time={t[0]:.1f}s  speedup={speedup:.2f}x"
+        )
+>       assert metrics["max_abs_diff"] <= tol, (
+            f"[{combo_id}] max_abs_diff={metrics['max_abs_diff']:.4f} exceeds tolerance {tol}"
+        )
+E       AssertionError: [A_D_E] max_abs_diff=227622.2702 exceeds tolerance 0.1
+E       assert 227622.27015758486 <= 0.1
+
+tests/speed_up_tests/test_combinations.py:71: AssertionError
+----------------------------------------------------------------- Captured stdout call ------------------------------------------------------------------
+
+[A_D_E] A+D+E: Python QN + synthetic P + precomputed clusters
+  max_abs_diff=227622.2702  mean_abs_diff=371.9788  pct_within_1pct=15.7%  time=2.9s  speedup=16.95x
+________________________________________________________________ test_combination[A_D_G] ________________________________________________________________
+
+combo_id = 'A_D_G', kwargs = {'precompute_qn_reference': True, 'python_cublock': True, 'synthetic_cublock_p': True}, tol = 0.1
+desc = 'A+D+G: Python QN + synthetic P + Python CuBlock'
+baseline_result = (                  A2M       A4GALT         AAAS         AACS        AAGAB  ...        ZXDB         ZXDC           ZYX...902  ...  503.334464  1190.665227  20558.405705  4162.401481  1133.498298
+
+[10 rows x 8174 columns], 48.62050981500033)
+
+    @octave_required
+    @pytest.mark.parametrize("combo_id,kwargs,tol,desc", _COMBOS, ids=[c[0] for c in _COMBOS])
+    def test_combination(combo_id, kwargs, tol, desc, baseline_result):
+        baseline_df, expected_df, baseline_time = baseline_result
+        input_df, p_df, q_df, _ = load_fixtures()
+        with measure_wall_time() as t:
+>           result = run_pipeline(
+                input_df=input_df, p_df=p_df, q_df=q_df, n_workers=1, random_seed=42, **kwargs
+            )
+
+tests/speed_up_tests/test_combinations.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/speed_up_tests/conftest.py:170: in run_pipeline
+    harmonized_T = parallel_module.harmonize_parallel(
+shambhala/parallel.py:402: in harmonize_parallel
+    for future in as_completed(future_to_idx):
+/usr/lib/python3.11/concurrent/futures/_base.py:243: in as_completed
+    waiter.event.wait(wait_timeout)
+/usr/lib/python3.11/threading.py:629: in wait
+    signaled = self._cond.wait(timeout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Condition(<unlocked _thread.lock object at 0x7f9c2f5f7640>, 0)>, timeout = None
+
+    def wait(self, timeout=None):
+        """Wait until notified or until a timeout occurs.
+    
+        If the calling thread has not acquired the lock when this method is
+        called, a RuntimeError is raised.
+    
+        This method releases the underlying lock, and then blocks until it is
+        awakened by a notify() or notify_all() call for the same condition
+        variable in another thread, or until the optional timeout occurs. Once
+        awakened or timed out, it re-acquires the lock and returns.
+    
+        When the timeout argument is present and not None, it should be a
+        floating point number specifying a timeout for the operation in seconds
+        (or fractions thereof).
+    
+        When the underlying lock is an RLock, it is not released using its
+        release() method, since this may not actually unlock the lock when it
+        was acquired multiple times recursively. Instead, an internal interface
+        of the RLock class is used, which really unlocks it even when it has
+        been recursively acquired several times. Another internal interface is
+        then used to restore the recursion level when the lock is reacquired.
+    
+        """
+        if not self._is_owned():
+            raise RuntimeError("cannot wait on un-acquired lock")
+        waiter = _allocate_lock()
+        waiter.acquire()
+        self._waiters.append(waiter)
+        saved_state = self._release_save()
+        gotit = False
+        try:    # restore state no matter what (e.g., KeyboardInterrupt)
+            if timeout is None:
+>               waiter.acquire()
+E               Failed: Timeout (>1200.0s) from pytest-timeout.
+
+/usr/lib/python3.11/threading.py:327: Failed
+================================================================ short test summary info ================================================================
+FAILED tests/speed_up_tests/test_approach_g.py::test_g_cublock_matches_octave - AssertionError: mean_rel_diff=226.1207% exceeds fail threshold 5%
+FAILED tests/speed_up_tests/test_approach_g.py::test_g_full_pipeline_within_tolerance - Failed: Timeout (>600.0s) from pytest-timeout.
+FAILED tests/speed_up_tests/test_approach_g.py::test_g_timing - Failed: Timeout (>3600.0s) from pytest-timeout.
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[A_only] - AssertionError: [A_only] max_abs_diff=16253.0651 exceeds tolerance 0.05
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[A_D] - AssertionError: [A_D] max_abs_diff=105985.6395 exceeds tolerance 0.05
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[C_20] - AssertionError: [C_20] max_abs_diff=211150.0548 exceeds tolerance 0.1
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[E] - AssertionError: [E] max_abs_diff=16048.7456 exceeds tolerance 0.1
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[A_E] - AssertionError: [A_E] max_abs_diff=16404.7977 exceeds tolerance 0.1
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[G] - Failed: Timeout (>1200.0s) from pytest-timeout.
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[A_D_E] - AssertionError: [A_D_E] max_abs_diff=227622.2702 exceeds tolerance 0.1
+FAILED tests/speed_up_tests/test_combinations.py::test_combination[A_D_G] - Failed: Timeout (>1200.0s) from pytest-timeout.
+================================================= 11 failed, 92 passed, 1 skipped in 7700.86s (2:08:20) =================================================
