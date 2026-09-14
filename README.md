@@ -1,4 +1,5 @@
 # Shambhala2_fast
+ DOI: [10.5281/zenodo.22756647](https://zenodo.org/records/22756647)
 
 A pure-Python + Octave implementation of the **Shambhala2** gene expression harmonization algorithm. Replaces the original R wrapper with a self-contained Python pipeline that handles S3/local I/O, per-sample parallelization, and NA management, while keeping the Octave numerical core unchanged.
 
